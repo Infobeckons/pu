@@ -42,7 +42,7 @@
         }
     </style>
    <div class="col-md-9" style="height:auto; width:100%;">
-    <a href="amount" target="_blank" style=""><input type="button" name="button" value="Amount"></a>
+    <a href="amount" target="_blank"><input type="button" name="button" value="Amount"></a>
        <center><img src="{{ asset('dist/img/undercons.png')}}" class="back"/> </center> 
     </div>
 </x-app-layout>

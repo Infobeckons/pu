@@ -54,7 +54,7 @@
                           <form action="formshow" method="post" enctype="multipart/form-data">
                                   @csrf
                                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-                                   <div style="" class="portlet">
+                                   <div class="portlet">
                                       <div class="col-md-4">
                                              <select name="eventname" class="form-control input-md" id="eventname"  value="old('eventname')" >
                                                 <option value="no" hidden>Select Your Event </option>
