@@ -6,19 +6,21 @@
                 </div>
 				<div class="panel">
 						<div class="row-search">
- 		             		  <form action="search" method="post">
+ 		             		  <form action="search" method="get">
  		             			  @csrf
- 		             			    <div class="searchbar">
- 		               					<input type="text" class="form_control" name="search" placeholder="ID/Group/Phone">
+									<div class="row">
+										<div class="col-md-9 searchbar">
+											<input type="text" class="form_control" name="search" placeholder="ID/Group/Phone">
+										</div>
+										<div class="col-md-3 searchbut">
+											<button type="submit" class="btn-info" name="submit"><i class="fa fa-search"></i></button>
+										</div>
 									</div>
- 		               				<div class="searchbut">
- 		               					<button type="submit" class="btn-info" name="submit"><i class="fa fa-search"></i></button>
- 		               				</div>
                             
  		               		
  		       		    </div>
 				</div>
-                   <div class="panel">
+                   <div class="panel mt-2">
                     <div class="panel-body">
                      <div class="text-center" style="color:white;background-color:gray">All Data</div><hr>
 					 @if(isset($users)) 

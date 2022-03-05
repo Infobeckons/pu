@@ -277,7 +277,7 @@
         <a href="{{'contact'}}" class="nav-link">
         <i class="nav-icon fas fa-address-book"></i>
             <p>
-            Contect
+            Contact
             </p>
         </a>
         </li>

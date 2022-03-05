@@ -25,9 +25,10 @@ use Illuminate\Http\Request;
 //user role checking(Eg. Admin, User, SuperAdmin etc)
 Route::get('redirect', 'App\Http\Controllers\HomeController@index');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('report');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('report');
+// })->name('dashboard');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/admindashboard', function () {
     return view('dashboard');
 })->name('admindashboard');
@@ -119,7 +120,7 @@ Route::post('ccreq', 'App\Http\Controllers\formup@paymentcall');
 
 // search
 // Route::get('search', 'App\Http\Controllers\booking@search');
-Route::post('search', 'App\Http\Controllers\transdata@find');
+Route::get('search', 'App\Http\Controllers\transdata@find');
 // Route::get('search?page={{id}}', 'App\Http\Controllers\transdata@find');
 Route::get('extend', 'App\Http\Controllers\formup@index');
 Route::post('regon', 'App\Http\Controllers\formup@register');
@@ -136,4 +137,4 @@ Route::view('pan', 'pan');
 
 Route::get('logout', 'App\Http\Controllers\HomeController@logout');
 
-//Route::get('404', function (){   return view('errors\404');  });
+// Route::get('404', function (){   return view('errors\404');  });
