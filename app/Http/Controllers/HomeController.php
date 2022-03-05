@@ -11,20 +11,25 @@ class HomeController extends Controller
         $role=Auth::user()->role;
         if($role=='1')
         {
-            // $data= $request->input();
-            $request->session()->put('email', $request->input('email'));
+            //$data= $request->input();
+            //$request->session()->put('email', $request->input('email'));
             // dd($_SESSION);
-            return $request->session->get('email');
-            // return view('dashboard');
+            //return $request->session->get('email');
+            return view('dashboard');
+            //return Auth::user()->name;
             
         }
         elseif($role=='0'){
-            $request->session()->put('email', $request->input('email'));
+            //$request->session()->put('email', $request->input('email'));
+            //return view('report');
+            //return Auth::user()->name;
             return view('report');
         }
         else{
-            $_SESSION = session()->all();
-            return view('report');
+            //$_SESSION = session()->all();
+            //return view('report');
+            //return Auth::user()->name;
+            return view('dashboard');
         }
     }
 
