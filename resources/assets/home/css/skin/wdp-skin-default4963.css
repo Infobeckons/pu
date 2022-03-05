@@ -1,0 +1,522 @@
+.fancy-select,
+.fancy-select .options,
+.wdp_btn,
+.wdp_btn_inverse {
+    border: 1px solid #a40006
+}
+
+.wdp_home_form_success_text,
+.wdp_page_form_success_text {
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    width: 100%
+}
+
+.m-btncolr,
+.wdp_btn,
+.wdp_btn_inverse,
+.wdp_nav a {
+    transition: all .4s ease
+}
+
+.fancy-select {
+    background: #FFF
+}
+
+.fancy-select .trigger {
+    color: #454545
+}
+
+.fancy-select .trigger:after {
+    color: #a40006
+}
+
+.fancy-select .trigger.open {
+    color: #CCC
+}
+
+.fancy-select ul.options>li a,
+.fancy-select ul.options>li:hover,
+body {
+    color: #454545
+}
+
+.fancy-select .options {
+    background-color: #FFF
+}
+
+.wdp_splash_date,
+a:hover,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #a40006
+}
+
+::-moz-selection,
+::-webkit-selection {
+    color: #FFF;
+    background: #a40006
+}
+
+body {
+    background: url(../../images/body-bg.png) fixed #FFF
+}
+
+a {
+    color: #454545
+}
+
+a:active,
+a:visited {
+    color: #CCC
+}
+
+a:focus {
+    outline: 0;
+    color: inherit
+}
+
+.wdp_preloader {
+    background: url(../../images/preloader.png) center no-repeat #fff
+}
+
+.wdp_btn {
+    background: linear-gradient(to top, transparent 50%, #a40006 50%)!important;
+    background-size: 100% 200%!important;
+    background-position: bottom!important;
+    color: #a40006!important
+}
+
+.wdp_btn:hover,
+.wdp_nav a {
+    background: linear-gradient(to top, transparent 50%, #a40006 50%)!important
+}
+
+.wdp_btn:hover {
+    background-size: 100% 200%!important;
+    background-position: top!important;
+    color: #FFF!important
+}
+
+.wdp_btn_inverse {
+    background: linear-gradient(to top, #a40006 50%, transparent 50%)!important;
+    background-size: 100% 200%!important;
+    background-position: bottom!important;
+    color: #FFF!important
+}
+
+.wdp_btn_inverse:hover {
+    background: linear-gradient(to top, #a40006 50%, transparent 50%)!important;
+    background-size: 100% 200%!important;
+    background-position: top!important;
+    color: #a40006!important
+}
+
+.wdp_breadcrumb {
+    background: 0 0
+}
+
+.wdp_breadcrumb a,
+.wdp_breadcrumb a:focus,
+.wdp_breadcrumb a:visited {
+    color: #454545
+}
+
+.wdp_breadcrumb .active {
+    color: #CCC
+}
+
+.wdp_pagination>li>a,
+.wdp_pagination>li>span {
+    color: #a40006
+}
+
+.wdp_pagination>li>a:focus,
+.wdp_pagination>li>a:hover,
+.wdp_pagination>li>span:focus,
+.wdp_pagination>li>span:hover {
+    color: #454545;
+    background-color: transparent;
+    border-color: #CCC
+}
+
+.wdp_pagination>.active>a,
+.wdp_pagination>.active>a:hover {
+    color: #FFF;
+    background: #a40006;
+    border-color: #FFF
+}
+
+.wdp_header {
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, .9) 0, rgba(255, 255, 255, .7) 70%, rgba(255, 255, 255, .25) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, .9) 0, rgba(255, 255, 255, .7) 70%, rgba(255, 255, 255, .25) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, .9) 0, rgba(255, 255, 255, .7) 70%, rgba(255, 255, 255, .25) 100%)
+}
+
+.wdp_header_icon {
+    background: url(../../images/header-icon.png) no-repeat;
+    background-size: contain
+}
+
+.wdp_navigation {
+    background: #fff;
+    box-shadow: 17px -3px 12px #808080cf
+}
+
+.wdp_nav a {
+    background-size: 100% 200%!important;
+    background-position: bottom!important;
+    color: #a40006!important
+}
+
+.wdp_current_page_item>a,
+.wdp_nav a:hover {
+    background: linear-gradient(to top, transparent 50%, #a40006 50%)!important;
+    background-size: 100% 200%!important;
+    background-position: top!important;
+    color: #FFF!important
+}
+
+.wdp_dropdown_menu {
+    border: none
+}
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover {
+    background-color: transparent;
+    color: #a40006
+}
+
+.wdp_contact_bar_mail,
+.wdp_contact_bar_mail a,
+.wdp_contact_bar_mail:hover,
+.wdp_countdown_item,
+.wdp_splash_couple_ini {
+    color: #FFF
+}
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: transparent;
+    border-color: transparent
+}
+
+.wdp_contact_bar_inner {
+    background: #a40006;
+    color: #FFF
+}
+
+.wdp_footer_copyright {
+    background: #FFF
+}
+
+#wdp_featured_image:before,
+#wdp_slideshow:before {
+    background: url(../../images/slidshow-shadow.png) bottom no-repeat;
+    background-size: contain
+}
+
+#wdp_featured_image:after,
+#wdp_slideshow:after {
+    background: url(../../images/slidshow-shape.png) bottom no-repeat;
+    background-size: contain
+}
+
+#wdp_splash {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, .55) 0, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, .55) 0, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, .55) 0, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%)
+}
+
+.wdp_splash_inner {
+    background: url(../../images/splash-bg.png) center no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain
+}
+
+.wdp_splash_hearts {
+    background: url(../../images/hearts.png) center no-repeat;
+    background-size: contain
+}
+
+.wdp_countdown_item {
+    background: url(../../images/countdown-item-bg.png) center no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain
+}
+
+.wdp_about_background {
+    background: url(https://www.panjabuniversityrosefestival.in/images/bg-ross.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover
+}
+
+.wdp_about_image {
+    border: 5px solid #FFF
+}
+
+img.wdp_bouquet_img {
+    background: url(../../images/bouquet.png) no-repeat;
+    background-size: contain
+}
+
+.wdp_social_icon_item,
+.wdp_social_icon_item:active,
+.wdp_social_icon_item:focus,
+.wdp_social_icon_item:visited {
+    color: #a40006;
+    border: 1px solid transparent;
+    text-decoration: none
+}
+
+.wdp_social_icon_item:hover {
+    background: #a40006;
+    color: #FFF;
+    border: 1px solid #a40006
+}
+
+.wdp_event_title {
+    border-bottom: dashed 1px #a40006
+}
+
+.wdp_event_date {
+    background: url(../../images/countdown-item-bg.png) center no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    color: #FFF
+}
+
+.wdp_event_image {
+    border: 5px solid #FFF
+}
+
+.wdp_event_description {
+    color: #454545
+}
+
+.wdp_event_details,
+.wdp_gallery_magnificPopup_item:hover,
+.wdp_home_form,
+.wdp_page_form {
+    color: #a40006
+}
+
+.wdp_photo_album_swiper_item_data {
+    background-color: #F2DEE2
+}
+
+.wdp_home_form_success {
+    background: url(../../demo/rsvp-image-1.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover
+}
+
+.wdp_home_form input,
+.wdp_home_form select {
+    border: 1px solid #a40006
+}
+
+.wdp_home_form input:focus,
+.wdp_home_form select:focus {
+    box-shadow: none;
+    border: 1px solid #a40006
+}
+
+.wdp_carousel_swiper_item {
+    background: #F2DEE2
+}
+
+.wdp_carousel_swiper_pagination>.swiper-pagination-bullet-active {
+    background-color: #a40006
+}
+
+.wdp_carousel_swiper_next {
+    background: url(../../images/arrow-next.png) no-repeat
+}
+
+.wdp_carousel_swiper_prev {
+    background: url(../../images/arrow-prev.png) no-repeat
+}
+
+a.wdp_thumbnail,
+a.wdp_thumbnail.active,
+a.wdp_thumbnail:focus,
+a.wdp_thumbnail:hover {
+    border: none;
+    box-shadow: none;
+    outline: 0
+}
+
+.wdp_page_form_success {
+    background: url(../../demo/rsvp-image-2.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover
+}
+
+.wdp_page_form input,
+.wdp_page_form select {
+    border: 1px solid #ccc
+}
+
+.wdp_page_form input:focus,
+.wdp_page_form select:focus {
+    box-shadow: none;
+    border: 1px solid #a40006
+}
+
+hr.wdp_blog_border_bottom {
+    border-color: #a40006
+}
+
+.wdp_entry_footer {
+    background: #FFF
+}
+
+@media screen and (max-width:1023px) {
+    #wdp_splash,
+    .wdp_splash_inner {
+        background: 0 0
+    }
+}
+
+@media screen and (max-width:910px) {
+    .wdp_navigation {
+        background: #a40006;
+        border: none
+    }
+    .navbar-toggle {
+        border-color: #FFF
+    }
+    .navbar-toggle .icon-bar {
+        background: #FFF
+    }
+    .wdp_dropdown_menu>li>a {
+        background: #F2DEE2!important
+    }
+    .navbar-collapse {
+        background: #FFF;
+        box-shadow: 0 2px 10px #E2E2E2
+    }
+}
+
+@media screen and (max-width:767px) {
+    .wdp_slideshow_inner:before,
+    .wdp_slideshow_splash_inner {
+        background: 0 0
+    }
+}
+
+@media screen and (max-width:592px) {
+    .wdp_countdown_item {
+        background: 0 0;
+        color: #a40006
+    }
+}
+
+.m-btncolr {
+    border: 1px solid #fff;
+    background: linear-gradient(to top, #a40006 50%, transparent 50%)!important;
+    background-size: 100% 200%!important;
+    background-position: bottom!important;
+    color: #FFF!important;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px
+}
+
+.m-btncolr:hover {
+    background: linear-gradient(to top, #fff 50%, transparent 50%)!important;
+    background-size: 100% 200%!important;
+    background-position: top!important;
+    color: #fff!important
+}
+
+.add-rows img {
+    width: 35px;
+    display: inline;
+    vertical-align: middle
+}
+
+.add-rows p {
+    border-top: 1px dashed #a40006;
+    margin-top: 15px;
+    padding-top: 10px;
+    width: 86%;
+    line-height: 2
+}
+
+.cnt-head {
+    font-size: 23px;
+    vertical-align: bottom;
+    padding-left: 12px;
+    padding-top: 6px;
+    color: #a40006
+}
+
+.add-rows p a,
+.bck p a {
+    color: #337ab7
+}
+
+.bck {
+    padding: 50px 40px;
+    -webkit-box-shadow: -1px -3px 31px -3px rgba(125, 125, 125, 1);
+    -moz-box-shadow: -1px -3px 31px -3px rgba(125, 125, 125, 1);
+    box-shadow: -1px -3px 31px -3px rgba(125, 125, 125, 1);
+    border: 2px dashed #ccc
+}
+
+.bck h3 {
+    font-size: 18px
+}
+
+.bck p {
+    font-size: 15px
+}
+
+.bck img {
+    margin-top: 20px
+}
+.rules-competition img {
+    width: 99.9%;
+}
+.rules-competition {
+    background: #fff;
+    padding: 0 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #a40006;
+}
+.rules-competition h1 {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+.rules-competition h3 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+.rule-theme strong {
+    margin-left: 50px;
+}
+.rule-theme {
+    margin-bottom: 10px;
+}
+.rules-competition h4 {
+    text-align: center;
+}
+.regis-form select#eventname option {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 20px 0 !important;
+}

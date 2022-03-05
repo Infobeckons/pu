@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+.contain{
+    border: 2px solid;
+    margin-top: 10px;
+}
+.logo{
+    margin-top:23px;
+}
+h1{
+    font-family: 'Anton', sans-serif;
+    font-size: 85px;
+
+}
+h2{
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    margin-top: 75px;
+    line-height: 2px;
+}
+h4{
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    line-height: 2px;
+    padding-bottom: 25px;
+}
+.boxed {
+    border: 1px solid black;
+    margin-top: 50px;
+    height: 192px;
+    width: 163px;
+}
+.dotted{
+    border: none;
+    border-top: 2px dotted #000;
+    color: #fff;
+    height: 1px;
+    width: 100%;
+}
+.date{
+    margin-left: 402px;
+    margin-top: 30px;
+}
+.margin{
+    margin-top: 40px;
+}
+@media only screen and (max-width: 540px){
+.btn{white-space: normal !important;}
+}
