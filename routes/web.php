@@ -25,10 +25,10 @@ use Illuminate\Http\Request;
 //user role checking(Eg. Admin, User, SuperAdmin etc)
 Route::get('redirect', 'App\Http\Controllers\HomeController@index');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', function () {
     return view('report');
 })->name('dashboard');
-Route::middleware(['auth:sanctum', 'verified'])->get('/admindashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('admindashboard', function () {
     return view('dashboard');
 })->name('admindashboard');
 
@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/admindashboard', function
 Route::resource('tasks',TaskController::class);
 Route::resource('admin',AdminController::class);
 
-Route::get('report', function (){    return view('report');     });
+//Route::get('report', function (){    return view('report');     });
 Route::post('report', 'App\Http\Controllers\reportcontroller@show');
 
 Route::get('contact', 'App\Http\Controllers\reportcontroller@showcontact');
@@ -57,7 +57,7 @@ Route::get('editamount/{data}', 'App\Http\Controllers\amounts@peramount');
 // pages//
 Route::resource('editor', 'App\Http\Controllers\CKEditorController');
 Route::get('/', function () {   return view('welcome'); });
-// Route::get('dash', function (){  return view('dashboard');   });
+//Route::get('dashboard', function (){  return view('dashboard');   });
 Route::get('find', function (){  return view('find');   });
 Route::get('paintingcompitition', function (){   return view('paintingcompitition');    });
 Route::get('collarge', function (){  return view('collarge');   });

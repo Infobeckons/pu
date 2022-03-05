@@ -1,4 +1,4 @@
-@if(session()->get('email'))
+{{-- @if(session()->get('email')) --}}
 
 @extends('layouts/layout')
 @section('content')
@@ -400,8 +400,8 @@
   </div>
 @stop
 
-@else
+{{-- @else
 <script type="text/javascript">
     window.location = "{{url('404')}}";//here double curly bracket
 </script>
-@endif
+@endif --}}
