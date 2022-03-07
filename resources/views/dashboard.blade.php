@@ -42,7 +42,12 @@
         }
     </style>
    <div class="col-md-9" style="height:auto; width:100%;">
+<<<<<<< HEAD
+    <a href="amount" target="_blank"><input type="button" name="button" value="Amount"></a>
+       <center><img src="{{ asset('dist/img/undercons.png')}}" class="back"/> </center> 
+=======
     <a href="amount" target="_blank" style=""><input type="button" name="button" value="Amount"></a>
        {{-- <center><img src="{{ asset('dist/img/undercons.png')}}" class="back"/> </center>  --}}
+>>>>>>> 386698c51cde043315ff33e348dc8d41e81c2ab1
     </div>
 </x-app-layout>

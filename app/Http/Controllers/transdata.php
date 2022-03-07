@@ -40,8 +40,13 @@ class transdata extends Controller
             ->where(['PURF_ID'=>$req->input('search')])
             ->orwhere(['phone'=>$req->input('search')])
             ->orwhere(['groupname'=>$req->input('search')])
+<<<<<<< HEAD
             ->Paginate(2);
             $find= $find->appends(request()->except('find'));
+=======
+            ->paginate(2);
+
+>>>>>>> e3c8e6c5e3157cfa540d9028b3386e7c043178d8
             return view('find',['users'=>$find]); 
     }
 }

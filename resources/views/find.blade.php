@@ -6,11 +6,11 @@
                 </div>
 				<div class="panel">
 						<div class="row-search">
- 		             		  <form action="search" method="post">
+ 		             		  <form action="search" method="get">
  		             			  @csrf
 						
  		             			    <div class="searchbar">
- 		               					<input type="text" class="form_control" id="search" name="search" placeholder="ID/Group/Phone" required>
+ 		               					<input type="text" class="form_control" name="search" placeholder="ID/Group/Phone" required>
 									</div>
  		               				<div class="searchbut">
  		               					<button type="submit" class="btn-info" name="submit"><i class="fa fa-search"></i></button>
