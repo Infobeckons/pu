@@ -109,7 +109,7 @@ Route::post('add','App\Http\Controllers\booking@addData');
 Route::view('addev','band');
 Route::post('addev','App\Http\Controllers\rule@addData');
 Route::get('show','App\Http\Controllers\booking@show');
-Route::post('formshow','App\Http\Controllers\transdata@showData');
+Route::any('formshow','App\Http\Controllers\transdata@showData');
 // Route::get('formshow?page{id}','App\Http\Controllers\transdata@showData');
 
 Route::get('data', function (){    return view('ccavenue\dataFrom');   });

@@ -23,12 +23,12 @@ class transdata extends Controller
             'age-group'=>$req->input('agegroup'),
             'member'=>$req->input('members')])
              ->Paginate(2);
+             $users= $users->appends(request()->except('report'));
             //dd($users);
             //return response()->json(['users', $users]);
             //return view('report')->with('users', $users);
             //return view('report',['users'=>$users]); 
-            return view('report',compact('users'));
-
+            return view('report',['users'=>$users]);
     }
 
     //Fetch Data from forms table through search in find page through ID,GroupName or Phone numbers
@@ -40,7 +40,7 @@ class transdata extends Controller
             ->where(['PURF_ID'=>$req->input('search')])
             ->orwhere(['phone'=>$req->input('search')])
             ->orwhere(['groupname'=>$req->input('search')])
-            ->Paginate(10);
+            ->Paginate(5);
             $find= $find->appends(request()->except('find'));
             return view('find',['users'=>$find]); 
     }
