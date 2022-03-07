@@ -1,5 +1,3 @@
-{{-- @if(session()->get('email')) --}}
-
 @extends('layouts/layout')
 @section('content')
     <!-- Aside Ends-->
@@ -99,7 +97,7 @@
                       $('#members').css('display','block');
                       $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="3-10">3 to 10 Year</option><option value="11-15">10 to 15 year</option><option value="16-100">above 15</option>');
                       $('#members').html('<option value="" hidden>---Select Members---</option><option value="Solo">Solo</option><option value="Duet">Duet</option><option value="Group">Group</option>');
-                      }
+                 }
                   else if(eventName=='facepainting')
                   {
                       $('#agegroup').css('display','block');
@@ -399,9 +397,3 @@
     <!-- /.content -->
   </div>
 @stop
-
-{{-- @else
-<script type="text/javascript">
-    window.location = "{{url('404')}}";//here double curly bracket
-</script>
-@endif --}}

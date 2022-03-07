@@ -1,62 +1,62 @@
 @extends('layouts.layout')
 @section('content')
 
-      <script>
-$(document).ready(function () {
-       var url = window.location;
-   // Will only work if string in href matches with location
-       $('ul.nav a[href="' + url + '"]').parent().addClass('active');
+<script>
+	$(document).ready(function() {
+		var url = window.location;
+		// Will only work if string in href matches with location
+		$('ul.nav a[href="' + url + '"]').parent().addClass('active');
 
-   // Will also work for relative and absolute hrefs
-       $('ul.nav a').filter(function () {
-           return this.href == url;
-       }).parent().addClass('active').parent().parent().addClass('active');
-   });
+		// Will also work for relative and absolute hrefs
+		$('ul.nav a').filter(function() {
+			return this.href == url;
+		}).parent().addClass('active').parent().parent().addClass('active');
+	});
 </script>
 
 <script type="text/javascript">
-$(function() {
-   $('.ajax-link').click( function() {
-         $.get( $(this).attr('href'), function(msg) {
-              alert( "Data Saved: " + msg );
-         });
-         return false; // don't follow the link!
-   });
-});
-</script>	<!-- Header Ends -->
-	<!-- Page Content Start -->
-	<!-- ================== -->
-	
-				<div class="portlet">
-				@if(Session::get('success'))
-            <div class="alert alert-success">
-              {{Session::get('success')}}
-            </div>
-          @endif
+	$(function() {
+		$('.ajax-link').click(function() {
+			$.get($(this).attr('href'), function(msg) {
+				alert("Data Saved: " + msg);
+			});
+			return false; // don't follow the link!
+		});
+	});
+</script> <!-- Header Ends -->
+<!-- Page Content Start -->
+<!-- ================== -->
 
-          @if(Session::get('fail'))
-            <div class="alert alert-danger">
-              {{Session::get('fail')}}
-            </div>
-          @endif
-				<div class="portlet-heading">
-				<h3 class="portlet-title text-dark text-uppercase" style="padding-bottom: 1%">
-				Creative Mehndi Competition Rules</h3>
-			</div>
-					<!-- /primary heading -->
-					{{-- <script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/ckeditor.js"></script>
+<div class="portlet">
+	@if(Session::get('success'))
+	<div class="alert alert-success">
+		{{Session::get('success')}}
+	</div>
+	@endif
+
+	@if(Session::get('fail'))
+	<div class="alert alert-danger">
+		{{Session::get('fail')}}
+	</div>
+	@endif
+	<div class="portlet-heading">
+		<h3 class="portlet-title text-dark text-uppercase" style="padding-bottom: 1%">
+			Creative Mehndi Competition Rules</h3>
+	</div>
+	<!-- /primary heading -->
+	{{-- <script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/ckeditor.js"></script>
 			<script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/samples/js/sample.js"></script> --}}
-			<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
-			<script src="{{asset('ckeditor/samples/js/sample.js')}}"></script>
-			<div class="portlet-heading">
-				 
-				<div class="adjoined-bottom" >
-					<div class="grid-container">
-						<div class="grid-width-100">
-						<form action="addev" method="post">
+	<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+	<script src="{{asset('ckeditor/samples/js/sample.js')}}"></script>
+	<div class="portlet-heading">
+
+		<div class="adjoined-bottom">
+			<div class="grid-container">
+				<div class="grid-width-100">
+					<form action="addev" method="post">
 						@csrf
 						<input type="hidden" name="id" value="15">
-							<textarea id="editor" name="editor">
+						<textarea id="editor" name="editor">
 						<div class="rules-competition"><img src="https://www.panjabuniversityrosefestival.in/resources/assets/home/images/top-rule.jpg" />
 <h1>CONDITIONS AND GUIDELINES FOR CREATIVE MEHANDI COMPETITION</h1>
 
@@ -88,28 +88,26 @@ $(function() {
 	</li>
 </ol>
 <img src="https://www.panjabuniversityrosefestival.in/resources/assets/home/images/bottom-rule.jpg" /></div>						</textarea>
-																		
+						<br>
 						<button type="submit" name="show" class="btn btn-primary">Publish</button>
-						
-<!-- <button type="submit" name="update" class="btn btn-success">Update</button>
+
+						<!-- <button type="submit" name="update" class="btn btn-success">Update</button>
                         <button type="submit" name="delete" class="btn btn-danger">Delete &nbsp;<i class="fa fa-trash"></i></button> -->
-					
-                        </div>
-							</div>
-						</div>
-						<script>
-							initSample();
-						</script>
-						<div class="clearfix">
-						</div>
-					</div>
-			</form>
+
+				</div>
+			</div>
 		</div>
-		
-		<!-- Page Content Ends -->
-    </section>
-    <!-- /.content -->
-  </div>
+		<script>
+			initSample();
+		</script>
+		<div class="clearfix">
+		</div>
+	</div>
+	</form>
+</div>
+
+<!-- Page Content Ends -->
+</section>
+<!-- /.content -->
+</div>
 @stop
-
-

@@ -79,8 +79,10 @@ $(function() {
 	<li>Parents/Guardians will not be allowed on the stage.</li>
 	<li>Acknowledgement receipt must be shown at the time of Competition.</li>
 </ol>
-							</textarea>											
+							</textarea>	
+							<br>										
 						<button type="submit" name="show" class="btn btn-primary">Publish</button>
+						
 						
 <!-- <button type="submit" name="update" class="btn btn-success">Update</button>
                         <button type="submit" name="delete" class="btn btn-danger">Delete &nbsp;<i class="fa fa-trash"></i></button> -->

@@ -1,31 +1,30 @@
-
 @extends('layouts.layout')
 @section('content')
-				<div class="portlet">
-				
-				@if(Session::get('success'))
-            <div class="alert alert-success">
-              {{Session::get('success')}}
-            </div>
-          @endif
+<div class="portlet">
 
-          @if(Session::get('fail'))
-            <div class="alert alert-danger">
-              {{Session::get('fail')}}
-            </div>
-          @endif
+	@if(Session::get('success'))
+	<div class="alert alert-success">
+		{{Session::get('success')}}
+	</div>
+	@endif
 
-				<h3 class="portlet-title text-dark text-uppercase" style="padding-bottom: 1%">
-				Painting Competition Competition Rules</h3>
-				{{-- <script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/ckeditor.js"></script>
+	@if(Session::get('fail'))
+	<div class="alert alert-danger">
+		{{Session::get('fail')}}
+	</div>
+	@endif
+
+	<h3 class="portlet-title text-dark text-uppercase" style="padding-bottom: 1%">
+		Painting Competition Competition Rules</h3>
+	{{-- <script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/ckeditor.js"></script>
 					<script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/samples/js/sample.js"></script> --}}
-					<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
-			<script src="{{asset('ckeditor/samples/js/sample.js')}}"></script>
-					
-						<form action="addev" method="post">
-						@csrf
-						<input type="hidden" name="id" value="1">
-							<textarea id="editor" name="editor">
+	<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+	<script src="{{asset('ckeditor/samples/js/sample.js')}}"></script>
+
+	<form action="addev" method="post">
+		@csrf
+		<input type="hidden" name="id" value="1">
+		<textarea id="editor" name="editor">
 						<div class="rules-competition">
 <h1>CONDITIONS AND GUIDELINES FOR PAINTING COMPETITION</h1>
 
@@ -55,25 +54,26 @@
 	<li>Acknowledgement receipt must be shown at the time of Competition.</li>
 </ol>
 </div>						</textarea>
-																		
-						<button type="submit" name="show" class="btn btn-primary">Publish</button>
-						
-<!-- <button type="submit" name="update" class="btn btn-success">Update</button>
+
+		<br>
+		<button type="submit" name="show" class="btn btn-primary">Publish</button>
+
+		<!-- <button type="submit" name="update" class="btn btn-success">Update</button>
                         <button type="submit" name="delete" class="btn btn-danger">Delete &nbsp;<i class="fa fa-trash"></i></button> -->
-						</div>
-							</div>
-						</div>
-						<script>
-							initSample();
-						</script>
-						<div class="clearfix">
-						</div>
-					</div>
-			</form>
-		</div>
-		
-		<!-- Page Content Ends -->
-    </section>
-    <!-- /.content -->
-  </div>
+</div>
+</div>
+</div>
+<script>
+	initSample();
+</script>
+<div class="clearfix">
+</div>
+</div>
+</form>
+</div>
+
+<!-- Page Content Ends -->
+</section>
+<!-- /.content -->
+</div>
 @stop

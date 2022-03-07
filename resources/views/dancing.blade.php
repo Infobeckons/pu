@@ -43,6 +43,7 @@
 							<script>
 								CKEDITOR.replace( 'summary-ckeditor' );
 							</script>										 --}}
+							<br>
 						<button type="submit" name="show" class="btn btn-primary">Publish</button>
 						
 						<!-- <button type="submit" name="update" class="btn btn-success">Update</button>

@@ -25,18 +25,11 @@ use Illuminate\Http\Request;
 //user role checking(Eg. Admin, User, SuperAdmin etc)
 Route::get('redirect', 'App\Http\Controllers\HomeController@index');
 
-<<<<<<< HEAD
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('report');
-// })->name('dashboard');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/admindashboard', function () {
-=======
-Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('report');
 })->name('dashboard');
-Route::middleware(['auth:sanctum', 'verified'])->get('admindashboard', function () {
->>>>>>> 386698c51cde043315ff33e348dc8d41e81c2ab1
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/admindashboard', function () {
     return view('dashboard');
 })->name('admindashboard');
 
@@ -44,7 +37,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('admindashboard', function 
 Route::resource('tasks',TaskController::class);
 Route::resource('admin',AdminController::class);
 
-//Route::get('report', function (){    return view('report');     });
+Route::get('report', function (){    return view('report');     });
 Route::post('report', 'App\Http\Controllers\reportcontroller@show');
 
 Route::get('contact', 'App\Http\Controllers\reportcontroller@showcontact');
@@ -104,7 +97,7 @@ Route::get('pur-6', function (){   return view('PURF_gallery\pur-6');  });
 Route::get('pur-7', function (){   return view('PURF_gallery\pur-7');  });
 Route::get('pur-8', function (){   return view('PURF_gallery\pur-8');  });
 Route::get('pur-9', function (){   return view('PURF_gallery\pur-9');  });
-Route::get('pur-10', function (){   return view('PURF_gallery\pur-10');  });
+Route::get('pur-10', function (){   return view('PURF_gallery\pur-10'); });
 
 // Database
 Route::view('form','registrationform');
@@ -127,8 +120,8 @@ Route::post('ccreq', 'App\Http\Controllers\formup@paymentcall');
 
 // search
 // Route::get('search', 'App\Http\Controllers\booking@search');
-Route::get('search', 'App\Http\Controllers\transdata@find');
-// Route::get('search?page={{id}}', 'App\Http\Controllers\transdata@find');
+Route::any('search', 'App\Http\Controllers\transdata@find');
+// Route::any('search?', 'App\Http\Controllers\transdata@find');
 Route::get('extend', 'App\Http\Controllers\formup@index');
 Route::post('regon', 'App\Http\Controllers\formup@register');
 

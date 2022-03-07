@@ -218,6 +218,7 @@
 										<li>Those applying online should bring the acknowledgement receipt and an attested copy of DOB certificate at the venue of the Competition.</li>
 									</ol>
 										</div>	</textarea>
+										<br>
 										<button type="submit" class="btn btn-primary">Publish</button>
 										
 										</div>
