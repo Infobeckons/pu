@@ -122,11 +122,8 @@ Route::post('ccreq', 'App\Http\Controllers\formup@paymentcall');
 // search
 // Route::get('search', 'App\Http\Controllers\booking@search');
 Route::any('search', 'App\Http\Controllers\transdata@find');
-<<<<<<< HEAD
 // Route::any('search?', 'App\Http\Controllers\transdata@find');
-=======
 //Route::post('search?page=2','App\Http\Controllers\transdata@find');
->>>>>>> 70489944d96a34a48bf483308de03f387a5fd266
 Route::get('extend', 'App\Http\Controllers\formup@index');
 Route::post('regon', 'App\Http\Controllers\formup@register');
 
