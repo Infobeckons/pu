@@ -1,35 +1,35 @@
 @extends('layouts.layout')
 @section('content')
-				<div class="portlet">
-				@if(Session::get('success'))
-            <div class="alert alert-success">
-              {{Session::get('success')}}
-            </div>
-          @endif
+<div class="portlet">
+	@if(Session::get('success'))
+	<div class="alert alert-success">
+		{{Session::get('success')}}
+	</div>
+	@endif
 
-          @if(Session::get('fail'))
-            <div class="alert alert-danger">
-              {{Session::get('fail')}}
-            </div>
-          @endif
-				<div class="portlet-heading">
-				<h3 class="portlet-title text-dark text-uppercase" style="padding-bottom: 1%">
-				Face painting  Competition Rules</h3>
-			</div>
-					<!-- /primary heading -->
-					{{-- <script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/ckeditor.js"></script>
+	@if(Session::get('fail'))
+	<div class="alert alert-danger">
+		{{Session::get('fail')}}
+	</div>
+	@endif
+	<div class="portlet-heading">
+		<h3 class="portlet-title text-dark text-uppercase" style="padding-bottom: 1%">
+			Face painting Competition Rules</h3>
+	</div>
+	<!-- /primary heading -->
+	{{-- <script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/ckeditor.js"></script>
 			<script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/samples/js/sample.js"></script> --}}
-			<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
-			<script src="{{asset('ckeditor/samples/js/sample.js')}}"></script>
-			<div class="portlet-heading">
-				 
-				<div class="adjoined-bottom" >
-					<div class="grid-container">
-						<div class="grid-width-100">
-						<form action="addev" method="post">
+	<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+	<script src="{{asset('ckeditor/samples/js/sample.js')}}"></script>
+	<div class="portlet-heading">
+
+		<div class="adjoined-bottom">
+			<div class="grid-container">
+				<div class="grid-width-100">
+					<form action="addev" method="post">
 						@csrf
 						<input type="hidden" name="id" value="4">
-							<textarea id="editor" name="editor">
+						<textarea id="editor" name="editor">
 						<div class="rules-competition"><img src="https://www.panjabuniversityrosefestival.in/resources/assets/home/images/top-rule.jpg" />
 <h1>CONDITIONS AND GUIDELINES FOR FACE PAINTING</h1>
 
@@ -56,26 +56,27 @@
 	<li>Material will be arranged by the participants themselves.</li>
 	<li>Acknowledgement receipt must be shown at the time of Competition.</li>
 </ol>
-<img src="https://www.panjabuniversityrosefestival.in/resources/assets/home/images/bottom-rule.jpg" /></div>						</textarea>
-																		
+<img src="https://www.panjabuniversityrosefestival.in/resources/assets/home/images/bottom-rule.jpg" /></div>
+					</textarea>
+						<br>
 						<button type="submit" name="show" class="btn btn-primary">Publish</button>
-						
-<!-- <button type="submit" name="update" class="btn btn-success">Update</button>
+
+						<!-- <button type="submit" name="update" class="btn btn-success">Update</button>
                         <button type="submit" name="delete" class="btn btn-danger">Delete &nbsp;<i class="fa fa-trash"></i></button> -->
-						</div>
-							</div>
-						</div>
-						<script>
-							initSample();
-						</script>
-						<div class="clearfix">
-						</div>
-					</div>
-			</form>
+				</div>
+			</div>
 		</div>
-		
-		<!-- Page Content Ends -->
-    </section>
-    <!-- /.content -->
-  </div>
+		<script>
+			initSample();
+		</script>
+		<div class="clearfix">
+		</div>
+	</div>
+	</form>
+</div>
+
+<!-- Page Content Ends -->
+</section>
+<!-- /.content -->
+</div>
 @stop

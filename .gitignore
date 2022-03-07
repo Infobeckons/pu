@@ -5,10 +5,6 @@
 /vendor
 /node_modules
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 386698c51cde043315ff33e348dc8d41e81c2ab1
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml

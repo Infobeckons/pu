@@ -90,7 +90,7 @@ $(function() {
 	<li>Acknowledgement receipt must be shown at the time of Competition.</li>
 </ol>
 <img src="https://www.panjabuniversityrosefestival.in/resources/assets/home/images/bottom-rule.jpg" /></div>						</textarea>
-																		
+					<br>													
 						<button type="submit" name="show" class="btn btn-primary">Publish</button>
 						
 <!-- <button type="submit" name="update" class="btn btn-success">Update</button>
