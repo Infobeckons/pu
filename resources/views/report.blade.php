@@ -50,13 +50,12 @@
                                    Reports
                           </h3>
                               <br>
-                        
                           <form action="formshow" method="post" enctype="multipart/form-data">
                                   @csrf
                                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                                    <div style="" class="portlet">
                                       <div class="col-md-4">
-                                             <select name="eventname" class="form-control input-md" id="eventname"  value="old('eventname')" >
+                                             <select name="eventname" class="form-control input-md" id="eventname" :value="old('eventname')" required autofocus >
                                                 <option value="no" hidden>Select Your Event </option>
                                                 <option value="collagemaking">Collarge Making Competition </option>
                                                 <option value="creativemehandi">Creative Mehandi Competition</option>
@@ -76,11 +75,11 @@
                                            </select>
                                        </div>
                                       <div class="col-md-4">
-                                          <select name="agegroup" id="agegroup" style="display:none" class="form-control input-md"  value="old('agegroup')" >
+                                          <select name="agegroup" id="agegroup" style="display:none" class="form-control input-md"  :value="old('agegroup')" >
                                           </select>
                                       </div>
                                       <div class="col-md-4">
-                                            <select name="members" id="members" style="display:none" class="form-control input-md"  value="old('members')" >
+                                            <select name="members" id="members" style="display:none" class="form-control input-md" :value="old('members')" >
                                             </select>
                                       </div>
 <script>
@@ -150,7 +149,7 @@
             <div class="clearfix">
             </div>
          
-        </div><br>
+        </div>
             </form>
                 </br>
                     </div>
@@ -170,7 +169,11 @@
                                         @csrf --}}
                                             @if(isset($users)) 
 							                <table class="table">
+                                                @if($users=='')
+                                                <div class>
+                                                @else
 									        <thead>
+                                                
 									        	<tr>
 									        		<th>Register ID</th>
                                                     <th>Competition</th>
@@ -182,6 +185,7 @@
 									        		<th>DOB</th>
 									        	</tr>
 									        </thead>
+                                            @endif
 							                @foreach($users as $user)
 									<tr>
 										<td>{{$user->PURF_ID}}</td>
@@ -197,27 +201,36 @@
                                         @endif
 										<td>{{$user->dob}}</td>
 									</tr>
-                                  
 								@endforeach
 
+                                @if($users=='')
+                                <div class="row-col" style="display:none;">
+                                    
+                                </div>
+                                @else
+                                
                                 <div class="row-col">
-                                    {{-- {{ var_dump($users) }} --}}
-                                    {{ $users->links('vendor.pagination.bootstrap-4') }}
+                                    {{-- {!! var_dump($users) !!} --}}
+                                    {{ $users->render('vendor.pagination.bootstrap-4') }}
+                                    {{-- {{ $users->render('vendor.pagination.simple-default') }} --}}
                                 </div>
                                 <style>
                                     .w-5{
                                         display: none;
                                     }
                                 </style>
-                                {{-- @elseif(isset($users==" "))
-
-                                <div class="text-center"><h2>NO DATA!</h2></div>
-                                        </table>
-								 --}}
-								@else
-								<div class="text-center"><h2>NO DATA!</h2></div>
                                 @endif
                             </table>
+
+                            @if($users=='')
+                            <div class="text-center"><h2>There isn't Any Data!</h2></div>
+                            @endif
+
+                            @else
+								<div class="text-center"><h2>There isn't Any Data!</h2></div>
+                            @endif
+
+
                             {{-- {{ dump($users)}} --}}
                             {{-- </form> --}}
 								

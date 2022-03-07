@@ -8,20 +8,25 @@
 						<div class="row-search">
  		             		  <form action="search" method="post">
  		             			  @csrf
+						
  		             			    <div class="searchbar">
- 		               					<input type="text" class="form_control" name="search" placeholder="ID/Group/Phone">
+ 		               					<input type="text" class="form_control" id="search" name="search" placeholder="ID/Group/Phone" required>
 									</div>
  		               				<div class="searchbut">
  		               					<button type="submit" class="btn-info" name="submit"><i class="fa fa-search"></i></button>
- 		               				</div>
-                            
- 		               		
- 		       		    </div>
+									</div>
+									
+
+						{{-- <a href="find" class="mt-2 btn btn-primary">Clear</a> --}}
+ 		       		</div>
 				</div>
-                   <div class="panel">
+                   <div class="panel mt-2">
                     <div class="panel-body">
                      <div class="text-center" style="color:white;background-color:gray">All Data</div><hr>
 					 @if(isset($users)) 
+					 @if($users=='')
+						<div class="text-center"><h2>NO DATA!</h2></div>
+					 @else
                         <table class="table table-bordered table-responsive" id="datatable-editable">
                             <thead>
                                 <tr>
@@ -53,13 +58,16 @@
 									}
 								</style>
 								{{-- </table> --}}
-								@else
-								<div class="text-center"><h2>NO DATA!</h2></div>
-								@endif
+								
                              
                             </tbody>
 							
 						</table>
+						@endif
+								@else
+								<div class="text-center"><h2>NO DATA!</h2></div>
+								@endif
+						
 						</div>
 							</div>
 						</div>

@@ -22,17 +22,26 @@ class transdata extends Controller
             'eventname'=>$req->input('eventname'),
             'age-group'=>$req->input('agegroup'),
             'member'=>$req->input('members')])
-            ->Paginate(3);
-           return view('report',['users'=>$users]);
+             ->Paginate(2);
+            //dd($users);
+            //return response()->json(['users', $users]);
+            //return view('report')->with('users', $users);
+            //return view('report',['users'=>$users]); 
+            return view('report',compact('users'));
+
     }
 
     //Fetch Data from forms table through search in find page through ID,GroupName or Phone numbers
     public function find(Request $req){ 
-        $find=DB::table('forms')->select()
+        if($req->input('search')==null){
+           echo "<script>alert('No Data Founded.')</script>";				
+        };
+        $find=DB::table('forms')
             ->where(['PURF_ID'=>$req->input('search')])
-            ->orwhere([ 'phone'=>$req->input('search')])
+            ->orwhere(['phone'=>$req->input('search')])
             ->orwhere(['groupname'=>$req->input('search')])
             ->Paginate(2);
+            $find= $find->appends(request()->except('find'));
             return view('find',['users'=>$find]); 
     }
 }
