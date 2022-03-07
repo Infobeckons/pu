@@ -23,7 +23,7 @@ use Illuminate\Http\Request;
 
 
 //user role checking(Eg. Admin, User, SuperAdmin etc)
-Route::get('redirect', 'App\Http\Controllers\HomeController@index');
+Route::get('success', 'App\Http\Controllers\HomeController@index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('report');
@@ -51,10 +51,11 @@ Route::get('registeration', 'App\Http\Controllers\formup@showreg');
 // Route::post('user', 'App\Http\Controllers\UserAuth@userLogin');
 Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');
 Route::get('amount', 'App\Http\Controllers\amounts@show');
-// Route::view('amounts' , 'superadmin\amountedit');
+Route::view('amounts' , 'superadmin\amountedit');
 Route::post('changeamount', 'App\Http\Controllers\amounts@changeamount');
-Route::post('editamount/changeamount', 'App\Http\Controllers\amounts@changeamount');
+//Route::post('editamount/changeamount', 'App\Http\Controllers\amounts@changeamount');
 Route::get('editamount/{data}', 'App\Http\Controllers\amounts@peramount');
+
 // pages//
 Route::resource('editor', 'App\Http\Controllers\CKEditorController');
 Route::get('/', function () {   return view('welcome'); });
@@ -121,7 +122,11 @@ Route::post('ccreq', 'App\Http\Controllers\formup@paymentcall');
 // search
 // Route::get('search', 'App\Http\Controllers\booking@search');
 Route::any('search', 'App\Http\Controllers\transdata@find');
+<<<<<<< HEAD
 // Route::any('search?', 'App\Http\Controllers\transdata@find');
+=======
+//Route::post('search?page=2','App\Http\Controllers\transdata@find');
+>>>>>>> 70489944d96a34a48bf483308de03f387a5fd266
 Route::get('extend', 'App\Http\Controllers\formup@index');
 Route::post('regon', 'App\Http\Controllers\formup@register');
 

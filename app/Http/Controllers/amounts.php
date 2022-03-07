@@ -21,23 +21,27 @@ class amounts extends Controller
         return view('superadmin/amountedit',['user'=>$users]);
     }
 
-    public function peramount(Request $data){
-        // $id = $request->input('id');
-        $data=DB::table('select * from amounts')->where('id',$data)->update([
-            'amount'=>$data->input('amount')
+    public function peramount(Request $request,$data){  
+        //$id = $request->input('id');
+        $datas=DB::table('amounts')->where('id', $data->id)->insert([
+            'amount'=>$request->input('amount', 10000)
         ]);
+        dd($datas);
         // return view('editamount',['amount'=>$data]);
-        return redirect('amount');
+        return redirect('amount')->with('success','Data has been updated successfully.');
     }
 
     public function changeamount(Request $request){
     //    $data=amount::find("id", $request->input('id'));
-    //    $data->eventname->$request->input('name');
+    //    $data->eventname->$request->input('id');
     //    $data->amount->$request->input('amount');
+    //    dd($data);
     //    $data->save();
-    $data=DB::table("amounts")->where("id", $request->input('id'))->update([
+       
+    $data=DB::table("amounts")->where('id', $request->input('id'))->update([
         'amount'=>$request->input('amount')
     ]);
+    dd($data);
         if($data){
             return redirect('amount')->with('success','Data has been updated successfully.');
             // dd($currenturl1);
@@ -45,23 +49,5 @@ class amounts extends Controller
            return redirect('amount')->with('fail','This data is already saved, or some technical issue is occuring.');
             // dd($currenturl);
         }
-    }
-
-
-
-
-
-
-    // public function changeamount(Request $request){
-    //     $users=DB::table("amounts")->where("id", $request->input('id'))->update([
-    //         'amount' => $request->input('amount'),
-    //     ]);
-    //     if($users){
-    //     return redirect('amount')->with('success','Data has been updated successfully.');
-    //     }
-    //     else{
-    //     return redirect('amount')->with('fail','This data is already saved, or some technical issue is occuring.');
-    //    }
-    // }
-      
+     }
 }
