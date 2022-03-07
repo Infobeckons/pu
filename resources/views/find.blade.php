@@ -24,9 +24,7 @@
                     <div class="panel-body">
                      <div class="text-center" style="color:white;background-color:gray">All Data</div><hr>
 					 @if(isset($users)) 
-					 @if($users=='')
-						<div class="text-center"><h2>NO DATA!</h2></div>
-					 @else
+					
                         <table class="table table-bordered table-responsive" id="datatable-editable">
                             <thead>
                                 <tr>
@@ -67,7 +65,7 @@
                             </tbody>
 							
 						</table>
-						@endif
+						
 								@else
 								<div class="text-center"><h2>NO DATA!</h2></div>
 								@endif
