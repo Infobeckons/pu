@@ -51,10 +51,11 @@ Route::get('registeration', 'App\Http\Controllers\formup@showreg');
 // Route::post('user', 'App\Http\Controllers\UserAuth@userLogin');
 Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');
 Route::get('amount', 'App\Http\Controllers\amounts@show');
-// Route::view('amounts' , 'superadmin\amountedit');
+Route::view('amounts' , 'superadmin\amountedit');
 Route::post('changeamount', 'App\Http\Controllers\amounts@changeamount');
-Route::post('editamount/changeamount', 'App\Http\Controllers\amounts@changeamount');
+//Route::post('editamount/changeamount', 'App\Http\Controllers\amounts@changeamount');
 Route::get('editamount/{data}', 'App\Http\Controllers\amounts@peramount');
+
 // pages//
 Route::resource('editor', 'App\Http\Controllers\CKEditorController');
 Route::get('/', function () {   return view('welcome'); });
@@ -120,13 +121,8 @@ Route::post('ccreq', 'App\Http\Controllers\formup@paymentcall');
 
 // search
 // Route::get('search', 'App\Http\Controllers\booking@search');
-<<<<<<< HEAD
-Route::post('search', 'App\Http\Controllers\transdata@find');
-Route::post('search?page=2','App\Http\Controllers\transdata@find');
-=======
-Route::get('search', 'App\Http\Controllers\transdata@find');
-// Route::get('search?page={{id}}', 'App\Http\Controllers\transdata@find');
->>>>>>> e3c8e6c5e3157cfa540d9028b3386e7c043178d8
+Route::any('search', 'App\Http\Controllers\transdata@find');
+//Route::post('search?page=2','App\Http\Controllers\transdata@find');
 Route::get('extend', 'App\Http\Controllers\formup@index');
 Route::post('regon', 'App\Http\Controllers\formup@register');
 
