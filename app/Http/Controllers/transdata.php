@@ -8,9 +8,11 @@ use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use App\Models\form;
+use Laravel\Scout\Searchable;
 
 class transdata extends Controller
 {
+    use Searchable;
     //Shows every data in forms table
     public function index(){
         return DB::select('select * from forms');
@@ -18,6 +20,7 @@ class transdata extends Controller
     
     //Fetch Data from forms  table and show on report page in admin panel
     public function showData(Request $req){
+        
         $users=DB::table('forms')->where([
             'eventname'=>$req->input('eventname'),
             'age-group'=>$req->input('agegroup'),

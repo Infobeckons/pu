@@ -28,6 +28,8 @@
                         <table class="table table-bordered table-responsive" id="datatable-editable">
                             <thead>
                                 <tr>
+									<th>PURF_ID</th>
+									<th>Name</th>
                                     <th>Event name</th>
                                     <th>Group Name</th>
                                     <th>Membername</th>
@@ -36,7 +38,9 @@
                             </thead>
                             <tbody>
 							@foreach($users as $user)
-							<tr>
+								<tr>
+									<td>{{$user->PURF_ID}}</td>
+									<td>{{$user->name}}</td>
                                         <td>{{$user->eventname}}</td>
 										<td>{{$user->groupname}}</td>
                                         <td>{{$user->member}}</td>

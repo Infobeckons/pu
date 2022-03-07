@@ -15,7 +15,7 @@
 			<div>
 			</div><br>
 			<div>		</div></div></div>
-				 <form method="post" name="multiple_upload_form" id="multiple_upload_form" enctype="multipart/form-data" action="{{url('upur-1')}}">
+				 <form method="post" name="multiple_upload_form" id="multiple_upload_form" enctype="multipart/form-data" action="{{url('upur-1')}}" style="width:100%;">
 			<div style="background-color:white">
 				@csrf
 				<input type="hidden" name="id" value="1">
@@ -27,10 +27,10 @@
 				</div></div><br>
 				<div>
 				<table width="1080px">
-				<tr style="background:#C0C0C0">
-				<th class="col-md-9">Images</th>
-				<th >Edit</th>
-				<th >Delete</th>
+					<tr class="col-md-12" style="background:#C0C0C0">
+						<th class="col-md-6">Images</th>
+						<th class="col-md-3">Edit</th>
+						<th class="col-md-3">Delete</th>
 				</tr>
 				@if(isset($success))
 				@foreach($success as  $use)

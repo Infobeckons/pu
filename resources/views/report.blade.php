@@ -168,7 +168,7 @@
                                             @if(isset($users)) 
 							                <table class="table">
                                                 @if($users=='')
-                                                <div class>
+                                                <div class></div>
                                                 @else
 									        <thead>
                                                 
