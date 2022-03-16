@@ -125,7 +125,10 @@
                             <div class="border-t border-gray-100"></div>
 
                             <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
+                            <x-jet-dropdown-link href="{{ route('logout') }}">
+                       {{ __('Logout') }}
+                   </x-jet-dropdown-link>
+                            {{-- <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
@@ -133,7 +136,7 @@
                                                 this.closest('form').submit();">
                                     {{ __('Logout') }}
                                 </x-jet-dropdown-link>
-                            </form>
+                            </form> --}}
                         </x-slot>
                     </x-jet-dropdown>
                 </div>
@@ -187,7 +190,10 @@
                 @endif
 
                 <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
+                <x-jet-responsive-nav-link href="{{ route('logout') }}">
+                        {{ __('Logout') }}
+                    </x-jet-responsive-nav-link>
+                {{-- <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
@@ -195,7 +201,7 @@
                                     this.closest('form').submit();">
                         {{ __('Logout') }}
                     </x-jet-responsive-nav-link>
-                </form>
+                </form> --}}
 
                 <!-- Team Management -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

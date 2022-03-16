@@ -330,19 +330,19 @@ function disableNews() {
     }, 250);
 }
 
-function logOut(){
-    $.ajax({
-      method: "POST",
-      url: "logout.php",
-    }).done(function( msg ) {
-        $('#settingsDiv').hide();
-        $('#background3').slideUp(250, 'swing');
+// function logOut(){
+//     $.ajax({
+//       method: "POST",
+//       url: "logout.php",
+//     }).done(function( msg ) {
+//         $('#settingsDiv').hide();
+//         $('#background3').slideUp(250, 'swing');
 
-        setTimeout(function(){
-            location.reload();
-        }, 300);
-    });
-}
+//         setTimeout(function(){
+//             location.reload();
+//         }, 300);
+//     });
+// }
 
 // keyboard shortcuts
 $(document).keyup(function (e){

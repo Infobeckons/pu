@@ -134,7 +134,7 @@ Route::view('pan', 'pan');
 //     $session = session()->all();
 //     return($session);
 // });
-
-Route::get('logout', 'App\Http\Controllers\HomeController@logout');
+Route::get('login','App\Http\Controllers\HomeController@login')->name('login');
+Route::get('logout', 'App\Http\Controllers\HomeController@logout')->name('logout');
 
 // Route::get('404', function (){   return view('errors\404');  });

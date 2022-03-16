@@ -354,12 +354,14 @@
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ __('dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item"><a><form class="logout" method="POST" action="{{ route('logout') }}">
+                <li class="breadcrumb-item"><a href="{{route('logout')}}">  {{ __('Logout')}}
+                    {{-- <form class="logout" method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
                                     {{ __('Logout')}}
                                 </a>
-                            </form></a>
+                            </form> --}}
+                        </a>
                 </li>
                 </ol>
             </div><!-- /.col -->

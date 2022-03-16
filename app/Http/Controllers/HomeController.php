@@ -21,4 +21,14 @@ class HomeController extends Controller
         }
     }
 
+    public function login(Request $request)
+    {
+        return  view('auth\login');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect(route('login'));
+    }
+
 }
