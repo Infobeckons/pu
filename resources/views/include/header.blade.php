@@ -195,6 +195,14 @@
         </a>
         </li>
         <li class="nav-item">
+        <a href="{{'booking'}}" class="nav-link">
+            <i class="nav-icon fas fa-bookmark"></i>
+            <p>
+            Amount
+            </p>
+        </a>
+        </li>
+        <li class="nav-item">
         <a href="{{'event'}}" class="nav-link">
             <i class="nav-icon fas fa-tasks"></i>
             <p>

@@ -25,6 +25,10 @@ use Illuminate\Http\Request;
 //user role checking(Eg. Admin, User, SuperAdmin etc)
 Route::get('success', 'App\Http\Controllers\HomeController@index');
 
+Route::get('/', function(){
+    view('welcome');
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('report');
 })->name('dashboard');
@@ -134,7 +138,7 @@ Route::view('pan', 'pan');
 //     $session = session()->all();
 //     return($session);
 // });
-Route::get('login','App\Http\Controllers\HomeController@login')->name('login');
+// Route::get('login','App\Http\Controllers\HomeController@login')->name('login');
 Route::get('logout', 'App\Http\Controllers\HomeController@logout')->name('logout');
 
 // Route::get('404', function (){   return view('errors\404');  });

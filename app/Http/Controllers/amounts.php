@@ -23,8 +23,9 @@ class amounts extends Controller
 
     public function peramount(Request $request,$data){  
         //$id = $request->input('id');
-        $datas=DB::table('amounts')->where(['id'=>$data->id])->insert([
-            'amount'=>$request->input('amount', 10000)
+        //dd();
+        $datas=DB::table('amounts')->select('Id')->where(['id'=>$request->Id])->insert([
+            'amount'=>$request->input('amount', 1000)
         ]);
         dd($datas);
         // return view('editamount',['amount'=>$data]);
@@ -41,7 +42,7 @@ class amounts extends Controller
     $data=DB::table("amounts")->where('id', $request->input('id'))->update([
         'amount'=>$request->input('amount')
     ]);
-    dd($data);
+    //dd($data);
         if($data){
             return redirect('amount')->with('success','Data has been updated successfully.');
             // dd($currenturl1);

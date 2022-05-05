@@ -34,9 +34,9 @@
                         @endif
                     @endauth
 
-                    @auth
+                    <!-- @auth
                         <a href="{{ route('admindashboard') }}" class="text-sm text-gray-700 underline">Main_Dashboard</a>
-                    @endauth
+                    @endauth -->
                 </div>
             @endif
 

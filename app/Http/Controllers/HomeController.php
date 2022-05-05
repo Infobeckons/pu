@@ -11,13 +11,13 @@ class HomeController extends Controller
         $role=Auth::user()->role;
         if($role=='1')
         {
-            return view('dashboard');
+            return view('report');
         }
         elseif($role=='0'){
             return view('report');
         }
         else{
-            return view('dashboard');
+            return view('report');
         }
     }
 

@@ -56,15 +56,15 @@
                 @if(isset($user))
                 @foreach($user as $data)
                 <tr>
-                    <th><center><input type='text' name="id" id="id" value='{{ $data->id }}' readonly></center></th>
+                    <th><center><input type='text' name="id" id="id" value='{{ $data->Id }}' readonly></center></th>
                     <td><center><input type='text' name="amount" id="amount" value='{{ $data->amount }}'></center></td>
-                    {{-- <td><button type="submit" name="submit" value="submit">Submit</button></td> --}}
-                    <td><a href={{"editamount/"}}>Edit</a></td>
+                    <!-- <td><button type="submit" name="submit" value="submit">Submit</button></td>  -->
+                    <td><a href='{{"editamount/{data}"}}'>Edit</a></td>
                 </tr>
                 @endforeach
                 @endif
                 
-                    {{-- <button type="submit" name="submit" value="submit">Submit</button> --}}
+                    <!-- <button type="submit" name="submit" value="submit">Submit</button> -->
             
             </tbody>
         </table>

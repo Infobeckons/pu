@@ -14,8 +14,9 @@ class CreateAmountsTable extends Migration
     public function up()
     {
         Schema::create('amounts', function (Blueprint $table) {
-            $table->id();
+            $table->string('Id');
             $table->string('eventname', 20);
+            $table->integer('amount', 3)->nullable();
             $table->timestamps();
         });
     }
