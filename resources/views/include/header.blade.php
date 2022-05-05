@@ -360,6 +360,7 @@
             <h1 class="m-0">Dashboard</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
+            {{-- @livewire('navigation-menu') --}}
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ __('dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{route('logout')}}">  {{ __('Logout')}}

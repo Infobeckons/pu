@@ -23,15 +23,32 @@ class rule extends Controller
 
     //This function is used to change/update data in "booking stalls" and "event schedule"//
     function addData(Request $req){
-        $query = DB::table("events")->where("eventname", $req->input('id'))->update([
-            'text' => $req->input('editor'),
-            'file' => $req->input('es'),
-        ]);
+        //  dd($req);
+        $find= DB::table("events")->find('eventname', $req->input('id'));
+        //dd($find);
+        if($find==null){
+            $query = DB::table("events")->insert([
+                'text' => $req->input('editor'),
+                'file' => $req->input('es'),
+            ]);
     
-        if($query){
-            return back()->with('success','Data has been updated successfully.');
-        }else{
-            return back()->with('fail','This data is already saved, or some technical issue is occuring.');
+            if($query){
+                return back()->with('success','Data has been updated successfully.');
+            }else{
+                return back()->with('fail','This data is already saved, or some technical issue is occuring.');
+            }
+        }
+        else{
+            $query = DB::table("events")->where("eventname", $req->input('id'))->update([
+                'text' => $req->input('editor'),
+                'file' => $req->input('es'),
+            ]);
+        
+            if($query){
+                return back()->with('success','Data has been updated successfully.');
+            }else{
+                return back()->with('fail','This data is already saved, or some technical issue is occuring.');
+            }
         }
     }
 }

@@ -19,28 +19,42 @@ class DatabaseSeeder extends Seeder
         //There are two ways to create fake data using db:seed command
         //one is the following where you make a factory with artisan command and call it here.
          \App\Models\User::factory(10)->create();
+         //
 
          //And the second is the following where you can define database table fields and set them to 
          // print fake data in database.
         $faker = Faker::create();
 
-    	foreach (range(1,10) as $index) {
-            DB::table('employees')->insert([
-                'name' => $faker->name,
-                'email' => $faker->email,
-                'phone_number' => $faker->phoneNumber,
-                'dob' => $faker->date($format = 'D-m-y', $max = '2000',$min = '1990')
-            ]);
-        }
+    	// foreach (range(1,10) as $index) {
+        //     DB::table('employees')->insert([
+        //         'name' => $faker->name,
+        //         'email' => $faker->email,
+        //         'phone_number' => $faker->phoneNumber,
+        //         'dob' => $faker->date($format = 'D-m-y', $max = '2000',$min = '1990')
+        //     ]); 
+        // }
+
         $reg=DB::table('files');
-        if($reg!==null){
+        if($reg=null){
                 DB::table('files')->insert([
                     'Id'=> 1,
                     'reg_status'=>'ON',
-                ]);
-            
+                ]);   
         }
-        
+        DB::table('contacts')->insert([
+            'contact1' => $faker->phoneNumber,
+            'contact2' => $faker->phoneNumber,
+            'contact3' => $faker->phoneNumber,
+            'address' => '26, Jawaharlal Nehru Rd, Splanad,Kolkata',
+            'social' => 'www.social_media_address.com',
+            'email' => 'abc@abc.com'
+        ]);
+
+        DB::table('amounts')->insert([
+            'Id' => $faker->phoneNumber,
+            'eventname' => $faker->phoneNumber,
+            'amount' => $faker->phoneNumber
+        ]);
         
     }
 }

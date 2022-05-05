@@ -79,6 +79,20 @@
 
          <a  value="image" onclick="defaultBtnActive()" id="custom-btn" required="true">Choose a photo</a>
          <input id="default-btn" type="file" lazy="loading" name="image" required="true">
+        <script>
+         jQuery(document).ready(function(){
+          jQuery("#submit").onclick(function(){
+              var image=$(this).val();
+              if(image=='submit')
+                  {  
+                    $('#cursive').css('display','block');
+                  }
+                  else{
+                    $('#cursive').css('display','none');
+                  }
+          })
+        });
+        </script>
       </div>
       <script>
          const wrapper = document.querySelector(".wrapper");
@@ -753,7 +767,8 @@ switch(member){
 
 
 <div class="col-md-5">
-    <center><button type="submit" name="submit" value="submit"  class="registerbtn">Register</button></center>
+  <center><p style="font-family:cursive; display:none;" id="cursive" >The Image field is empty.</p></center>
+    <center><button type="submit" name="submit" id="submit" value="submit" class="registerbtn">Register</button></center>
     </div>
   </div>
   </div>
