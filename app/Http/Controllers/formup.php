@@ -18,15 +18,31 @@ class formup extends Controller
         //dd($request);
         $id= 'PURF'.mt_rand(000001,999999);
         $PURFID=$id;
-        //if ($request->input('member')=='Duet'){
+        $agegroup= $request->input('agegroup');
+        $agegroup1= $request->input('agegroup1');
+        $agegroup2= $request->input('agegroup2');
+        $agegroup3= $request->input('agegroup3');
+        if($agegroup!=null){
+            return input('agegroup');
+        }
+        elseif($agegroup1!=null){
+            return input('agegroup1');
+        }
+        elseif($agegroup2!=null){
+            return input('agegroup2');
+        }
+        else{
+            return input('agegroup3');
+        }
         $query = form::insert([
             'PURF_ID'=>$PURFID,
             'image' => $request->file('image')->move('storage\image', $PURFID.'.png'),
             'eventname' => $request->input('eventname'),
-            'age-group' => $request->input('agegroup'),
-            'age-group' => $request->input('agegroup1'),
-            'age-group' => $request->input('agegroup2'),
-            'age-group' => $request->input('agegroup3'),
+            'age-group' => $request->$agegroup,
+            // 'age-group' => $request->input('agegroup'),
+            // 'age-group' => $request->input('agegroup1'),
+            // 'age-group' => $request->input('agegroup2'),
+            // 'age-group' => $request->input('agegroup3'),
             'member' => $request->input('members'),
             'membernum' => $request->input('members1'),
             'groupname' => $request->input('group'),
@@ -45,35 +61,7 @@ class formup extends Controller
             'gender' => $request->input('gender'),
             'declaration' => $request->input('declaration'),
             'date' => $request->input('date'),
-    //     ];
-    // [
-    //     'PURF_ID'=>$PURFID,
-    //         'image' => $request->file('image')->move('storage\image', $PURFID.'.png'),
-    //         'eventname' => $request->input('eventname'),
-    //         'age-group' => $request->input('agegroup'),
-    //         'age-group1' => $request->input('agegroup1'),
-    //         'age-group2' => $request->input('agegroup2'),
-    //         'age-group3' => $request->input('agegroup3'),
-    //         'member' => $request->input('members'),
-    //         'membernum' => $request->input('members1'),
-    //         'groupname' => $request->input('group'),
-    //         'amount' => $request->input('amount'),
-    //         'name' => $request -> input('name'),
-    //         'fname' => $request->input('Fname'),
-    //         'dob' => $request->input('dateofbirth'),
-    //         'age'=> $request->input('age'),
-    //         'payment' => $request->input('pay'),
-    //         'address' => $request->input('billing_address'),
-    //         'city' => $request->input('billing_city'),
-    //         'state' => $request->input('billing_state'),
-    //         'email' => $request->input('billing_email'),
-    //         'institute' => $request->input('institute'),
-    //         'phone' => $request->input('phone'),
-    //         'gender' => $request->input('gender'),
-    //         'declaration' => $request->input('declaration'),
-    //         'date' => $request->input('date'),
      ]);
-    //}
        if($query){
             return back()->with('success','Data has been inserted successfully.');
         }

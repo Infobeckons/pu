@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class rule extends Controller
 {
-    // function addData(Request $req){
+    // function addData(Request $request){
     // $query = DB::table('events')->insert([
-    //     'eventname' => $req->input('id'),
-    //     'text' => $req->input('editor'),
+    //     'eventname' => $request->input('id'),
+    //     'text' => $request->input('editor'),
     // ]);
 
     // if($query){
@@ -19,35 +19,36 @@ class rule extends Controller
     // }else{
     //     return back()->with('fail','Something went wrong.');
     // }
+// }
     
 
     //This function is used to change/update data in "booking stalls" and "event schedule"//
-    function addData(Request $req){
-        //  dd($req);
-        $find= DB::table("events")->find('eventname', $req->input('id'));
+    function addData(Request $request){
+        $find = DB::table("events")->select('eventname'==$request->input('id'));
         //dd($find);
-        if($find==null){
-            $query = DB::table("events")->insert([
-                'text' => $req->input('editor'),
-                'file' => $req->input('es'),
+        if($find){
+            $query = DB::table("events")->where(['eventname', $request->input('id')])->update([
+                'text' => $request->input('editor'),
+                'file' => $request->input('es'),
             ]);
-    
             if($query){
-                return back()->with('success','Data has been updated successfully.');
-            }else{
-                return back()->with('fail','This data is already saved, or some technical issue is occuring.');
+                return back()->with('success','Updated');
+            }
+            else{
+                return back()->with('fail','Updated Error');
             }
         }
         else{
-            $query = DB::table("events")->where("eventname", $req->input('id'))->update([
-                'text' => $req->input('editor'),
-                'file' => $req->input('es'),
+            $query2 = DB::table("events")->insert([
+                    'eventname' => $request->input('id'),
+                    'text' => $request->input('editor'),
+                    'file' => $request->input('es'),
             ]);
-        
-            if($query){
-                return back()->with('success','Data has been updated successfully.');
-            }else{
-                return back()->with('fail','This data is already saved, or some technical issue is occuring.');
+            if($query2){
+                return back()->with('success','Inserted');
+            }   
+            else{
+                return back()->with('fail','Insert Error ');
             }
         }
     }
