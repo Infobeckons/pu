@@ -24,31 +24,37 @@ class rule extends Controller
 
     //This function is used to change/update data in "booking stalls" and "event schedule"//
     function addData(Request $request){
-        $find = DB::table("events")->select('eventname'==$request->input('id'));
+        $id=$request->input('id');
+        $find = event::where('eventname', '=',$id)->first();
+        //DB::table("events")->where('eventname',$id)->get();
         //dd($find);
-        if($find){
-            $query = DB::table("events")->where(['eventname', $request->input('id')])->update([
+        if(is_null($find)){
+            //dd($find);
+            $query = DB::table("events")->insert([
+                'eventname' => $request->input('id'),
                 'text' => $request->input('editor'),
                 'file' => $request->input('es'),
             ]);
+            //dd($query);
             if($query){
-                return back()->with('success','Updated');
+                return back()->with('success','Data has been inserted successfully.');
             }
             else{
-                return back()->with('fail','Updated Error');
+                return back()->with('fail','Something went wrong.');
             }
         }
         else{
-            $query2 = DB::table("events")->insert([
-                    'eventname' => $request->input('id'),
+            //dd($find);
+            $query2 = DB::table("events")->update([
+                    //'eventname' => $request->input('id'),
                     'text' => $request->input('editor'),
                     'file' => $request->input('es'),
             ]);
             if($query2){
-                return back()->with('success','Inserted');
+                return back()->with('success','Data updated successfully.');
             }   
             else{
-                return back()->with('fail','Insert Error ');
+                return back()->with('fail','Data Updating Error ');
             }
         }
     }

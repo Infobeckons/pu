@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class event extends Model
 {
     use HasFactory;
+    public $fillable = ['text', 'file', 'eventname'];
     public $timestamps=false;
 }
