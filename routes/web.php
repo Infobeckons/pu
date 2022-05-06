@@ -55,7 +55,6 @@ Route::get('registeration', 'App\Http\Controllers\formup@showreg');
 // Route::post('user', 'App\Http\Controllers\UserAuth@userLogin');
 Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');
 Route::get('amount', 'App\Http\Controllers\amounts@show');
-Route::view('amounts' , 'superadmin\amountedit');
 Route::post('changeamount', 'App\Http\Controllers\amounts@changeamount');
 //Route::post('editamount/changeamount', 'App\Http\Controllers\amounts@changeamount');
 Route::get('editamount/{data}', 'App\Http\Controllers\amounts@peramount');

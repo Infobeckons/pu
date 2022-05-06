@@ -59,7 +59,7 @@
     <div class="container">
          <div class="wrapper">
             <div class="image">
-               <img src="" alt="" onclick="defaultBtnActive()" required="true" height="50" width="50" style="cursor:pointer" onerror="this.onerror=null;this.src='{{ asset('dist/img/images/logo.png')}}'" required="true">
+               <img src="" alt="" onclick="defaultBtnActive()" required="true" height="50" width="50" style="cursor:pointer" onerror="this.onerror=null;this.src='{{ asset('dist/img/images/logo.png')}}'" >
             </div>
             <div class="content">
                <div class="icon">
@@ -79,20 +79,7 @@
 
          <a  value="image" onclick="defaultBtnActive()" id="custom-btn" required="true">Choose a photo</a>
          <input id="default-btn" type="file" lazy="loading" name="image" required="true">
-        <script>
-         jQuery(document).ready(function(){
-          jQuery("#submit").onclick(function(){
-              var image=$(this).val();
-              if(image=='submit')
-                  {  
-                    $('#cursive').css('display','block');
-                  }
-                  else{
-                    $('#cursive').css('display','none');
-                  }
-          })
-        });
-        </script>
+       
       </div>
       <script>
          const wrapper = document.querySelector(".wrapper");
@@ -153,41 +140,41 @@
 
   <div class="col-md-6" name="agegroup" id="agegroup" style="display:none" >
   <label class="control-label" for="agegroup"><b>Your AgeGroup</b></label>  
-      <select name="agegroup" id="agegroupsel" class="form-control wdp_form_control" >
+      <select name="agegroup[]" id="agegroupsel" class="form-control wdp_form_control" >
         <option value="" hidden>---Select---</option>
-        <option value="3-10">3 to 10 Year</option>
-        <option value="11-15">11 to 15 year</option>
-        <option value="16-30">16 to 30 year</option>
+        <option value="3-10 Year">3 to 10 Year</option>
+        <option value="11-15 Year">11 to 15 year</option>
+        <option value="16-30 Year">16 to 30 year</option>
       </select>
     </div>
 
    <div class="col-md-6" name="agegroup1" id="agegroup1" style="display:none">
     <label class="control-label" for="agegroup1"><b>Your AgeGroup</b></label>  
-        <select name="agegroup1" id="agegroupsel1" class="form-control wdp_form_control">
+        <select name="agegroup[]" id="agegroupsel1" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
-          <option value="5-11">5 to 11 Year</option>
-          <option value="12-17">12 to 17 year</option>
-          <option value="18-27">18  to 27 Year</option>
+          <option value="5-11 Year">5 to 11 Year</option>
+          <option value="12-17 Year">12 to 17 year</option>
+          <option value="18-27 Year">18  to 27 Year</option>
         </select>
     </div>
 
     <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
      <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>  
-          <select name="agegroup2" id="agegroupsel2" class="form-control wdp_form_control">
+          <select name="agegroup[]" id="agegroupsel2" class="form-control wdp_form_control">
             <option value="" hidden>---Select---</option>
-            <option value="1">0 to 1 Year</option>
-            <option value="2"> 2 Year</option>
-            <option value="3"> 3 Year</option>
+            <option value="1 Year">0 to 1 Year</option>
+            <option value="2 Year"> 2 Year</option>
+            <option value="3 Year"> 3 Year</option>
           </select>
       </div>
 
        <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
         <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>  
-            <select name="agegroup3" id="agegroupsel3" class="form-control wdp_form_control">
+            <select name="agegroup[]" id="agegroupsel3" class="form-control wdp_form_control">
               <option value="" hidden>---Select---</option>
-              <option value="3-5">3 to 5 Year</option>
-              <option value="6-8">6 to 8 Year</option>
-              <option value="9-12">9  to 12 Year</option>
+              <option value="3-5 Year">3 to 5 Year</option>
+              <option value="6-8 Year">6 to 8 Year</option>
+              <option value="9-12 Year">9  to 12 Year</option>
             </select>
         </div>
         {{-- <input type="hidden" name="purf_id" value="PUrf_default"> --}}
@@ -593,9 +580,9 @@ switch(member){
     }
     document.getElementById("danceapend").innerHTML=data;
       break;
-}
-});
+    }
   });
+});
 </script> 
 
 
@@ -774,6 +761,25 @@ switch(member){
   </div>
   </fieldset>
 </form>
+
+
+
+<script>
+         jQuery(document).ready(function(){
+          jQuery("#submit").onclick(function(){
+              var image=$(this).val();
+              if(image=='submit')
+                  {  
+                    $('#cursive').css('display','block');
+                  }
+                  else{
+                    $('#cursive').css('display','none');
+                  }
+          })
+        });
+        </script>
+
+
 
   @include('cookie-consent::index')
   

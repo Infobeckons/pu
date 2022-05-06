@@ -11,16 +11,6 @@ use Illuminate\Support\Facades\DB;
 class reportcontroller extends Controller
 {
     //This function is used for showing the data in admin-panel's sidebar "rules"//
-    public function show(Request $request){
-        $users=DB::table("events")->where("eventname", $request->input('id'))->select([
-            'text' => $request->input('editor'),
-        ]); 
-        if($users){
-            return back()->with('success','Data has been updated successfully.');
-        }else{
-            return back()->with('fail','This data is already saved, or some technical issue is occuring.');
-        }
-    }
 
     //This function is used for updating contact form in admin panel//
     public function contactupdate(Request $request){

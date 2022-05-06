@@ -18,11 +18,11 @@ class CreateFormsTable extends Migration
             $table->string('PURF_ID',15);
             $table->string('image', 50);
             $table->string('eventname', 20);
-            $table->string('age-group', 20);
+            $table->text('age-group', 20);
             $table->string('member', 10)->nullable();
             $table->tinyInteger('membernum')->nullable();
             $table->string('groupname', 40)->nullable();
-            $table->tinyInteger('amount');
+            $table->smallInteger('amount');
             $table->string('name', 50);
             $table->string('fname', 50);
             $table->date('dob');

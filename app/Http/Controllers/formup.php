@@ -9,40 +9,62 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Validator;
 
 class formup extends Controller
 {
     //Insert data from registeration page to database
      //This is the main submission form where user fills their personal details for registeration//
     protected function addData(Request $request){ 
-        //dd($request);
+        $validate = $request->validate([
+            'image' => 'required',
+            // 'eventname' => 'required',
+            // 'agegroup' => 'required',
+            // 'members' => 'required',
+            // 'members1' => 'required',
+            // 'group' => 'required',
+            // 'amount' => 'required',
+            // 'billing_name' => 'required',
+            // 'fathername' => 'required',
+            // 'dateofbirth' => 'required',
+            // 'age' => 'required',
+            // 'pay' => 'required',
+            // 'billing_address' => 'required',
+            // 'billing_city' => 'required',
+            // 'billing_state' => 'required',
+            // 'billing_email' => 'required',
+            // 'institute' => 'required',
+            // 'phone' => 'required',
+            // 'gender' => 'required',
+            // 'declaration' => 'required',
+            // 'date' => 'required'
+        ]);
+        if($validate==false){
+            echo "<script>alert('All fields are required.😊')</script>";
+        }
+
         $id= 'PURF'.mt_rand(000001,999999);
-        $PURFID=$id;
-        $agegroup= $request->input('agegroup');
-        $agegroup1= $request->input('agegroup1');
-        $agegroup2= $request->input('agegroup2');
-        $agegroup3= $request->input('agegroup3');
-        if($agegroup!=null){
-            return input('agegroup');
+        $PURFID = $id;
+        global $free;
+        $agegroup = $request->input('agegroup');
+        if(isset($agegroup)){
+            foreach($agegroup as $value){
+                if($value == null){
+                    continue;
+                }
+                else{
+                    $free = $value;
+                    // break;
+                }
+            }
         }
-        elseif($agegroup1!=null){
-            return input('agegroup1');
-        }
-        elseif($agegroup2!=null){
-            return input('agegroup2');
-        }
-        else{
-            return input('agegroup3');
-        }
+        $free==$value;
+        // dd($free);
         $query = form::insert([
             'PURF_ID'=>$PURFID,
             'image' => $request->file('image')->move('storage\image', $PURFID.'.png'),
             'eventname' => $request->input('eventname'),
-            'age-group' => $request->$agegroup,
-            // 'age-group' => $request->input('agegroup'),
-            // 'age-group' => $request->input('agegroup1'),
-            // 'age-group' => $request->input('agegroup2'),
-            // 'age-group' => $request->input('agegroup3'),
+            'age-group' => $free,
             'member' => $request->input('members'),
             'membernum' => $request->input('members1'),
             'groupname' => $request->input('group'),
@@ -62,7 +84,7 @@ class formup extends Controller
             'declaration' => $request->input('declaration'),
             'date' => $request->input('date'),
      ]);
-       if($query){
+       if($query==true){
             return back()->with('success','Data has been inserted successfully.');
         }
         else{
