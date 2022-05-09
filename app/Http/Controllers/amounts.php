@@ -14,16 +14,14 @@ class amounts extends Controller
     print_r($input_id->amount); 
 
     }
-    public function show(){
-        // $amounts =DB::table('amounts')->select()->all();
-        // return view('amount',['am'=>$amounts]);
-        $users = DB::select('select * from amounts');
-        return view('superadmin/amountedit',['user'=>$users]);
+    public function show(Request $request){
+        $events = DB::table('amounts')->get();
+        return view('amount',['event'=>$events]);
     }
 
-    public function peramount(Request $request,$data){  
+    public function peramount(Request $id){  
         //$id = $request->input('id');
-        //dd();
+        dd($id);
         $datas=DB::table('amounts')->where(['id'=>$request->Id])->insert([
             'amount'=>$request->input('amount', 1000)
         ]);

@@ -138,18 +138,18 @@
 	  <option value="Sloganwriting">Slogan Writing Competition</option>
   </select>  
 
-  <div class="col-md-6" name="agegroup" id="agegroup" style="display:none" >
-  <label class="control-label" for="agegroup"><b>Your AgeGroup</b></label>  
+    <div class="col-md-6" name="agegroup" id="agegroup" style="display:none" >
+      <label class="control-label" for="agegroup"><b>Your AgeGroup</b></label>  
       <select name="agegroup[]" id="agegroupsel" class="form-control wdp_form_control" >
         <option value="" hidden>---Select---</option>
         <option value="3-10 Year">3 to 10 Year</option>
         <option value="11-15 Year">11 to 15 year</option>
-        <option value="16-30 Year">16 to 30 year</option>
+        <option value="16-40 Year">16 to 40 year</option>
       </select>
     </div>
 
-   <div class="col-md-6" name="agegroup1" id="agegroup1" style="display:none">
-    <label class="control-label" for="agegroup1"><b>Your AgeGroup</b></label>  
+    <div class="col-md-6" name="agegroup1" id="agegroup1" style="display:none">
+      <label class="control-label" for="agegroup1"><b>Your AgeGroup</b></label>  
         <select name="agegroup[]" id="agegroupsel1" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
           <option value="5-11 Year">5 to 11 Year</option>
@@ -158,8 +158,8 @@
         </select>
     </div>
 
-    <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
-     <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>  
+      <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
+        <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>  
           <select name="agegroup[]" id="agegroupsel2" class="form-control wdp_form_control">
             <option value="" hidden>---Select---</option>
             <option value="1 Year">0 to 1 Year</option>
@@ -168,8 +168,8 @@
           </select>
       </div>
 
-       <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
-        <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>  
+        <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
+          <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>  
             <select name="agegroup[]" id="agegroupsel3" class="form-control wdp_form_control">
               <option value="" hidden>---Select---</option>
               <option value="3-5 Year">3 to 5 Year</option>

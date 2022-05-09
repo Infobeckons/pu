@@ -130,8 +130,8 @@
     </div>
     <center>
     <div class="sign">
-        <div class="first-col"><center><p><span>Signature of the</span><span>applicant recieving the form</span></p></center></div>
-        <div class="second-col"><center><p><span>Signature of the</span><span>applicant recieving the form</span></p></center></div>
+        <div class="first-col"><center><p><span>Signature of the applicant recieving the form</span></p></center></div>
+        <div class="second-col"><center><p><span>Signature of the applicant recieving the form</span></p></center></div>
     </div><br>
     <div class="sign">
         <center><p><span>**Those applying should bring the acknowledgement receipt and an attested copy of DOB certificate at the vanue of the compitition.  </span>

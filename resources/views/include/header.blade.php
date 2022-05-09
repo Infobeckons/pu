@@ -76,14 +76,6 @@
                 </p>
             </a>
             </li>
-        <!-- <li class="nav-item">
-        <a href="{{'welcome'}}" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-            Widgets
-            </p>
-        </a>
-        </li> -->
         <li class="nav-item">
         <a href="{{'find'}}" class="nav-link">
             <i class="nav-icon fas fa-search"></i>
@@ -195,11 +187,9 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="{{'booking'}}" class="nav-link">
-            <i class="nav-icon fas fa-bookmark"></i>
-            <p>
-            Amount
-            </p>
+        <a href="{{'amount'}}" class="nav-link">
+            <i class="nav-icon fas fa-rupee-sign"></i>
+            <p>Amount</p>
         </a>
         </li>
         <li class="nav-item">
@@ -388,7 +378,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                <h3>5</h3>
+                <h3>{{$reg_user}}</h3>
                 <p>Total Registeration</p>
                 </div>
                 <div class="icon">
@@ -402,8 +392,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                <h3>5</h3>
-              
+                <h3>{{$success_reg}}</h3>
                 <p>Success Registeration</p>
                 </div>
                 <div class="icon">
@@ -417,7 +406,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                <h3>44</h3>
+                <h3>{{$admin}}</h3>
                 <p>User Registrations</p>
                 </div>
                 <div class="icon">
@@ -431,7 +420,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                <h3>10,008</h3>
+                <h3></h3>
                 <p>Total Visitors</p>
                 </div>
                 <div class="icon">

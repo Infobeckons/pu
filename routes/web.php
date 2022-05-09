@@ -8,6 +8,7 @@ use App\Http\Controllers\reportcontroller;
 use App\Http\Controllers\formup;
 use App\Http\Controllers\transdata;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\widgetController;
 use Illuminate\Http\Request;
 
 /*
@@ -30,6 +31,7 @@ Route::get('/', function(){
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    
     return view('report');
 })->name('dashboard');
 
@@ -57,18 +59,19 @@ Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');
 Route::get('amount', 'App\Http\Controllers\amounts@show');
 Route::post('changeamount', 'App\Http\Controllers\amounts@changeamount');
 //Route::post('editamount/changeamount', 'App\Http\Controllers\amounts@changeamount');
-Route::get('editamount/{data}', 'App\Http\Controllers\amounts@peramount');
+Route::post('editamount/[$id]', 'App\Http\Controllers\amounts@peramount');
+// Route::get('/editamount/{id}', function ($id) {
+//     return redirect($id)->with('App\Http\Controllers\amounts@peramount'); 
+// });
 
 // pages//
 Route::resource('editor', 'App\Http\Controllers\CKEditorController');
 Route::get('/', function () {   return view('welcome'); });
-//Route::get('dashboard', function (){  return view('dashboard');   });
 Route::get('find', function (){  return view('find');   });
 Route::get('paintingcompitition', function (){   return view('paintingcompitition');    });
 Route::get('collarge', function (){  return view('collarge');   });
 Route::get('dancing', function (){  return view('dancing'); });
 Route::get('booking', function (){   return view('booking');    });
-// Route::get('contact', function (){   return view('contact');    });
 Route::get('result', function (){   return view('result2021');    });
 Route::get('fa_paint', function (){  return view('facepainting');   });
 Route::get('fe_dress', function (){ return view('fancydress');  });
@@ -83,8 +86,6 @@ Route::get('slog', function (){  return view('slogan');  });
 Route::get('band', function (){  return view('band');  });
 Route::get('cmc', function (){  return view('mehandi');  });
 Route::view('acknowledge', 'acknowledge');
-// Route::get('registeration', function (){ return view('registeration'); });
-// Route::get('regform', function (){   return view('registrationform');   });
 Route::get('event', function (){   return view('event');  });
 Route::get('p_home', function(){    return view('p_home');  });
 Route::get('p_about', function(){    return view('p_about');  });
@@ -141,3 +142,4 @@ Route::view('pan', 'pan');
 Route::get('logout', 'App\Http\Controllers\HomeController@logout')->name('logout');
 
 // Route::get('404', function (){   return view('errors\404');  });
+//Route::get('reguser', [widgetController::class, 'index']);

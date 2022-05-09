@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 
-		                <script>
+<script>
 $(document).ready(function () {
        var url = window.location;
    // Will only work if string in href matches with location

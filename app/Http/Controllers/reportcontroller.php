@@ -14,7 +14,7 @@ class reportcontroller extends Controller
 
     //This function is used for updating contact form in admin panel//
     public function contactupdate(Request $request){
-        $users=DB::table("contacts")->where("id", $request->input('id'))->update([
+        $users=DB::table("contacts")->update([
             'contact1' => $request->input('c1'),
             'contact2' => $request->input('c2'),
             'contact3' => $request->input('c3'),

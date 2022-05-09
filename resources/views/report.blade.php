@@ -55,20 +55,20 @@
                                       <div class="col-md-4">
                                              <select name="eventname" class="form-control input-md" id="eventname" :value="old('eventname')" required autofocus >
                                                 <option value="no" hidden>Select Your Event </option>
-                                                <option value="collagemaking">Collarge Making Competition </option>
-                                                <option value="creativemehandi">Creative Mehandi Competition</option>
-                                                <option value="dance">Dancing Competition </option>
-                                                <option value="facepainting">Face Painting </option>
-                                                <option value="fancydress">Fancy Dress Competition </option>
-                                                <option value="paintingmentally">Painting Competition For Children With Intellectual Disability (Mentally Challenged)</option>
-                                                <option value="paintingcom">Painting Competition </option>
+                                                <option value="Collargemaking">Collarge Making Competition </option>
+                                                <option value="Creativemehandi">Creative Mehandi Competition</option>
+                                                <option value="Dance">Dancing Competition </option>
+                                                <option value="Facepainting">Face Painting </option>
+                                                <option value="Fancydress">Fancy Dress Competition </option>
+                                                <option value="Paintingmentally">Painting Competition For Children With Intellectual Disability (Mentally Challenged)</option>
+                                                <option value="Paintingcom">Painting Competition </option>
                                                 <option value="photography">Photography Competition </option>
-                                                <option value="poeticrecitation">Poetic Recitation </option>
-                                                <option value="rangolicom">Rangoli Competition </option>
-                                                <option value="roseprince">Rose Prince And Rose Princess </option>
-                                                <option value="rosequiz">Rose Quiz </option>
-                                                <option value="singing">Singing Competition </option>
-                                                <option value="sloganwriting">Slogan Writing Competition </option>
+                                                <option value="Poeticrecitation">Poetic Recitation </option>
+                                                <option value="Rangolicom">Rangoli Competition </option>
+                                                <option value="Roseprincess">Rose Prince And Rose Princess </option>
+                                                <option value="Rosequiz">Rose Quiz </option>
+                                                <option value="Singing">Singing Competition </option>
+                                                <option value="Sloganwriting">Slogan Writing Competition </option>
                                                 <!---<option value="fashion">FASHION COMPETITION </option>-->
                                            </select>
                                        </div>
@@ -84,60 +84,60 @@
           jQuery(document).ready(function(){
           jQuery("#eventname").change(function(){
               var eventName=$(this).val();
-                  if(eventName=='collagemaking' || eventName=='creativemehandi' || eventName=='poeticrecitation' || eventName=='rangolicom' || eventName=='sloganwriting' || eventName=='photography' || eventname=="photography")
+                  if(eventName=='Collargemaking' || eventName=='Creativemehandi' || eventName=='Poeticrecitation' || eventName=='Rangolicom' || eventName=='Sloganwriting' || eventName=='Rosequiz' || eventname=="photography")
                   {   
                       $('#agegroup').css('display','block');
-                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-12">5 to 12 Year</option><option value="12-18">12 to 18 year</option><option value="18-27">18 to 27 year</option>');	
-                      $('#members').css('display','none');
+                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-11 Year">5 to 11 Year</option><option value="12-17 Year">12 to 17 year</option><option value="18-27 Year">18 to 27 year</option>');	
+                      $('#members').css('display','none').val('Solo');
                   }
-                  else if(eventName=='dance')
+                  else if(eventName=='Dance')
                   { 
                       $('#agegroup').css('display','block');
                       $('#members').css('display','block');
-                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="3-10">3 to 10 Year</option><option value="11-15">10 to 15 year</option><option value="16-100">above 15</option>');
+                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="3-10 Year">3 to 10 Year</option><option value="11-15 Year">10 to 15 year</option><option value="16-40 Year">above 15</option>');
                       $('#members').html('<option value="" hidden>---Select Members---</option><option value="Solo">Solo</option><option value="Duet">Duet</option><option value="Group">Group</option>');
                  }
-                  else if(eventName=='facepainting')
+                  else if(eventName=='Facepainting')
                   {
                       $('#agegroup').css('display','block');
-                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-12">5 to 12 Year</option><option value="12-18">12 to 18 year</option><option value="18-27">18 to 27</option>');	
+                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-12 Year">5 to 12 Year</option><option value="12-18 Year">12 to 18 year</option><option value="18-27 Year">18 to 27</option>');	
                       $('#members').css('display','none');
                   }
-                  else if(eventName=='fancydress')
+                  else if(eventName=='Fancydress')
                   {
                       $('#agegroup').css('display','block');
-                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="3-6">3 to 6 Year</option><option value="6-9">6 to 9 year</option><option value="9-12">9 to 12</option>');	
+                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="3-6 Year">3 to 6 Year</option><option value="6-9 Year">6 to 9 year</option><option value="9-12 Year">9 to 12</option>');	
                       $('#members').css('display','none');
                   }
-                  else if(eventName=='paintingmentally')
+                  else if(eventName=='Paintingmentally')
                   {
                       $('#agegroup').css('display','block');
-                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="12-18">12 to 18 Year</option><option value="18-35">18 to 35 year</option><option value="36-100">above 35</option>');	
+                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="12-18 Year">12 to 18 Year</option><option value="18-35 Year">18 to 35 year</option><option value="36-100 Year">above 35</option>');	
                       $('#members').css('display','none');
                   }
-                  else if(eventName=='paintingcom')
+                  else if(eventName=='Paintingcom')
                   {
                       $('#agegroup').css('display','block');
-                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-10">5 to 10 Year</option><option value="11-15">10 to 15 year</option><option value="15-30">15 to 30</option>');	
+                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-10 Year">5 to 10 Year</option><option value="11-15 Year">10 to 15 year</option><option value="15-30 Year">15 to 30</option>');	
                       $('#members').css('display','none');
                   }
-                  else if(eventName=='roseprince')
+                  else if(eventName=='Roseprincess')
                   {
                       $('#agegroup').css('display','block');
-                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="0-1">0 to 1 Year</option><option value="1-2">1 to 2 year</option><option value="2-3">2 to 3</option>');	
+                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="0-1 Year">0 to 1 Year</option><option value="1-2 Year">1 to 2 year</option><option value="2-3 Year">2 to 3</option>');	
                       $('#members').css('display','none');
                   }
-                  else if(eventName=='singing')
+                  else if(eventName=='Singing')
                   {
                       $('#members').css('display','block');
                       $('#agegroup').css('display','block');
-                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-12">5 to 12 Year</option><option value="12-18">12 to 18 year</option><option value="18-27">18 to 27 year</option>');
+                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-12 Year">5 to 12 Year</option><option value="12-18 Year">12 to 18 year</option><option value="18-27 Year">18 to 27 year</option>');
                       $('#members').html('<option value="" hidden>---Select Members---</option><option value="Solo">Solo</option><option value="Duet">Duet</option><option value="Group">Group</option>');
                   }
                   else
                   {
                       $('#agegroup').css('display','block');
-                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-12">5 to 12 Year</option><option value="12-18">12 to 18 year</option><option value="18-27">18 to 27 year</option>');
+                      $('#agegroup').html('<option value="" hidden>---Select AgeGroup---</option><option value="5-12 Year">5 to 12 Year</option><option value="12-18 Year">12 to 18 year</option><option value="18-27 Year">18 to 27 year</option>');
                   }
                 });
             });
@@ -163,15 +163,12 @@
                               <div class="portlet">
                                   <div class="portlet-body">
                                       <div class="table-responsive">
-                                      {{-- <form class="form" method="POST">  
-                                        @csrf --}}
-                                            @if(isset($users)) 
-							                <table class="table">
-                                                @if($users=='')
+                                        @if(isset($users)) 
+							            <table class="table">
+                                                @if($users==null)
                                                 <div class></div>
                                                 @else
 									        <thead>
-                                                
 									        	<tr>
 									        		<th>Register ID</th>
                                                     <th>Competition</th>
@@ -201,15 +198,17 @@
 									</tr>
 								@endforeach
 
-                                @if($users=='')
+                                @if($users==null)
                                 <div class="row-col" style="display:none;">
-                                    
+                                </div>
+                                @elseif(count($users) < 5)
+                                <div class="row-col" style="display:none;">
                                 </div>
                                 @else
                                 
                                 <div class="row-col">
                                     {{-- {!! var_dump($users) !!} --}}
-                                    {{ $users->render('vendor.pagination.bootstrap-4') }}
+                                     {{$users->render('vendor.pagination.bootstrap-4') }}
                                     {{-- {{ $users->render('vendor.pagination.simple-default') }} --}}
                                 </div>
                                 <style>
@@ -220,7 +219,7 @@
                                 @endif
                             </table>
 
-                            @if($users=='')
+                            @if($users==null)
                             <div class="text-center"><h2>There isn't Any Data!</h2></div>
                             @endif
 
@@ -230,7 +229,7 @@
 
 
                             {{-- {{ dump($users)}} --}}
-                            {{-- </form> --}}
+                          
 								
                    
                                       </div>

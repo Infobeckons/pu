@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class amount extends Model
 {
     use HasFactory;
+    public $fillable = ['amount', 'eventname'];
     public $timestamps=false;
 }
