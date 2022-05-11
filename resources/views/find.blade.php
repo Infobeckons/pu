@@ -69,8 +69,6 @@
 						}
 					</style>
 					@endif
-					{{-- </table> --}}
-
 
 				</tbody>
 

@@ -3,7 +3,7 @@
   <!-- Favicon -->
   <link rel="icon" href="{{asset('dist/img/favicon.ico')}}">
 <head>
-  @include('include.head')
+    @include('include.head')
 </head>   
 <body class="hold-transition sidebar-mini layout-fixed">
 
