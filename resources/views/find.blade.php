@@ -52,6 +52,14 @@
 						@endif
 					</tr>
 					@endforeach
+
+					@if($users==null)
+                    <div class="row-col" style="display:none;">
+                    </div>
+                    @elseif(count($users) < 1)
+                    <div class="row-col" style="display:none;">
+                    </div>
+                    @else
 					<div class="row-col">
 						{{ $users->links('vendor.pagination.bootstrap-4') }}
 					</div>
@@ -60,6 +68,7 @@
 							display: none;
 						}
 					</style>
+					@endif
 					{{-- </table> --}}
 
 

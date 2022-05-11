@@ -61,7 +61,7 @@ $(function() {
 																		<hr>
 						<div class="row">
 						    <div class="col-md-3">
-						        	<img src="uploads/gallery/pu-about.jpg" class="img-circle" style="height:40px;width:40px">
+						        	<img src="{{ asset('dist/uploads/gallery/pu-about.jpg')}}" class="img-circle" style="height:40px;width:40px">
 						        <input type="hidden" name="old_img" value="pu-about.jpg">
 						        </div>
 						    <div class="col-md-3">

@@ -19,12 +19,11 @@ class transdata extends Controller
     
     //Fetch Data from forms  table and show on report page in admin panel
     public function showData(Request $request){
-        
         $user=form::where([
             'eventname'=>$request->input('eventname'),
             'age-group'=>$request->input('agegroup'),
             'member'=>$request->input('members')])->paginate(2);
-        //$users['forms']= form::orderBy('id','desc')->paginate(3);
+            //$users['forms']= form::orderBy('id','desc')->paginate(3);
             $users= $user->appends(request()->except('report'));
             //dd($users);
             //return response()->json(['users', $users]);
@@ -35,15 +34,17 @@ class transdata extends Controller
 
     //Fetch Data from forms table through search in find page through ID,GroupName or Phone numbers
     public function find(Request $req){ 
-        if($req->input('search')==null){
-           echo "<script>alert('Sorry, we are not able to fetch your data at the moment.')</script>";				
-        };
+        $request=$req->input('search');
+        if(is_null($request)){
+           return redirect('find')->with('Value is Required.');				
+        }else{
         $find=DB::table('forms')
             ->where(['PURF_ID'=>$req->input('search')])
             ->orwhere(['phone'=>$req->input('search')])
             ->orwhere(['groupname'=>$req->input('search')])
-            ->Paginate(5);
+            ->Paginate(2);
             $find= $find->appends(request()->except('find'));
             return view('find',['users'=>$find]); 
+        }
     }
 }

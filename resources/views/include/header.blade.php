@@ -407,7 +407,7 @@
             <div class="small-box bg-warning">
                 <div class="inner">
                 <h3>{{$admin}}</h3>
-                <p>User Registrations</p>
+                <p style="color:black;">User Registrations</p>
                 </div>
                 <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -420,7 +420,12 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                <h3></h3>
+                <h3>
+                <!-- @if(isset($visitor))
+                   {{$visitor}}
+                   @endif -->
+                   10,004
+                </h3>
                 <p>Total Visitors</p>
                 </div>
                 <div class="icon">

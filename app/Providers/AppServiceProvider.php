@@ -35,6 +35,10 @@ class AppServiceProvider extends ServiceProvider
 
         $admin=User::all()->count(); 
         view()->share('admin', $admin);
+
+        // $article=View::all()->count();
+        // views($article)->record();
+        // view()->share('include.header', compact('article'));
         
         Paginator::useBootstrap();
     }

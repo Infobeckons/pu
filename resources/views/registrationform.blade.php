@@ -3,28 +3,23 @@
   <head><title>PunjabUniversity-Rose_Festival</title>
 
     <link rel="stylesheet" href="{{ asset('dist/css/register.css')}}">
-
-<!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
- <!-- Daterange picker -->
- <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css')}}">
-
-   <!-- Font Awesome -->
-   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
-   <link rel="apple-touch-icon" href="/example.png">
-   <meta name="description" content="This is a form page.">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-</head>
-    <body>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css')}}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="apple-touch-icon" href="/example.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="description" content="This is a form page.">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
    
-      <!-- <img src="{{ asset('dist/img/rose_background.jpg')}}"/> -->
-    <div class="row">
-<fieldset>
+  <!-- <img src="{{ asset('dist/img/rose_background.jpg')}}"/> -->
+  <div class="row">
+  <fieldset>
   <div class="containor">
   <center><h1>Registeration Form</h1>
     <p>Please fill in this form for Registration</p></center>
@@ -47,12 +42,12 @@
             </div>
           @endif
     <form action="submit" method="post" class="fileUpload" enctype="multipart/form-data">
-  @csrf
-  <fieldset class="border"><legend></legend>
+    @csrf
+    <fieldset class="border"><legend></legend>
     
-  <span class="legend"><b>Enter Your information here:</b></span><br><br>
+    <span class="legend"><b>Enter Your information here:</b></span><br><br>
 
-  <!-- <label for="image">Upload Your Image:</label>
+    <!-- <label for="image">Upload Your Image:</label>
     <input type="file" enctype="multipart/form-data" name="image" id="image" class="file" required = "true"><br><br> -->
     
     <div class="col-md-7">  
@@ -119,7 +114,7 @@
     </div>
 
      
-   <div class="col-md-4"> 
+  <div class="col-md-4"> 
   <label class="eventname" for="eventname"><b>Event Name: </b></label>  
   <select name="eventname" class="form-control wdp_form_control" id="eventnameid"  onchange="getamount();" onclick="refresh();" required = "true" >
 	  <option value="null" hidden>---Select Your Event---</option>
@@ -158,38 +153,38 @@
         </select>
     </div>
 
-      <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
-        <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>  
-          <select name="agegroup[]" id="agegroupsel2" class="form-control wdp_form_control">
-            <option value="" hidden>---Select---</option>
-            <option value="1 Year">0 to 1 Year</option>
-            <option value="2 Year"> 2 Year</option>
-            <option value="3 Year"> 3 Year</option>
-          </select>
-      </div>
+    <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
+      <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>  
+        <select name="agegroup[]" id="agegroupsel2" class="form-control wdp_form_control">
+          <option value="" hidden>---Select---</option>
+          <option value="1 Year">0 to 1 Year</option>
+          <option value="2 Year"> 2 Year</option>
+          <option value="3 Year"> 3 Year</option>
+        </select>
+    </div>
 
-        <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
-          <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>  
-            <select name="agegroup[]" id="agegroupsel3" class="form-control wdp_form_control">
-              <option value="" hidden>---Select---</option>
-              <option value="3-5 Year">3 to 5 Year</option>
-              <option value="6-8 Year">6 to 8 Year</option>
-              <option value="9-12 Year">9  to 12 Year</option>
-            </select>
-        </div>
-        {{-- <input type="hidden" name="purf_id" value="PUrf_default"> --}}
-       <div class="col-md-6" id="members" style="display:none" >
-  <label class="control-label" for="members"><b>Members</b></label>  
-  <select  name="members" class="form-control wdp_form_control" id="membersel" required="true" onchange="refresh2();" onclick="refresh3();">
-  	<option value="" hidden>---Select---</option>
-    <option value="Solo" >SOLO</option>
-    <option value="Duet">DUET</option>
-    <option value="Group">GROUP</option>
-  </select>
-</div>
+    <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
+      <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>  
+        <select name="agegroup[]" id="agegroupsel3" class="form-control wdp_form_control">
+          <option value="" hidden>---Select---</option>
+          <option value="3-5 Year">3 to 5 Year</option>
+          <option value="6-8 Year">6 to 8 Year</option>
+          <option value="9-12 Year">9  to 12 Year</option>
+        </select>
+    </div>
+    <!-- {{-- <input type="hidden" name="purf_id" value="PUrf_default"> --}} -->
+    <div class="col-md-6" id="members" style="display:none" >
+    <label class="control-label" for="members"><b>Members</b></label>  
+    <select  name="members" class="form-control wdp_form_control" id="membersel" required="true" onchange="refresh2();" onclick="refresh3();">
+    	<option value="" hidden>---Select---</option>
+      <option value="Solo" >SOLO</option>
+      <option value="Duet">DUET</option>
+      <option value="Group">GROUP</option>
+    </select>
+  </div>
 
-<div class="col-md-6" id="members1" style="display:none">
-  <label class="control-label" for="members1"><b>Group of members</b></label>  
+          <div class="col-md-6" id="members1" style="display:none">
+            <label class="control-label" for="members1"><b>Group of members</b></label>  
            <select name="members1" id="member1" class="form-control wdp_form_control" >
              <option value="">---Select---</option>
              <option value="3" >3</option>
@@ -201,8 +196,8 @@
              <option value="9" >9</option>
              <option value="10">10</option>
            </select>
-       </div>
-  <br>
+          </div>
+          <br>
 
   <div class="col-md-7" id="group" style="display:none">
     <label class="control-label" for="group"><b>Group/Individual/Team's' Name</b></label>  

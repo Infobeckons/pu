@@ -15,7 +15,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        $role=Auth::user()->role;
+        // $role=Auth::user()->role;
         if (! $request->expectsJson()) {
             return route('login');
         }

@@ -23,7 +23,7 @@
   <!-- jQuery -->
   <script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
 
-  <link rel="icon" href="{{url('resources/assets/home/images/favicon.ico')}}">
+  <link rel="icon" href="{{asset('dist/img/favicon.ico')}}">
   <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')}}">
   <!-- Tempusdominus Bootstrap 4 -->
   <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
