@@ -424,8 +424,6 @@
                 <!-- @if(isset($visitor))
                    {{$visitor}}
                    @endif -->
-                   <a href='https://www.symptoma.com/en/info/covid-19'>corona check</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=453c1ddbc52cfd8102506a86f6260a3fb9fb8490'></script>
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/941827/t/0"></script>
                 </h3>
                 <p>Total Visitors</p>
                 </div>

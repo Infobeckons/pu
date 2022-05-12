@@ -41,5 +41,10 @@ class reportcontroller extends Controller
         $user=$users->get();
         return view('dancing',['users'=>$user]);
     }
+
+    public function test(){
+        $input_id = amount::findOrFail($request->eventid);
+        print_r($input_id->amount); 
+    }
    
 }

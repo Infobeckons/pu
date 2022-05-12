@@ -53,20 +53,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('addcontact', 'App\Http\Controllers\reportcontroller@contactupdate');
 
     Route::get('registeration', 'App\Http\Controllers\formup@showreg');
-    // Route::get('dancing', 'App\Http\Controllers\reportcontroller@showrule');
-    // Route::get('regform', 'App\Http\Controllers\formup@showreg');
 
-    //session//
-    // Route::post('user', 'App\Http\Controllers\UserAuth@userLogin');
-    Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');
     Route::get('amount', 'App\Http\Controllers\amounts@show');
-    Route::post('changeamount', 'App\Http\Controllers\amounts@changeamount');
-    //Route::post('editamount/changeamount', 'App\Http\Controllers\amounts@changeamount');
-    Route::get('/editamount/{$id}', 'App\Http\Controllers\amounts@peramount');
-    // Route::get('/editamount/{id}', function ($id) {
-    //     $event=$id;
-    //     return 
-    // });
+    Route::post('editamount', 'App\Http\Controllers\amounts@peramount');
 
     // pages//
     Route::resource('editor', 'App\Http\Controllers\CKEditorController');
@@ -108,10 +97,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('pur-10', function (){   return view('PURF_gallery\pur-10'); });
 
     // Database
-    Route::view('form','registrationform');
     Route::post('submit','App\Http\Controllers\formup@addData');
     Route::get('showing','App\Http\Controllers\reportcontroller@show');
-    Route::view('add','booking');
+    //Route::view('add','booking');
     Route::post('add','App\Http\Controllers\booking@addData');
     Route::view('addev','band');
     Route::post('addev','App\Http\Controllers\rule@addData');
@@ -132,15 +120,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('emp', 'App\Http\Controllers\pdfs@showEmployees');
     Route::get('/employee/pdf', 'App\Http\Controllers\pdfs@createPDF');
     Route::view('pan', 'pan');
-
-    // Route::get('redirect', function(){
-    //     $session = session()->all();
-    //     return($session);
-    // });
-    // Route::get('login','App\Http\Controllers\HomeController@login')->name('login');
     
     Route::get('logout', 'App\Http\Controllers\HomeController@logout')->name('logout');
 });
 
 Route::view('acknowledge', 'acknowledge');
-
+Route::view('form','registrationform');
+Route::get('test', 'App\Http\Controllers\reportController@test');
+Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');

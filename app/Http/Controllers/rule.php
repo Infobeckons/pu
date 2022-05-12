@@ -11,36 +11,44 @@ class rule extends Controller
     //This function is used to change/update data in "event schedule"//
     function addData(Request $request){
         $id=$request->input('id');
-        $find = event::where('eventname', '=', $id)->first();
-        //DB::table("events")->where('eventname',$id)->get();
+        global $name;
+        if($request->hasFile('es')){
+            $logoImage = $request->file('es');
+            $name = $logoImage->getClientOriginalName();
+        }
+
+        $find = DB::table("events")->where('eventname',$request->input('id'))->first();
         //dd($find);
-        if(is_null($find)){
-            //dd($find);
-            $query = DB::table("events")->insert([
-                'eventname' => $request->input('id'),
-                'text' => $request->input('editor'),
-                'file' => $request->input('es'),
-            ]);
-            //dd($query);
-            if($query){
-                return back()->with('success','Data has been inserted successfully.');
-            }
-            else{
-                return back()->with('fail','Something went wrong.');
-            }
+        if($request->input('editor')==null || $request->file('es')==null){
+            return back()->with('fail','All Fields are required.');
         }
         else{
-            //dd($find);
-            $query2 = DB::table("events")->update([
-                    //'eventname' => $request->input('id'),
+            if($find!=null){
+                //dd($find);
+                $query2 = DB::table("events")->where('eventname', '=', $id)->update([
                     'text' => $request->input('editor'),
-                    'file' => $request->input('es'),
-            ]);
-            if($query2){
-                return back()->with('success','Data updated successfully.');
-            }   
+                    'file' => $request->file('es')->move('storage\image\event',$name),
+                ]);
+                if($query2){
+                    return back()->with('success','Data updated successfully.');
+                }   
+                else{
+                    return back()->with('fail','Data Updating Error ');
+                }
+            }
             else{
-                return back()->with('fail','Data Updating Error ');
+                $query = DB::table("events")->insert([
+                    'eventname' => $request->input('id'),
+                    'text' => $request->input('editor'),
+                    'file' => $request->file('es')->move('storage\image\event',$name),
+                ]);
+
+                if($query){
+                    return back()->with('success','Data has been inserted successfully.');
+                }
+                else{
+                    return back()->with('fail','Something went wrong.');
+                }
             }
         }
     }

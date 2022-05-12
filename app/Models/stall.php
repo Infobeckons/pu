@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class stall extends Model
 {
     use HasFactory;
+    public $fillable=['file', 'text'];
     public $timestamps=false;
+
 }

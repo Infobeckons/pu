@@ -13,12 +13,13 @@ class booking extends Controller
     function addData(Request $request)
     {
         //Here, the user can input the details of stalls that is booked by participants or else//
-        $query = DB::table('stalls')->insert([
-            'file' => $request->input('bfs'),
+        $image=$request->file('bfs')->getClientOriginalName();
+        $query = stall::insert([
+            'file' => $request->file('bfs')->move('storage\image\booking',$image),
             'text' => $request->input('text'),
         ]);
 
-        if($query){
+        if($query==true){
             return back()->with('success','Data has been inserted successfully.');
         }
         else{
@@ -34,24 +35,5 @@ class booking extends Controller
         // return  Carbon::now();
         return $data;
     }
-
-    // <tr>
-    //     <td>Id</td>
-    //     <td>Image</td>
-    //     <td>Event</td>
-    //     <td>Amount</td>
-    //     <td>Gender</td>
-    // <tr>
-    // @foreach($members as $member)
-    // <tr>
-    //     <td>{{$member['Id']}}</td>
-    //     <td>{{$member['image']}}</td>
-    //     <td>{{$member['eventname']}}</td>
-    //     <td>{{$member['amount']}}</td>
-    //     <td>{{$member['gender']}}</td>   
-    // <tr>
-    // @endforeach
-
-    // }
     
 }

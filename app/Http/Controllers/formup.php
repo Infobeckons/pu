@@ -18,26 +18,23 @@ class formup extends Controller
     protected function addData(Request $request){ 
         $validate = $request->validate([
             'image' => 'required',
-            // 'eventname' => 'required',
-            // 'agegroup' => 'required',
-            // 'members' => 'required',
-            // 'members1' => 'required',
-            // 'group' => 'required',
-            // 'amount' => 'required',
-            // 'billing_name' => 'required',
-            // 'fathername' => 'required',
-            // 'dateofbirth' => 'required',
-            // 'age' => 'required',
-            // 'pay' => 'required',
-            // 'billing_address' => 'required',
-            // 'billing_city' => 'required',
-            // 'billing_state' => 'required',
-            // 'billing_email' => 'required',
-            // 'institute' => 'required',
-            // 'phone' => 'required',
-            // 'gender' => 'required',
-            // 'declaration' => 'required',
-            // 'date' => 'required'
+            'eventname' => 'required',
+            'agegroup' => 'required',
+            'amount' => 'required',
+            'billing_name' => 'required',
+            'fathername' => 'required',
+            'dateofbirth' => 'required',
+            'age' => 'required',
+            'pay' => 'required',
+            'billing_address' => 'required',
+            'billing_city' => 'required',
+            'billing_state' => 'required',
+            'billing_email' => 'required',
+            'institute' => 'required',
+            'phone' => 'required',
+            'gender' => 'required',
+            'declaration' => 'required',
+            'date' => 'required'
         ]);
         if($validate==false){
             echo "<script>alert('All fields are required.😊')</script>";
@@ -45,7 +42,6 @@ class formup extends Controller
 
         $id= 'PURF'.mt_rand(000001,999999);
         $PURFID = $id;
-        global $free;
         $agegroup = $request->input('agegroup');
         if(isset($agegroup)){
             foreach($agegroup as $value){
@@ -53,18 +49,18 @@ class formup extends Controller
                     continue;
                 }
                 else{
-                    $free = $value;
+                    $age = $value;
                     // break;
                 }
             }
         }
-        $free==$value;
+        $age==$value;
         // dd($free);
         $query = form::insert([
             'PURF_ID'=>$PURFID,
             'image' => $request->file('image')->move('storage\image', $PURFID.'.png'),
             'eventname' => $request->input('eventname'),
-            'age-group' => $free,
+            'age-group' => $age,
             'member' => $request->input('members'),
             'membernum' => $request->input('members1'),
             'groupname' => $request->input('group'),

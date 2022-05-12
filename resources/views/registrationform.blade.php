@@ -592,8 +592,8 @@ switch(member){
             method : "POST",
             url : "{{URL::to('amountfetch')}}",
             data : {
-              'id' : eventname,
-
+              'id' : eventname
+              
             },
             success: function(data){
               $("#amount").val(data);
@@ -749,7 +749,6 @@ switch(member){
 
 
 <div class="col-md-5">
-  <center><p style="font-family:cursive; display:none;" id="cursive" >The Image field is empty.</p></center>
     <center><button type="submit" name="submit" id="submit" value="submit" class="registerbtn">Register</button></center>
     </div>
   </div>
@@ -757,28 +756,7 @@ switch(member){
   </fieldset>
 </form>
 
-
-
-<script>
-         jQuery(document).ready(function(){
-          jQuery("#submit").onclick(function(){
-              var image=$(this).val();
-              if(image=='submit')
-                  {  
-                    $('#cursive').css('display','block');
-                  }
-                  else{
-                    $('#cursive').css('display','none');
-                  }
-          })
-        });
-        </script>
-
-
-
   @include('cookie-consent::index')
-  
-
 
 @else
 <section class="equal campus text-center">

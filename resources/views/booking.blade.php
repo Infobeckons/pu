@@ -17,17 +17,14 @@
             </div>
           @endif
 			 
-			<form action="add" method="post">	
+			<form action="add" method="post" enctype="multipart/form-data">	
 					@csrf
 					<div class="form-group">
 						<input class="form-control" name="bfs" placeholder="select pdf file" type="file">
 					</div>		
-					{{-- <script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/ckeditor.js"></script>
-					<script src="https://panchayatiduniya.com/rose-festival/resources/assets/ckeditor/samples/js/sample.js"></script> --}}
 					<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
-			<script src="{{asset('ckeditor/samples/js/sample.js')}}"></script>
+					<script src="{{asset('ckeditor/samples/js/sample.js')}}"></script>
 					<div class="portlet-heading">
-						
 						<div class="adjoined-bottom" >
 							<div class="grid-container">
 								<div class="grid-width-100">
@@ -35,7 +32,7 @@
                  						<br>
                  						<span style="color:red">@error('text'){{$message}} @enderror</span>
                  						<br>
-									<button type="submit" class="btn btn-primary">Publish</button>
+									
 								</div>
 							</div>
 						</div>
@@ -45,6 +42,7 @@
 						<div class="clearfix">
 						</div>
 					</div>
+					<button type="submit" class="btn btn-primary">Publish</button>
 			</form>
 		</div>
 		
