@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="{{ asset('plugins/jquery-ui/jquery-ui.js')}}">
   <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css')}}">
   
-{{-- 
+<!-- {{-- 
   <link rel="stylesheet" href="{{ asset('ckeditor/ckeditor.js')}}">
-  <link rel="stylesheet" href="{{ asset('ckeditor/samples/js/samples.js')}}"> --}}
+  <link rel="stylesheet" href="{{ asset('ckeditor/samples/js/samples.js')}}"> --}} -->
 

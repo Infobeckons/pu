@@ -756,7 +756,7 @@ switch(member){
   </fieldset>
 </form>
 
-  @include('cookie-consent::index')
+@include('cookie-consent::index')
 
 @else
 <section class="equal campus text-center">

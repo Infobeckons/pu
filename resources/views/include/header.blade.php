@@ -1,4 +1,3 @@
-
 <div class="wrapper">
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -340,6 +339,7 @@
 </aside>
 
 
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -350,7 +350,6 @@
             <h1 class="m-0">Dashboard</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
-            {{-- @livewire('navigation-menu') --}}
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ __('dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{route('logout')}}">  {{ __('Logout')}}
@@ -424,6 +423,7 @@
                 <!-- @if(isset($visitor))
                    {{$visitor}}
                    @endif -->
+                   10,004
                 </h3>
                 <p>Total Visitors</p>
                 </div>
@@ -432,6 +432,7 @@
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
+            
             </div>
 
             

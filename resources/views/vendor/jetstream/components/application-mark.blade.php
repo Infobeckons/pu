@@ -3,5 +3,5 @@
   <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
 </svg> -->
 <div>
-<img src="/storage/profile-photos/PunjabUniversity.jpg" height="50px" width="50px" alt="PunjabUniversity Logo" style="margin:10px; border-radius:30px;">
+<img src="{{ asset('storage/favicon.ico')}}" height="50px" width="50px" alt="PunjabUniversity Logo" style="margin:10px; border-radius:30px;">
 </div>

@@ -290,6 +290,39 @@ i.fas.fa-cloud-upload-alt {
 }
 
 
+.js-cookie-consent.cookie-consent.fixed.bottom-0.inset-x-0.pb-2 {
+  background: #f7e8d4;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+button.js-cookie-consent-agree.cookie-consent__agree.cursor-pointer.flex.items-center.justify-center.px-4.py-2.rounded-md.text-sm.font-medium.text-yellow-800.bg-yellow-400.hover\:bg-yellow-300 {
+  background: #f7d1a1;
+  border: 0px;
+  color: #b27220;
+  border-radius: 10px;
+  height: 30px;
+  width: 125px;
+  margin-left:20px;
+}
+p.ml-3.text-black.cookie-consent__message {
+  color: #bb8239;
+  font-family: serif;
+  float: left;
+  height: 10px;
+  width: fit-content;
+  margin-left: 150px;
+}
+.mt-2.flex-shrink-0.w-full.sm\:mt-0.sm\:w-auto {
+  line-height: 20px;
+  padding: 10px;
+}
+.w-0.flex-1.items-center.hidden.md\:inline {
+  line-height: 15px;
+  padding: 0px;
+}
+
+
+
 
 
 
