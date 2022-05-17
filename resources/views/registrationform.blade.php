@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-   
+
   <!-- <img src="{{ asset('dist/img/rose_background.jpg')}}"/> -->
   <div class="row">
   <fieldset>
@@ -27,7 +27,7 @@
 
     <?php $reg=DB::select("select * from files");?>
     @foreach($reg as $registration)
-    @if($registration->reg_status=="ON") 
+    @if($registration->reg_status=="ON")
 
 
     @if(Session::get('success'))
@@ -44,14 +44,14 @@
     <form action="submit" method="post" class="fileUpload" enctype="multipart/form-data">
     @csrf
     <fieldset class="border"><legend></legend>
-    
+
     <span class="legend"><b>Enter Your information here:</b></span><br><br>
 
     <!-- <label for="image">Upload Your Image:</label>
     <input type="file" enctype="multipart/form-data" name="image" id="image" class="file" required = "true"><br><br> -->
-    
-  <div class="profile-row">   
-   <div class="col-md-7">  
+
+  <div class="profile-row">
+   <div class="col-md-7">
     <div class="container">
          <div class="wrapper">
             <div class="image">
@@ -75,7 +75,7 @@
 
          <a  value="image" onclick="defaultBtnActive()" id="custom-btn" required="true">Choose a photo</a>
          <input id="default-btn" type="file" lazy="loading" name="image" required="true">
-       
+
       </div>
       <script>
          const wrapper = document.querySelector(".wrapper");
@@ -114,10 +114,10 @@
       </script>
     </div>
 
-     
-  <div class="col-md-4"> 
-  <label class="eventname" for="eventname"><b>Event Name: </b></label>  
-  <select name="eventname" class="form-control wdp_form_control" id="eventnameid"  onchange="getamount();" onclick="refresh();" required = "true" >
+
+  <div class="col-md-4">
+  <label class="eventname" for="eventname"><b>Event Name: </b></label>
+  <select name="eventname" class="form-control wdp_form_control" id="eventnameid"  onchange="getamount();" onclick="functioncan();" required = "true" >
 	  <option value="null" hidden>---Select Your Event---</option>
 	  <option value="Collargemaking">Collarge Making Competition</option>
 	  <option value="Creativemehandi">Creative Mehandi Competition</option>
@@ -132,10 +132,10 @@
 	  <option value="Rosequiz">Rose Quiz</option>
 	  <option value="Singing">Singing Competition</option>
 	  <option value="Sloganwriting">Slogan Writing Competition</option>
-  </select>  
+  </select>
 
     <div class="col-md-6" name="agegroup" id="agegroup" style="display:none" >
-      <label class="control-label" for="agegroup"><b>Your AgeGroup</b></label>  
+      <label class="control-label" for="agegroup"><b>Your AgeGroup</b></label>
       <select name="agegroup[]" id="agegroupsel" class="form-control wdp_form_control" >
         <option value="" hidden>---Select---</option>
         <option value="3-10 Year">3 to 10 Year</option>
@@ -145,7 +145,7 @@
     </div>
 
     <div class="col-md-6" name="agegroup1" id="agegroup1" style="display:none">
-      <label class="control-label" for="agegroup1"><b>Your AgeGroup</b></label>  
+      <label class="control-label" for="agegroup1"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel1" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
           <option value="5-11 Year">5 to 11 Year</option>
@@ -155,7 +155,7 @@
     </div>
 
     <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
-      <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>  
+      <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel2" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
           <option value="1 Year">0 to 1 Year</option>
@@ -165,7 +165,7 @@
     </div>
 
     <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
-      <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>  
+      <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel3" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
           <option value="3-5 Year">3 to 5 Year</option>
@@ -175,8 +175,8 @@
     </div>
     <!-- {{-- <input type="hidden" name="purf_id" value="PUrf_default"> --}} -->
     <div class="col-md-6" id="members" style="display:none" >
-    <label class="control-label" for="members"><b>Members</b></label>  
-    <select  name="members" class="form-control wdp_form_control" id="membersel" required="true" onchange="refresh2();" onclick="refresh3();">
+    <label class="control-label" for="members"><b>Members</b></label>
+    <select  name="members" class="form-control wdp_form_control" id="membersel" required="true"  onchange="refresh2(); refresh3();">
     	<option value="" hidden>---Select---</option>
       <option value="Solo" >SOLO</option>
       <option value="Duet">DUET</option>
@@ -185,9 +185,9 @@
   </div>
 
           <div class="col-md-6" id="members1" style="display:none">
-            <label class="control-label" for="members1"><b>Group of members</b></label>  
+            <label class="control-label" for="members1"><b>Group of members</b></label>
            <select name="members1" id="member1" class="form-control wdp_form_control" >
-             <option value="">---Select---</option>
+             <option value="" hidden>---Select---</option>
              <option value="3" >3</option>
              <option value="4" >4</option>
              <option value="5" >5</option>
@@ -201,13 +201,13 @@
           <br>
 
   <div class="col-md-7" id="group" style="display:none">
-    <label class="control-label" for="group"><b>Group/Individual/Team's' Name</b></label>  
+    <label class="control-label" for="group"><b>Group/Individual/Team's' Name</b></label>
     <input id="group" name="group" type="text" placeholder="Group/Individual/Team's Name" class="form-control wdp_form_control">
   </div><br>
 
   </div>
 </div>
-  
+
   <div class="col-reg" id="name2" style="display: none;">
     <div class="col-fil">
       <label class="control-label" for="name"><b>Name</b></label>
@@ -222,21 +222,22 @@
       <input type="text" name="Address" placeholder="Address" style="float: left; "/>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="danceapendx" id="danceapend"></div>
   </div>
 
 
- 
+
 <script>
           jQuery(document).ready(function(){
           jQuery("#eventnameid").change(function(){
               var eventName=$(this).val();
-                  if(eventName=='Collargemaking' || eventName=='Creativemehandi' || eventName=='Facepainting' || 
+              var amountfet = document.getElementById('amountfetch').value;
+                  if(eventName=='Collargemaking' || eventName=='Creativemehandi' || eventName=='Facepainting' ||
                   eventName=='Paintingmentally'|| eventName=='Paintingcom'|| eventName=='Poeticrecitation'|| eventName=='Rosequiz' ||
                    eventName=='Sloganwriting')
-                  {   
+                  {
                       $('#agegroup').css('display','none');
                       $('#agegroup1').css('display','block');
                       $('#agegroup2').css('display','none');
@@ -245,9 +246,10 @@
                       $('#members1').css('display','none');
                       $('#group').css('display','none');
                       $('#name2').css('display','none');
+                      document.getElementById('amount').value=amountfet;
                    }
                   else if(eventName=='Dance')
-                  { 
+                  {
                     $('#agegroup').css('display','block');
                     $('#agegroup1').css('display','none');
                     $('#agegroup2').css('display','none');
@@ -256,7 +258,8 @@
                     $('#members1').css('display','none');
                     $('#group').css('display','none');
                     $('#name2').css('display','none');
-                   } 
+                    document.getElementById('amount').value=amountfet;
+                   }
 
                   else if(eventName=='Rangolicom')
                   {
@@ -268,6 +271,7 @@
                       $('#members1').css('display','none');
                       $('#group').css('display','none');
                       $('#name2').css('display','none');
+                      document.getElementById('amount').value=amountfet;
                     }
                   else if(eventName=='Singing')
                   {
@@ -279,6 +283,7 @@
                     $('#members1').css('display','none');
                     $('#group').css('display','none');
                     $('#name2').css('display','none');
+                    document.getElementById('amount').value=amountfet;
                   }
                   else if(eventName=='Roseprincess')
                   {
@@ -290,6 +295,7 @@
                     $('#members1').css('display','none');
                     $('#group').css('display','none');
                     $('#name2').css('display','none');
+                    document.getElementById('amount').value=amountfet;
                   }
                   else if(eventName=='Fancydress')
                   {
@@ -301,6 +307,7 @@
                     $('#members1').css('display','none');
                     $('#group').css('display','none');
                     $('#name2').css('display','none');
+                    document.getElementById('amount').value=amountfet;
                   }
                   else
                   {
@@ -312,14 +319,18 @@
                       $('#members1').css('display','none');
                       $('#group').css('display','none');
                       $('#name2').css('display','none');
+                      document.getElementById('amount').value=amountfet;
                     }
                 });
             });
-</script>	
+</script>
 
 <script>
+    function functioncan(){
+        refresh(); refresh2(); refresh3();
+    }
   function refresh(){
-    var defaultt = "Solo";
+    var default1 = "Solo";
     var age="";
     var group = document.getElementById("agegroupsel");
     var group1 = document.getElementById("agegroupsel1");
@@ -327,21 +338,21 @@
     var group3 = document.getElementById("agegroupsel3");
     var elem = document.getElementById("membersel");
 
-    elem.value = defaultt;
-    group.value = age;
+    elem.value = default1;
+    group.value =age;
     group1.value=age;
     group2.value=age;
     group3.value=age;
   }
   function refresh2(){
-    var defaultt = "";
+    var default1 = "";
     var elem = document.getElementById("member1");
-    elem.value = defaultt;
+    elem.value = default1;
   }
   function refresh3(){
-    var defaultt = "";
-    var elem = document.getElementById("danceapend");
-    return elem.value = defaultt;
+    var default1 = "";
+    var elem = document.getElementById("danceapend").innerHTML=default1;
+    elem.value = default1;
   }
   // function groupfresh(){
   //   var defaultt = "NULL";
@@ -415,7 +426,7 @@
       }
     case "Group":
     if(amountfet==amount){
-     
+
             $('#members1').css('display','block');
             $('#group').css('display','block');
             $('#name2').css('display','none');
@@ -423,10 +434,10 @@
             // document.getElementById('danceapend').value=data;
             document.getElementById('amount').value=amountfet;
             break;
-    
+
       }
       else if(amountfet<amount){
-      
+
             $('#members1').css('display','block');
             $('#group').css('display','block');
             $('#name2').css('display','none');
@@ -434,10 +445,10 @@
             // document.getElementById('danceapend').value=data;
             document.getElementById('amount').value=div;
             break;
-      
+
       }
       else{
-  
+
             $('#members1').css('display','block');
             $('#group').css('display','block');
             $('#name2').css('display','none');
@@ -446,7 +457,7 @@
             document.getElementById('amount').value=amountfet;
             break;
       }
-    default: 
+    default:
             $('#members1').css('display','none');
             $('#group').css('display','none');
             $('#name2').css('display','none');
@@ -455,7 +466,7 @@
   }
 });
     });
-</script> 
+</script>
 
 
 <script>
@@ -472,7 +483,7 @@ jQuery("#member1").change(function(){
   var flush='';
   var i=1;
   var x;
-switch(member){ 
+switch(member){
   case "3":
   if(gmember==member){
       document.getElementById('amount').value=amount3;
@@ -568,7 +579,7 @@ switch(member){
     // document.getElementById("danceapend").innerHTML=data;
     //   break;
     // }
-  default: 
+  default:
       document.getElementById('amount').value=amountfet;
       document.getElementById("danceapend").innerHTML=flush;
       for(x=2 ; x<=member; x++){
@@ -580,7 +591,7 @@ switch(member){
     }
   });
 });
-</script> 
+</script>
 
 
 <script type="text/javascript">
@@ -595,7 +606,7 @@ switch(member){
             url : "{{URL::to('amountfetch')}}",
             data : {
               'id' : eventname
-              
+
             },
             success: function(data){
               $("#amount").val(data);
@@ -608,13 +619,13 @@ switch(member){
 
   <br>
  <br>
-  <input id="amountfetch" name="amountfetch" type="hidden" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly> 
+  <input id="amountfetch" name="amountfetch" type="hidden" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>
 <div class="col-12">
   <div class="col-md-6" >
   <label class="control-label" for="amount"><b>Amount</b></label>
-  <input id="amount" name="amount" type="text" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>    
+  <input id="amount" name="amount" type="text" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>
   </div>
- 
+
 
   <div class="col-md-6">
   <label class="control-label" for="username" id="username"><b>Name</b></label>
@@ -631,27 +642,27 @@ switch(member){
   function ageCalculator() {
       var userinput = document.getElementById("DOB").value;
       var dob = new Date(userinput);
-      var fun=document.getElementById("message").innerHTML = "";  
+      var fun=document.getElementById("message").innerHTML = "";
       if(userinput==null || userinput=='' ) {
-        var error=document.getElementById("message").innerHTML = "**Please Choose a Valid date!";  
+        var error=document.getElementById("message").innerHTML = "**Please Choose a Valid date!";
         // return error===true;
       } else {
-      
+
       //calculate month difference from current date in time
       var month_diff = Date.now() - dob.getTime();
-      
+
       //convert the calculated difference in date format
-      var age_dt = new Date(month_diff); 
-      
-      //extract year from date    
+      var age_dt = new Date(month_diff);
+
+      //extract year from date
       var year = age_dt.getUTCFullYear();
-      
+
       //now calculate the age of the user
       var age = Math.abs(year - 1970);
-      
+
       //display the calculated age
       return document.getElementById("result").value = age;
-      var fun=document.getElementById("message").innerHTML = "";  
+      var fun=document.getElementById("message").innerHTML = "";
       // return fun==true;
       }
   }
@@ -662,7 +673,7 @@ switch(member){
     <input id="DOB" name="dateofbirth" type="date" placeholder="Date of Birth" oninput="ageCalculator()" class="form-control wdp_form_control"   min="1990-01-01" max="2020-12-31"  format="dd/mm/yyyy" style="cursor:pointer;" />
     <span id = "message" style="color:red"></span>
   </div>
-  
+
     <div class="col-md-6">
 <label class="control-label" for="age" id="headage"><b>Age(in Years)</b></label>
   <input  type="text" id="result" name="age" placeholder="Your Age" class="form-control wdp_form_control" required ="true"  style="cursor:no-drop"  readonly />
@@ -693,13 +704,13 @@ switch(member){
 
   <div class="col-md-6">
   <label for="ctry"><b>Name of Institute</b></label>
-  <input id="intitude" name="institute" type="text" placeholder="Name of Institute" class="form-control wdp_form_control" required = "true" >    
+  <input id="intitude" name="institute" type="text" placeholder="Name of Institute" class="form-control wdp_form_control" required = "true" >
 </div>
 
 <div class="col-md-6">
-  <label for="phone"><b>Phone</b></label>  
+  <label for="phone"><b>Phone</b></label>
   <input id="phone" name="phone" type="tel"  placeholder="Phone" maxlength="10" class="form-control wdp_form_control" required = "true"  >
- </div> 
+ </div>
 
  <div class="col-md-6">
   <label for="Gender"><b>Gender</b></label>
@@ -709,9 +720,9 @@ switch(member){
     <label class="radio-inline"><input type="radio" name="gender" id="Transgender" value="Others">Others</label>
     </div>
   </div>
-  
 
-  <div class="col-md-5"> 
+
+  <div class="col-md-5">
   <label for="Declaration" class="dc-label"><b>Declaration</b></label>
   <input id="declaration" name="declaration" type="text"  value="I , declare that particulars given above are correct and true. I accept the conditions of schedule and competitions of the Rose Festival." required = "true"/>
   </div>
