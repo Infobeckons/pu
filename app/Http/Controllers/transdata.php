@@ -16,7 +16,7 @@ class transdata extends Controller
     public function index(){
         return DB::select('select * from forms');
     }
-    
+
     //Fetch Data from forms  table and show on report page in admin panel
     public function showData(Request $request){
         $user=form::where([
@@ -28,15 +28,15 @@ class transdata extends Controller
             //dd($users);
             //return response()->json(['users', $users]);
             //return view('report')->with('users', $users);
-            return view('report',['users'=>$users]); 
+            return view('report',['users'=>$users]);
             //return view('report', $users);
     }
 
     //Fetch Data from forms table through search in find page through ID,GroupName or Phone numbers
-    public function find(Request $req){ 
+    public function find(Request $req){
         $request=$req->input('search');
         if(is_null($request)){
-           return redirect('find')->with('Value is Required.');				
+           return redirect('find')->with('Value is Required.');
         }else{
         $find=DB::table('forms')
             ->where(['PURF_ID'=>$req->input('search')])
@@ -44,7 +44,7 @@ class transdata extends Controller
             ->orwhere(['groupname'=>$req->input('search')])
             ->Paginate(2);
             $find= $find->appends(request()->except('find'));
-            return view('find',['users'=>$find]); 
+            return view('find',['users'=>$find]);
         }
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\form;
-use Softon\Indipay\Facades\Indipay; 
+use Softon\Indipay\Facades\Indipay;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -15,7 +15,7 @@ class formup extends Controller
 {
     //Insert data from registeration page to database
      //This is the main submission form where user fills their personal details for registeration//
-    protected function addData(Request $request){ 
+    protected function addData(Request $request){
         $validate = $request->validate([
             'image' => 'required',
             'eventname' => 'required',
@@ -86,9 +86,9 @@ class formup extends Controller
         else{
             return back()->with('fail','Something went wrong.');
         }
-  
+
     }
-         
+
         // $dateOfBirth = $request->input('dateofbirth');
         // $years = Carbon::parse($dateOfBirth)->diff(Carbon::now())->format('%y');
         // $years = Carbon::parse($dateOfBirth)->diff(Carbon::now())->format('%y years, %m months and %d days');
@@ -108,27 +108,43 @@ class formup extends Controller
 
     //update the registeration status for website's regerationform
     public function register(Request $request){
-        $user=DB::table("files")->where("Id", $request->input('id'))->update([
-            'reg_status'=>$request->input('reg')
-        ]);
-        if($user){
-            return back()->with('success','Data has been updated successfully.');
+        // $request->validate([
+        //     'reg' => 'accepted'
+        // ]);
+        //dd($request->input('reg'));
+        //$validate=$request->input('reg');
+        if($request->has('reg')){
+            $user=DB::table("files")->where("Id", $request->input('id'))->update([
+                'reg_status'=>'ON'
+            ]);
+            if($user){
+                return back()->with('success','Data has been updated successfully.');
+            }
+            else{
+                return back()->with('fail','This data is already saved, or some technical issue is occuring.');
+            }
         }
         else{
-            return back()->with('fail','This data is already saved, or some technical issue is occuring.');
+            $user=DB::table("files")->where("Id", $request->input('id'))->update([
+                'reg_status'=>'OFF'
+            ]);
+            if($user){
+                return back()->with('success','Data has been updated successfully.');
+            }
+            else{
+                return back()->with('fail','This data is already saved, or some technical issue is occuring.');
+            }
         }
     }
 
 
 
 
-    //show registeration status 
+    //show registeration status
     public function showreg(){
         $users=DB::select('select * from files');
         return view('registeration',['user'=>$users]);
-    }       
-
-
+    }
 
     //ccavenue form submission from registeration page
     public function paymentcall(Request $request){
@@ -147,9 +163,5 @@ class formup extends Controller
           $order = Indipay::prepare($parameters);
           return Indipay::process($order);
     }
-
-    // public function validate(Request $request){
-    //     $valid = new validate;
-    // }
 
 }

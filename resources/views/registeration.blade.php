@@ -39,24 +39,23 @@
 				<div class="row">
 				<div class="col-md-4 space">Registration is:&nbsp; <b class=color>{{$value->reg_status}}</b></div>
 
-					<div class="col-md-4 text-center">
+					<div class="col-md-4 text-center regswitch">
     				<div class="onoffswitch4">
 
                         <label class="switch">
                             @if($value->reg_status=="OFF")
                                 {{-- <input type="hidden" name="reg" value="ON"> --}}
-                                <input type="checkbox" name="reg" value="OFF" >
+                                <input type="checkbox" onChange="this.form.submit()" name="reg" value="ON" >
                                 {{-- <input type="hidden" name="reg" value="OFF" > --}}
                             @else
                                 {{-- <input type="hidden" name="reg" value="OFF"> --}}
-                                <input type="checkbox" name="reg" value="ON" checked>
+                                <input type="checkbox" onChange="this.form.submit()" name="reg" value="OFF" checked>
                                 {{-- <input type="hidden" name="reg" value="ON" > --}}
                             @endif
                                 {{-- <input type="checkbox" name="reg" checked> --}}
                                 <span class="slider round"></span>
                         </label>
-
-                          <style>
+                        <style>
                             .switch {
                               position: relative;
                               display: inline-block;
@@ -116,7 +115,7 @@
                             .slider.round:before {
                               border-radius: 50%;
                             }
-                            </style>
+                        </style>
 
                         {{-- <button type=submit class="form-control btn btn-primary" name="submit" value="Submit">ON/OFF</button> --}}
 					</div>

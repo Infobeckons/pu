@@ -1,0 +1,1 @@
+jQuery(window).load(function(d){"use strict";jQuery(".wdp_preloader").addClass("animated fadeOutDown")});

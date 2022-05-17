@@ -2,13 +2,13 @@
 <html lang="en">
   <head><title>PunjabUniversity-Rose_Festival</title>
 
-    <link rel="stylesheet" href="{{ asset('dist/css/register.css')}}">
+    <link rel="stylesheet" href="{{ asset('dist/css/register.css')}}"> 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css')}}"> --}}
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}"> --}}
     <link rel="apple-touch-icon" href="/example.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta name="description" content="This is a form page.">
@@ -17,10 +17,15 @@
   </head>
   <body>
 
+    @include('home/header')
   <!-- <img src="{{ asset('dist/img/rose_background.jpg')}}"/> -->
-  <div class="row">
-  <fieldset>
-  <div class="containor">
+
+
+  <div class="container">
+
+    <div class="row mb-50">
+
+    <fieldset>
   <center class="form-title"><h1>Registeration Form</h1>
     <p>Please fill in this form for Registration</p></center>
 
@@ -50,33 +55,28 @@
     <!-- <label for="image">Upload Your Image:</label>
     <input type="file" enctype="multipart/form-data" name="image" id="image" class="file" required = "true"><br><br> -->
 
-  <div class="profile-row">
-   <div class="col-md-7">
-    <div class="container">
-         <div class="wrapper">
+  <div class="row">
+   <div class="col-md-6">   
             <div class="image">
-               <img src="" alt="" onclick="defaultBtnActive()" required="true" height="50" width="50" style="cursor:pointer" onerror="this.onerror=null;this.src='{{ asset('dist/img/images/logo.png')}}'" >
+               <img src="" alt="" onclick="defaultBtnActive()" required="true" height="250" width="250" style="cursor:pointer" onerror="this.onerror=null;this.src='{{ asset('dist/img/images/logo.png')}}'" >
+			   <input id="default-btn" type="file" lazy="loading" name="image" required="true">
+			   <p>Submit your picture here!</p>
             </div>
             <div class="content">
                <div class="icon">
                   <i class="fas fa-cloud-upload-alt"></i>
                </div>
-               <div class="text">
-                  <center>Submit your picture here!</center>
-               </div>
+               
             </div>
             <div id="cancel-btn">
-               <i class="fas fa-times"></i>
+               <i class="fa fa-times" aria-hidden="true"></i>
             </div>
             <div class="file-name">
                File name here
             </div>
-         </div>
+       
+        
 
-         <a  value="image" onclick="defaultBtnActive()" id="custom-btn" required="true">Choose a photo</a>
-         <input id="default-btn" type="file" lazy="loading" name="image" required="true">
-
-      </div>
       <script>
          const wrapper = document.querySelector(".wrapper");
          const fileName = document.querySelector(".file-name");
@@ -134,7 +134,7 @@
 	  <option value="Sloganwriting">Slogan Writing Competition</option>
   </select>
 
-    <div class="col-md-6" name="agegroup" id="agegroup" style="display:none" >
+    <div class="col-md-4" name="agegroup" id="agegroup" style="display:none" >
       <label class="control-label" for="agegroup"><b>Your AgeGroup</b></label>
       <select name="agegroup[]" id="agegroupsel" class="form-control wdp_form_control" >
         <option value="" hidden>---Select---</option>
@@ -144,7 +144,7 @@
       </select>
     </div>
 
-    <div class="col-md-6" name="agegroup1" id="agegroup1" style="display:none">
+    <div class="col-md-4" name="agegroup1" id="agegroup1" style="display:none">
       <label class="control-label" for="agegroup1"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel1" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -154,7 +154,7 @@
         </select>
     </div>
 
-    <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
+    <div class="col-md-4" name="agegroup2" id="agegroup2" style="display:none">
       <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel2" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -164,7 +164,7 @@
         </select>
     </div>
 
-    <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
+    <div class="col-md-4" name="agegroup3" id="agegroup3" style="display:none">
       <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel3" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -174,7 +174,7 @@
         </select>
     </div>
     <!-- {{-- <input type="hidden" name="purf_id" value="PUrf_default"> --}} -->
-    <div class="col-md-6" id="members" style="display:none" >
+    <div class="col-md-4" id="members" style="display:none" >
     <label class="control-label" for="members"><b>Members</b></label>
     <select  name="members" class="form-control wdp_form_control" id="membersel" required="true"  onchange="refresh2(); refresh3();">
     	<option value="" hidden>---Select---</option>
@@ -184,7 +184,7 @@
     </select>
   </div>
 
-          <div class="col-md-6" id="members1" style="display:none">
+          <div class="col-md-4" id="members1" style="display:none">
             <label class="control-label" for="members1"><b>Group of members</b></label>
            <select name="members1" id="member1" class="form-control wdp_form_control" >
              <option value="" hidden>---Select---</option>
@@ -200,7 +200,7 @@
           </div>
           <br>
 
-  <div class="col-md-7" id="group" style="display:none">
+  <div class="col-md-4" id="group" style="display:none">
     <label class="control-label" for="group"><b>Group/Individual/Team's' Name</b></label>
     <input id="group" name="group" type="text" placeholder="Group/Individual/Team's Name" class="form-control wdp_form_control">
   </div><br>
@@ -208,7 +208,7 @@
   </div>
 </div>
 
-  <div class="col-reg" id="name2" style="display: none;">
+  <div class="col-md-4 col-reg" id="name2" style="display: none;">
     <div class="col-fil">
       <label class="control-label" for="name"><b>Name</b></label>
       <input type="text" name="name"  placeholder="Name" style="float: left;" />
@@ -620,19 +620,19 @@ switch(member){
   <br>
  <br>
   <input id="amountfetch" name="amountfetch" type="hidden" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>
-<div class="col-12">
-  <div class="col-md-6" >
+
+  <div class="col-md-4">
   <label class="control-label" for="amount"><b>Amount</b></label>
   <input id="amount" name="amount" type="text" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>
   </div>
 
 
-  <div class="col-md-6">
+  <div class="col-md-4">
   <label class="control-label" for="username" id="username"><b>Name</b></label>
   <input id="billing_name" name="billing_name" type="text" placeholder="Name" class="form-control wdp_form_control" required = "true"  >
  </div>
 
-  <div class="col-md-6">
+  <div class="col-md-4">
   <label class="control-label" for="fathername" id="headfathername"><b>Father's Name</b></label>
   <input id="fathername" name="fathername" type="text" placeholder="Father's Name" class="form-control wdp_form_control" required = "true" >
   </div><br>
@@ -668,13 +668,13 @@ switch(member){
   }
   </script>
 
-  <div class="col-md-6">
+  <div class="col-md-4">
     <label class="control-label" for="dateofbirth" id="headdob"><b>Date of Birth</b></label>
     <input id="DOB" name="dateofbirth" type="date" placeholder="Date of Birth" oninput="ageCalculator()" class="form-control wdp_form_control"   min="1990-01-01" max="2020-12-31"  format="dd/mm/yyyy" style="cursor:pointer;" />
     <span id = "message" style="color:red"></span>
   </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
 <label class="control-label" for="age" id="headage"><b>Age(in Years)</b></label>
   <input  type="text" id="result" name="age" placeholder="Your Age" class="form-control wdp_form_control" required ="true"  style="cursor:no-drop"  readonly />
     </div>
@@ -682,37 +682,37 @@ switch(member){
   <input id="pay" name="pay" type="hidden" value="success" placeholder="Success or fail" class="form-control wdp_form_control" required = "true" >
 
 
-<div class="col-md-6">
+<div class="col-md-4">
   <label class="control-label" for="add"><b>Address</b></label>
-  <textarea name="billing_address" cols="62" class="form-control wdp_form_control" id="address" required = "true" ></textarea>
+  <textarea name="billing_address" cols="62" class="form-control wdp_form_control" id="address" required = "true" style="height:35px !important"></textarea>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-4">
   <label class="control-label" for="add"><b>City</b></label>
   <input id="billing_city" name="billing_city" type="text" placeholder="City" class="form-control wdp_form_control" required = "true" >
 </div>
 
-<div class="col-md-6">
+<div class="col-md-4">
   <label class="control-label" for="add"><b>State</b></label>
   <input id="billing_state" name="billing_state" type="text" placeholder="State" class="form-control wdp_form_control" required = "true"  >
  </div>
 
-<div class="col-md-6">
+<div class="col-md-4">
   <label class="control-label" for="email"><b>Email</b></label>
   <input id="email" name="billing_email" type="email" placeholder="Email" class="form-control wdp_form_control" required = "true" >
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-4">
   <label for="ctry"><b>Name of Institute</b></label>
   <input id="intitude" name="institute" type="text" placeholder="Name of Institute" class="form-control wdp_form_control" required = "true" >
 </div>
 
-<div class="col-md-6">
+<div class="col-md-4">
   <label for="phone"><b>Phone</b></label>
   <input id="phone" name="phone" type="number" step="0.01" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" placeholder="Phone" maxlength="10" class="form-control wdp_form_control" required = "true"  >
  </div>
 
- <div class="col-md-6">
+ <div class="col-md-4">
   <label for="Gender"><b>Gender</b></label>
     <div class="m-radio">
     <label class="radio-inline"><input type="radio" name="gender" id="Male" value="Male" checked="checked">Male </label>
@@ -722,19 +722,16 @@ switch(member){
   </div>
 
 
-  <div class="col-md-5">
-  <label for="Declaration" class="dc-label"><b>Declaration</b></label>
-  <input id="declaration" name="declaration" type="text"  value="I , declare that particulars given above are correct and true. I accept the conditions of schedule and competitions of the Rose Festival." required = "true"/>
+  <div class="col-md-6 dc-label">
+  <label for="Declaration"><b>Declaration</b></label>
+  <input id="declaration" name="declaration" type="text"  value="I , declare that particulars given above are correct and true. I accept the conditions of schedule and competitions of the Rose Festival." required = "true" style="width:100%"/>
   </div>
 
-<div class="col-md-5">
+<div class="col-md-6 dc-label">
   <label class="control-label" for="date" ><b>Date</b></label>
-  </div>
-
-<div class="col-md-5">
   <input  name="date" id="datepicker" type="date" class="form-control wdp_form_control" required = "true" value=""  min="1990-01-01" max="2021-12-31">
-</div>
-</div>
+ </div>
+
 <script>
 	window.onload = function() {
 		var d = new Date().getTime();
@@ -761,11 +758,9 @@ switch(member){
 
 
 <div class="col-md-5">
-    <center><button type="submit" name="submit" id="submit" value="submit" class="registerbtn">Register</button></center>
-    </div>
-  </div>
-  </div>
-  </fieldset>
+    <button type="submit" name="submit" id="submit" value="submit" class="btn wdp_btn wdp_margin_top_4 registerbtn">Register</button>
+</div>
+
 </form>
 
 @include('cookie-consent::index')
@@ -774,24 +769,12 @@ switch(member){
 <section class="equal campus text-center">
 <div class="container">
 <div class="heading">
-  <img class="image" src="{{ asset('dist/img/panjab-university-logo-1.jpg')}}">
+  <img class="image" src="{{ asset('dist/img/panjab-university-logo-1.jpg')}}" style="width:200px">
 </div>
-<div class=heading2>
-  <h2 class="center">Registration  Closed</h2>
+
+<div class="heading2">
+  <h2 class="center">Registration  Closed Agle saal try Kro</h2>
 </div>
-  <style>
-    .image{
-      border-radius: 55%;
-      height: 150px;
-      width: 150px;
-      margin-left: 450px;
-    }
-    .heading2{
-      width: 1050px;
-      text-align: center;
-      margin-top: 40px;
-    }
-  </style>
 
 <article>
 <div class="container">
@@ -808,5 +791,9 @@ switch(member){
 
 </fieldset>
 </div>
+</div>
+
+
+@include('home/footer')
 </body>
 </html>
