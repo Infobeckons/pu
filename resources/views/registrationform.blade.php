@@ -2,7 +2,7 @@
 <html lang="en">
   <head><title>PunjabUniversity-Rose_Festival</title>
 
-    <link rel="stylesheet" href="{{ asset('dist/css/register.css')}}"> 
+    <link rel="stylesheet" href="{{ asset('dist/css/register.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
     <!-- Daterange picker -->
@@ -56,7 +56,7 @@
     <input type="file" enctype="multipart/form-data" name="image" id="image" class="file" required = "true"><br><br> -->
 
   <div class="row">
-   <div class="col-md-6">   
+   <div class="col-md-6">
             <div class="image">
                <img src="" alt="" onclick="defaultBtnActive()" required="true" height="250" width="250" style="cursor:pointer" onerror="this.onerror=null;this.src='{{ asset('dist/img/images/logo.png')}}'" >
 			   <input id="default-btn" type="file" lazy="loading" name="image" required="true">
@@ -66,7 +66,7 @@
                <div class="icon">
                   <i class="fas fa-cloud-upload-alt"></i>
                </div>
-               
+
             </div>
             <div id="cancel-btn">
                <i class="fa fa-times" aria-hidden="true"></i>
@@ -74,8 +74,8 @@
             <div class="file-name">
                File name here
             </div>
-       
-        
+
+
 
       <script>
          const wrapper = document.querySelector(".wrapper");
@@ -134,7 +134,7 @@
 	  <option value="Sloganwriting">Slogan Writing Competition</option>
   </select>
 
-    <div class="col-md-6" name="agegroup" id="agegroup" style="display:none" >
+    <div class="col-md-4" name="agegroup" id="agegroup" style="display:none" >
       <label class="control-label" for="agegroup"><b>Your AgeGroup</b></label>
       <select name="agegroup[]" id="agegroupsel" class="form-control wdp_form_control" >
         <option value="" hidden>---Select---</option>
@@ -144,7 +144,7 @@
       </select>
     </div>
 
-    <div class="col-md-6" name="agegroup1" id="agegroup1" style="display:none">
+    <div class="col-md-4" name="agegroup1" id="agegroup1" style="display:none">
       <label class="control-label" for="agegroup1"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel1" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -154,7 +154,7 @@
         </select>
     </div>
 
-    <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
+    <div class="col-md-4" name="agegroup2" id="agegroup2" style="display:none">
       <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel2" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -164,7 +164,7 @@
         </select>
     </div>
 
-    <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
+    <div class="col-md-4" name="agegroup3" id="agegroup3" style="display:none">
       <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel3" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -174,7 +174,7 @@
         </select>
     </div>
     <!-- {{-- <input type="hidden" name="purf_id" value="PUrf_default"> --}} -->
-    <div class="col-md-6" id="members" style="display:none" >
+    <div class="col-md-4" id="members" style="display:none" >
     <label class="control-label" for="members"><b>Members</b></label>
     <select  name="members" class="form-control wdp_form_control" id="membersel" required="true"  onchange="refresh2(); refresh3();">
     	<option value="" hidden>---Select---</option>
@@ -184,7 +184,7 @@
     </select>
   </div>
 
-          <div class="col-md-6" id="members1" style="display:none">
+          <div class="col-md-4" id="members1" style="display:none">
             <label class="control-label" for="members1"><b>Group of members</b></label>
            <select name="members1" id="member1" class="form-control wdp_form_control" >
              <option value="" hidden>---Select---</option>
@@ -617,7 +617,6 @@ switch(member){
 </script>
 
  <br>
-  
 
 
   <div class="col-md-4">
@@ -629,7 +628,7 @@ switch(member){
   <label class="control-label" for="fathername" id="headfathername"><b>Father's Name</b></label>
   <input id="fathername" name="fathername" type="text" placeholder="Father's Name" class="form-control wdp_form_control" required = "true" >
   </div>
-  
+
   <div class="col-md-4">
   <label class="control-label" for="add"><b>Address</b></label>
   <textarea name="billing_address" cols="62" class="form-control wdp_form_control" id="address" required = "true" style="height:35px !important"></textarea>
@@ -673,7 +672,7 @@ switch(member){
   <label class="control-label" for="amount"><b>Amount</b></label>
   <input id="amount" name="amount" type="text" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>
   </div>
-  
+
   <div class="col-md-4">
     <label class="control-label" for="dateofbirth" id="headdob"><b>Date of Birth</b></label>
     <input id="DOB" name="dateofbirth" type="date" placeholder="Date of Birth" oninput="ageCalculator()" class="form-control wdp_form_control"   min="1990-01-01" max="2020-12-31"  format="dd/mm/yyyy" style="cursor:pointer;" />
