@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-.container{
-  height: 300px;width: 430px;margin-left: 115px;position: relative;
-}
-.container .wrapper{
-  position: relative;height: 200px;width: 50%;margin-left:100px;border-radius: 10px;background: #fff;border: 2px dashed #c2cdda;display: flex;align-items: center;justify-content: center;overflow: hidden;
+.container .wrapper {
+    position: relative;
+    height: 130px;
+    width: 40%;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px dashed #c2cdda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: auto;
 }
 .wrapper.active{
   border: none;
@@ -36,10 +43,27 @@
 .wrapper.active:hover .file-name{
   display: block;
 }
-.container #custom-btn{
-  margin-top: 30px;display: block;width: 100%;height: 50px;border: none;text-decoration: none;font-family: system-ui;text-align: center;line-height: 3;outline: none;border-radius: 25px;color: #fff;font-size: 18px;font-weight: 500;letter-spacing: 1px;text-transform: uppercase;cursor: pointer;background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+.container #custom-btn {
+    display: block;
+    width: 60%;
+    height: 35px;
+    border: none;
+    text-decoration: none;
+    font-family: system-ui;
+    text-align: center;
+    line-height: 35px;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+    margin: 10px auto;
 }
-  
+
   body{
   font-family: Arial, Helvetica, sans-serif;
   /* background: url("/dist/img/rose.png") 0% 0% repeat; */
@@ -56,15 +80,30 @@ fieldset{
   background: url("/dist/img/white.png");
 } */
 select {
-   width: 100%;padding: 10px 15px;border: 1px solid black;border-radius: 4px;background-color: white !important; transition-duration: 5s !important;transition:ease-in-out;
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    background-color: white !important;
+    transition-duration: 5s !important;
+    transition: ease-in-out;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #c9c9c9;
+}
+label.control-label b {
+    font-weight: 400;
+    font-size: 14px;
+}
+label b {
+    font-weight: 400;
+    font-size: 14px;
 }
 option{
    width: 100%;padding: 10px 15px;border: 1px solid black;border-radius: 4px;background-color: white;
 }
 
-.col-3{
-  height:120px;width:1250px;float:left;padding-left: 25px;
-}
+
 .danceapendx{
   float:left; height:auto; width: auto;
 }
@@ -75,23 +114,18 @@ option{
   height: auto; width: 135px; float: left; margin-top: 20px ;
 }
 
-.col-md-4{
-  height: auto; min-height:350px; width:500px;float: left;margin-left: 200px;
-}
-
-.col-md-7 {
-  margin-top:20px;height:58px;width:450px;float:left;
-}
 
 .col-md-6 {
-    height: auto;width: 33%;float: left;margin-top:10px;margin-left:4px;
+    height: auto;width: 33%;float: left;margin-top:0px;margin-left:4px;
 }
 .col-md-5{
-    height: auto;width: 100%;float: left;margin-top:10px;
+    height: auto;width: 100%;float: left;margin-top:0px;
 }
 
 .col-md-5 input[type=text] , .col-md-5 input[type=date] {
-    height: auto;width: 98%;font-size: 17px;
+    width: 98%;
+    font-size: 15px;
+    border: 1px solid #c9c9c9;
 }
 .col-md-5 input[type="text"]:focus,.col-md-5 input[type="date"]:focus,.col-md-5 input[type="date"]:focus{
     height: auto;width: 98%;  background-color: #ddd;outline: none;
@@ -132,20 +166,21 @@ label{
 }
 
 .m-radio {
-  background: #f1f1f1;
-  border: 2px solid black;
-  border-radius: 10px;
-  height: 50px;
-  line-height: 45px;
-  margin-top: 0px;
-  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-  margin-bottom: 20px;
-  margin-left: 10px;
-  width: 1170px;
+    background: #f1f1f1;
+    border: 1px solid #c9c9c9;
+    border-radius: 10px;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 0px;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    margin-bottom: 0px;
+    margin-left: 10px;
+    width: 98%;
 }
 
 label.radio-inline {
-  margin-left: 35px;
+    margin-left: 35px;
+    font-size: 14px;
 }
 
 * {
@@ -161,8 +196,20 @@ label.radio-inline {
   background-color: linear-gradient(red, white, green); */
 }
 
-input[type=text], input[type=tel], input[type=password], input[type=email], textarea{
-  width: 95%;height:50px;padding: 15px;margin: 5px 0 22px 0;display: inline-block;border-radius: 10px;background: #f1f1f1;max-height:100px;max-width:95%;min-height:50px;min-width:95%;margin-left: 10px;
+input[type=text], input[type=tel], input[type=password], input[type=email], textarea {
+    width: 98%;
+    height: 35px;
+    padding: 15px;
+    margin: 0 0 22px 0;
+    display: inline-block;
+    border-radius: 10px;
+    background: #f1f1f1;
+    max-height: 100px;
+    max-width: 98%;
+    min-height: 35px;
+    min-width: 98%;
+    margin-left: 10px;
+	border: 1px solid #c9c9c9;
 }
 
 input[type=text]:focus, input[type=password]:focus,input[type=email]:focus, textarea:focus,input[type=tel]:focus, textarea:focus {
@@ -170,7 +217,15 @@ input[type=text]:focus, input[type=password]:focus,input[type=email]:focus, text
 }
 
 input[type=date], input[type=date]:focus, input[type=date]:active {
-  height: 50px;width: 95%;padding: 15px;margin: 5px 0 22px 0;display: inline-block;border-radius: 10px;background: #f1f1f1;margin-left:10px;
+    height: 35px;
+    width: 95%;
+    padding: 15px;
+    margin: 0px 0 10px 0;
+    display: inline-block;
+    border-radius: 10px;
+    background: #f1f1f1;
+    margin-left: 10px;
+    border: 1px solid #c9c9c9;
 }
 input[type=date]:focus {
   background-color: rgb(187, 184, 184);outline: none;
@@ -242,9 +297,14 @@ margin-bottom: 15px;
 }
 /* Set a style for the submit button */
 .registerbtn {
-  /* background-color: #04aa6d8c; 
-   color: rgb(88, 83, 83);*/
- padding: 16px 20px;border-radius: 10px;cursor: pointer;width: 50%;transition-duration: .5s;border:1px solid transparent;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 15%;
+    transition-duration: .5s;
+    border: 1px solid transparent;
+    background: #008000;
+    color: #fff;
 }
 .registerbtn:active, .registerbtn:hover {
   opacity: 1;
@@ -290,6 +350,7 @@ i.fas.fa-cloud-upload-alt {
 }
 
 
+
 .js-cookie-consent.cookie-consent.fixed.bottom-0.inset-x-0.pb-2 {
   background: #f7e8d4;
   border-radius: 10px;
@@ -321,11 +382,6 @@ p.ml-3.text-black.cookie-consent__message {
   padding: 0px;
 }
 
-
-
-
-
-
 .cke_1 .cke_bottom {
   background-color: rgb(196, 194, 194) !important;
   border-top-color: rgb(196, 194, 194)  !important;
@@ -333,4 +389,21 @@ p.ml-3.text-black.cookie-consent__message {
 .cke_1 .cke_top {
   background-color: rgb(196, 194, 194) !important;
   border-top-color: rgb(196, 194, 194)  !important;
+}
+
+.profile-row {
+    width: 100%;
+    float: left;
+}
+.profile-row .col-md-7 {
+    width: 50%;
+    float: left;
+}
+.profile-row .col-md-4 {
+    width: 50%;
+    float: left;
+}
+
+center.form-title h1 {
+    margin: 0;
 }

@@ -6,48 +6,131 @@
     <li class="nav-item">
     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
-    <li class="nav-item d-none d-sm-inline-block">
-    <a href="report" class="nav-link">Home</a>
-    <label class="bottom-line"></label>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-    <a href="contact" class="nav-link">Contact</a>
-    <label class="bottom-line"></label>
-    </li>
 </ul>
+    <!-- Primary Navigation Menu -->
+            <div class="flex">
+                <!-- Navigation Links -->
+                <div class="nav-item d-none d-sm-inline-block">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" style="color:black;">
+                        {{ __('Dashboard') }}
+                    </x-jet-nav-link>
+                </div>
 
-<!-- SEARCH FORM -->
-<!-- <form class="form-inline ml-3" method="get" action="{{'search'}}">
-    <div class="input-group input-group-sm">
-    <input class="form-control form-control-navbar" type="search" name="search" placeholder="Search" aria-label="Search">
-    <div class="input-group-append">
-        <button class="btn btn-navbar" type="submit">
-        <i class="fas fa-search"></i>
-        </button>
+                <div class="nav-item d-none d-sm-inline-block">
+                    <x-jet-nav-link href="{{ ('contact') }}" :active="request()->routeIs('contact')" style="color:black;">
+                        {{ __('Contacts') }}
+                    </x-jet-nav-link>
+                </div>
+            </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden-options" id="hidden-profile" width="100%" style="display:none;">
+        <!-- Responsive Settings Options -->
+        <div class="pt-4 pb-1 border-t border-gray-200">
+            <div class="card-profile">
+                <!-- Account Management -->
+                <ul style="list-style: none;" class="ulist-profile">
+                    <li class="list-profile">
+                        <div class="button-text">
+                            {{ __('Manage Account') }}
+
+                        </div>
+                    </li>
+                    <li class="list-profile">
+                        <a href="{{ route('profile.show') }}" class="profilelinks" :active="request()->routeIs('profile.show')">
+                            <i class="fa fa-user" aria-hidden="true"></i>  {{ __('Profile') }}
+                        </a>
+                    </li>
+                    <li class="list-profile">
+                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                            <a href="{{ route('api-tokens.index') }}" class="profilelinks" :active="request()->routeIs('api-tokens.index')">
+                                <i class="fa fa-key" aria-hidden="true"></i>  {{ __('API Tokens') }}
+                            </a>
+                        @endif
+                    </li>
+                    <li class="list-profile">
+                        <!-- Authentication -->
+                        <a href="{{ route('logout') }}" class="profilelinks">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i> {{ __('Logout') }}
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+
+    <div class="nav-item d-sm-inline-block">
+        <!-- Settings Dropdown -->
+        <div class="ml-3 relative">
+            <x-jet-dropdown aligncontent="right">
+                <x-slot name="content">
+                    <!-- Account Management -->
+                    <div class="button-text">
+                        {{ __('Manage Account') }}
+                    </div>
+                    <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                        {{ __('Profile') }}
+                    </x-jet-dropdown-link>
+                    @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                        <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                            {{ __('API Tokens') }}
+                        </x-jet-dropdown-link>
+                    @endif
+                    <div class="border-t border-gray-100"></div>
+                        <!-- Authentication -->
+                        <x-jet-dropdown-link href="{{ route('logout') }}">
+                            {{ __('Logout') }}
+                        </x-jet-dropdown-link>
+
+                        </li>
+                    </ul>
+                </x-slot>
+                <x-slot name="trigger">
+                    @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                    {{-- <div class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out"> --}}
+                        <button class="profile-btn" id="clickbtn" name="clickbtn" onclick="show();">
+                            <img class="profile-pic-pos" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                        </button>
+                    {{-- </div> --}}
+                    @else
+                        <span class="inline-flex rounded-md">
+                            <button type="button">
+                                {{ Auth::user()->name }}
+                                <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </span>
+                    @endif
+                </x-slot>
+            </x-jet-dropdown>
+        </div>
     </div>
-</form> -->
+
+
+
 
 <!-- Right navbar links -->
-<ul class="navbar-nav ml-auto">
-    <!-- Messages Dropdown Menu -->
-    
     <!-- Notifications Dropdown Menu -->
-    
-    <li class="nav-item">
-    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-        <i class="fas fa-expand-arrows-alt"></i>
-    </a>
-    </li>
-    <!-- <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-            <i class="fas fa-th-large"></i>
+    <div class="fullscreen-div">
+        <a class="nav-link-fullscreen" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
         </a>
-    <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://localhost:8000/logout" onclick="event.preventDefault();
-            this.closest('form').submit();">Logout</a>
-    </li> -->
-</ul>
+    </div>
 </nav>
+
+<script>
+    function show() {
+  const x = document.getElementById("hidden-profile");
+  if (x.style.display == "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 <!-- /.navbar -->
 
 <!-- Main Sidebar Container -->
@@ -59,8 +142,6 @@
     </div>
 <!-- Sidebar -->
 <div class="sidebar">
-    <!-- Sidebar user panel (optional) -->
-    
     <!-- Sidebar Menu -->
     <nav class="mt-2 mb-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -330,7 +411,7 @@
             </li>
         </ul>
         </li>
-        
+
     </ul>
     </nav>
     <!-- /.sidebar-menu -->
@@ -350,7 +431,7 @@
             <h1 class="m-0">Dashboard</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
+            <!-- <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ __('dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{route('logout')}}">  {{ __('Logout')}}
                     {{-- <form class="logout" method="POST" action="{{ route('logout') }}">
@@ -361,13 +442,13 @@
                             </form> --}}
                         </a>
                 </li>
-                </ol>
+                </ol> -->
             </div><!-- /.col -->
         </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    
+
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -432,8 +513,8 @@
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            
+
             </div>
 
-            
+
 

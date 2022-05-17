@@ -21,7 +21,7 @@
   <div class="row">
   <fieldset>
   <div class="containor">
-  <center><h1>Registeration Form</h1>
+  <center class="form-title"><h1>Registeration Form</h1>
     <p>Please fill in this form for Registration</p></center>
 
 
@@ -50,7 +50,8 @@
     <!-- <label for="image">Upload Your Image:</label>
     <input type="file" enctype="multipart/form-data" name="image" id="image" class="file" required = "true"><br><br> -->
     
-    <div class="col-md-7">  
+  <div class="profile-row">   
+   <div class="col-md-7">  
     <div class="container">
          <div class="wrapper">
             <div class="image">
@@ -205,7 +206,7 @@
   </div><br>
 
   </div>
-  <br>
+</div>
   
   <div class="col-reg" id="name2" style="display: none;">
     <div class="col-fil">
@@ -325,6 +326,7 @@
     var group2 = document.getElementById("agegroupsel2");
     var group3 = document.getElementById("agegroupsel3");
     var elem = document.getElementById("membersel");
+
     elem.value = defaultt;
     group.value = age;
     group1.value=age;
@@ -609,18 +611,18 @@ switch(member){
   <input id="amountfetch" name="amountfetch" type="hidden" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly> 
 <div class="col-12">
   <div class="col-md-6" >
-  <label class="control-label" for="amount"><b>Amount</b></label><br>
+  <label class="control-label" for="amount"><b>Amount</b></label>
   <input id="amount" name="amount" type="text" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>    
   </div>
  
 
   <div class="col-md-6">
-  <label class="control-label" for="username" id="username"><b>Name</b></label> <br>
-  <input id="billing_name" name="billing_name" type="text" placeholder="Name" class="form-control wdp_form_control" required = "true"  ><br>
+  <label class="control-label" for="username" id="username"><b>Name</b></label>
+  <input id="billing_name" name="billing_name" type="text" placeholder="Name" class="form-control wdp_form_control" required = "true"  >
  </div>
 
   <div class="col-md-6">
-  <label class="control-label" for="fathername" id="headfathername"><b>Father's Name</b></label> <br>
+  <label class="control-label" for="fathername" id="headfathername"><b>Father's Name</b></label>
   <input id="fathername" name="fathername" type="text" placeholder="Father's Name" class="form-control wdp_form_control" required = "true" >
   </div><br>
 
@@ -656,13 +658,13 @@ switch(member){
   </script>
 
   <div class="col-md-6">
-    <label class="control-label" for="dateofbirth" id="headdob"><b>Date of Birth</b></label> <br>
+    <label class="control-label" for="dateofbirth" id="headdob"><b>Date of Birth</b></label>
     <input id="DOB" name="dateofbirth" type="date" placeholder="Date of Birth" oninput="ageCalculator()" class="form-control wdp_form_control"   min="1990-01-01" max="2020-12-31"  format="dd/mm/yyyy" style="cursor:pointer;" />
     <span id = "message" style="color:red"></span>
   </div>
   
     <div class="col-md-6">
-<label class="control-label" for="age" id="headage"><b>Age(in Years)</b></label> <br>
+<label class="control-label" for="age" id="headage"><b>Age(in Years)</b></label>
   <input  type="text" id="result" name="age" placeholder="Your Age" class="form-control wdp_form_control" required ="true"  style="cursor:no-drop"  readonly />
     </div>
 
@@ -670,57 +672,56 @@ switch(member){
 
 
 <div class="col-md-6">
-  <label class="control-label" for="add"><b>Address</b></label><br>
+  <label class="control-label" for="add"><b>Address</b></label>
   <textarea name="billing_address" cols="62" class="form-control wdp_form_control" id="address" required = "true" ></textarea>
   </div>
 
   <div class="col-md-6">
-  <label class="control-label" for="add"><b>City</b></label> <br>
+  <label class="control-label" for="add"><b>City</b></label>
   <input id="billing_city" name="billing_city" type="text" placeholder="City" class="form-control wdp_form_control" required = "true" >
 </div>
 
 <div class="col-md-6">
-  <label class="control-label" for="add"><b>State</b></label>  <br>
+  <label class="control-label" for="add"><b>State</b></label>
   <input id="billing_state" name="billing_state" type="text" placeholder="State" class="form-control wdp_form_control" required = "true"  >
  </div>
 
 <div class="col-md-6">
-  <label class="control-label" for="email"><b>Email</b></label>  <br>
+  <label class="control-label" for="email"><b>Email</b></label>
   <input id="email" name="billing_email" type="email" placeholder="Email" class="form-control wdp_form_control" required = "true" >
   </div>
 
   <div class="col-md-6">
-  <label for="ctry"><b>Name of Institute</b></label>  <br>
+  <label for="ctry"><b>Name of Institute</b></label>
   <input id="intitude" name="institute" type="text" placeholder="Name of Institute" class="form-control wdp_form_control" required = "true" >    
 </div>
 
 <div class="col-md-6">
-  <label for="phone"><b>Phone</b></label>  <br>
+  <label for="phone"><b>Phone</b></label>  
   <input id="phone" name="phone" type="tel"  placeholder="Phone" maxlength="10" class="form-control wdp_form_control" required = "true"  >
  </div> 
 
- <div class="col-md-5">
-  <label for="Gender"><b>Gender</b></label><br><br>
+ <div class="col-md-6">
+  <label for="Gender"><b>Gender</b></label>
     <div class="m-radio">
     <label class="radio-inline"><input type="radio" name="gender" id="Male" value="Male" checked="checked">Male </label>
     <label class="radio-inline"><input type="radio" name="gender" id="female" value="Female">Female</label>
-    <label class="radio-inline"><input type="radio" name="gender" id="Transgender" value="Others">Others</label><br><br>
+    <label class="radio-inline"><input type="radio" name="gender" id="Transgender" value="Others">Others</label>
     </div>
   </div>
-  <br>
-  <br>
+  
 
   <div class="col-md-5"> 
-  <label for="Declaration" class="dc-label"><b>Declaration</b></label><br>
-  <input id="declaration" name="declaration" type="text"  value="I , declare that particulars given above are correct and true. I accept the conditions of schedule and competitions of the Rose Festival." required = "true"/><br>
-  </div><br><br>
+  <label for="Declaration" class="dc-label"><b>Declaration</b></label>
+  <input id="declaration" name="declaration" type="text"  value="I , declare that particulars given above are correct and true. I accept the conditions of schedule and competitions of the Rose Festival." required = "true"/>
+  </div>
 
 <div class="col-md-5">
   <label class="control-label" for="date" ><b>Date</b></label>
   </div>
 
 <div class="col-md-5">
-  <input  name="date" id="datepicker" type="date" class="form-control wdp_form_control" required = "true" value=""  min="1990-01-01" max="2021-12-31"><br>
+  <input  name="date" id="datepicker" type="date" class="form-control wdp_form_control" required = "true" value=""  min="1990-01-01" max="2021-12-31">
 </div>
 </div>
 <script>
@@ -762,7 +763,7 @@ switch(member){
 <section class="equal campus text-center">
 <div class="container">
 <div class="heading">
-  <img class="image" src="{{ asset('dist/img/panjab-university-logo-1.jpg')}}"><br>
+  <img class="image" src="{{ asset('dist/img/panjab-university-logo-1.jpg')}}">
 </div>
 <div class=heading2>
   <h2 class="center">Registration  Closed</h2>

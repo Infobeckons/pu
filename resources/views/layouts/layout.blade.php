@@ -9,17 +9,15 @@
 </head>   
 <body class="hold-transition sidebar-mini layout-fixed">
 
-
-    @include('include.header')
-
+  @include('include.header')
+  
   <div class="container">
 
     @yield('content')
 
   </div>
- 
-    @include('include.footer')
 
-    
+  @include('include.footer')
+
   </body>
 </html>

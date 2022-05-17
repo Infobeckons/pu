@@ -1,8 +1,8 @@
 </div>
     </div>
-          
-  </section> 
-      
+
+  </section>
+
 </div>
 
  <footer class="main-footer">
@@ -49,6 +49,7 @@
 <!-- overlayScrollbars -->
 <script src="{{url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
  <!-- AdminLTE App -->
- <script src="{{url('dist/js/adminlte.js')}}"></script>  
+ <script src="{{url('dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{url('dist/js/pages/dashboard.js')}}"></script>
+

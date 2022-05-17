@@ -1,8 +1,3 @@
-@livewireStyles
-
-<!-- Scripts -->
-<script src="{{ mix('js/app.js') }}" defer></script>
-
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,10 +6,11 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <div class="logobar" height="60px" width="100px">
-                            <x-jet-application-mark>
-                            </x-jet-application-mark>
-                        </div>
+                    <div class="logobar" height="60px" width="100px">
+
+   <x-jet-application-mark>
+</x-jet-application-mark>
+    </div>
                     </a>
                 </div>
 
@@ -22,11 +18,6 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-jet-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ ('contact') }}" :active="request()->routeIs('tasks.index')">
-                        {{ __('Contacts') }}
                     </x-jet-nav-link>
                 </div>
 
@@ -117,35 +108,39 @@
 
                         <x-slot name="content">
                             <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
-                            </div>
+                            
+                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                        {{ __('Manage Account') }}
+                                    </div>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
-                            </x-jet-dropdown-link>
+                                    <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                        {{ __('Profile') }}
+                                    </x-jet-dropdown-link>
 
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                    {{ __('API Tokens') }}
-                                </x-jet-dropdown-link>
-                            @endif
 
-                            <div class="border-t border-gray-100"></div>
+                                    @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                                        <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                            {{ __('API Tokens') }}
+                                        </x-jet-dropdown-link>
+                                    @endif
 
-                            <!-- Authentication -->
-                            <x-jet-dropdown-link href="{{ route('logout') }}">
-                       {{ __('Logout') }}
-                   </x-jet-dropdown-link>
-                            {{-- <form method="POST" action="{{ route('logout') }}">
-                                @csrf
 
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
-                                         onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                    {{ __('Logout') }}
-                                </x-jet-dropdown-link>
-                            </form> --}}
+                                    <div class="border-t border-gray-100"></div>
+
+                                    <!-- Authentication -->
+                                    <x-jet-dropdown-link href="{{ route('logout') }}">
+                                        {{ __('Logout') }}
+                                    </x-jet-dropdown-link>
+                                    {{-- <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+
+                                        <x-jet-dropdown-link href="{{ route('logout') }}"
+                                                 onclick="event.preventDefault();
+                                                        this.closest('form').submit();">
+                                            {{ __('Logout') }}
+                                        </x-jet-dropdown-link>
+                                    </form> --}}
+
                         </x-slot>
                     </x-jet-dropdown>
                 </div>

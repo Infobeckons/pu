@@ -120,7 +120,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('emp', 'App\Http\Controllers\pdfs@showEmployees');
     Route::get('/employee/pdf', 'App\Http\Controllers\pdfs@createPDF');
     Route::view('pan', 'pan');
-    
+
     Route::get('logout', 'App\Http\Controllers\HomeController@logout')->name('logout');
 });
 

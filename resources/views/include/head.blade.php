@@ -42,8 +42,10 @@
  <link rel="stylesheet" href="{{ asset('plugins/jquery-ui/jquery-ui.css')}}">
   <link rel="stylesheet" href="{{ asset('plugins/jquery-ui/jquery-ui.js')}}">
   <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css')}}">
-  
-<!-- {{-- 
+  <link rel=”stylesheet” href=”http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css”>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+<!-- {{--
   <link rel="stylesheet" href="{{ asset('ckeditor/ckeditor.js')}}">
   <link rel="stylesheet" href="{{ asset('ckeditor/samples/js/samples.js')}}"> --}} -->
 

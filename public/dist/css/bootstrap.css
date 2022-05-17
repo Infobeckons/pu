@@ -38,11 +38,11 @@
   width: 100%;
   border-radius: 5px;
 }
-.table-responsive {
+/* .table-responsive {
   display: inline-table   !important;
   width: 100%   !important;
   overflow-x: auto    !important;
-}
+} */
 .table-bordered thead td, .table-bordered thead th, .table-bordered thead tr {
   border: 1px solid black !important;
 }
@@ -115,7 +115,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 .logobar b:active{
   color: transparent;
-  display: none; 
+  display: none;
   transition-delay: .5s;
 }
 .os-viewport {
@@ -177,7 +177,7 @@ form.logout {
   float: left;
 }
 .d-none:hover {
-  border-bottom: 1px solid rgb(92, 35, 119);
+  /* border-bottom: 1px solid rgb(92, 35, 119); */
   transition-duration: .5s;
   left: 100%;
 }
@@ -302,4 +302,71 @@ a.inline-flex.items-center.px-1.pt-1.border-b-2.border-transparent.text-sm.font-
 .cke_1 a.cke_combo_button:hover, .cke_1 a.cke_combo_button:focus, .cke_1 .cke_combo_on a.cke_combo_button {
   background-color: rgb(17, 247, 74) !important;
   border-color: rgb(17, 247, 74) !important;
+}
+
+
+img.profile-pic-pos {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+button.profile-btn {
+    border: 0px solid black;
+    border-radius: 50%;
+    padding: 0px;
+}
+.navigation-profile{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+i.fas.fa-compress-arrows-alt {
+    color: black;
+}
+i.fas.fa-expand-arrows-alt {
+    color: black;
+}
+a.profilelinks {
+    padding: 15px;
+}
+ul.ulist-profile {
+    padding: 0px 15px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid aliceblue;
+    position: absolute;
+    right: 40px;
+    top: 52px;
+}
+.button-text {
+    color: darkgray;
+}
+li.list-profile {
+    padding: 6px;
+}
+.flex {
+    flex: 2;
+}
+.fullscreen-div {
+    padding: 20px;
+}
+li.list-profile a i {
+    color: #dc3545;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+li.list-profile a {
+    color: #ababab;
+}
+
+/* .hide{
+    display: block !important;
+} */
+@media only screen and (min-width: 375)
+{
+    table.table.table-bordered.mb-5 {
+        width: 200px !important;
+    }
 }

@@ -4,7 +4,7 @@
 	<!-- Header Ends -->
 	<!-- Page Content Start -->
 	<!-- ================== -->
-	
+
 		<!-- end col -->
 				<div class="portlet-heading">
 
@@ -19,7 +19,7 @@
             {{Session::get('fail')}}
           </div>
         	@endif
-                  
+
 				  <h3 class="portlet-title text-dark text-uppercase" style="padding-bottom: 1%">Registration is ON/OFF</h3>
 			</div>
 					<!-- /primary heading -->
@@ -28,7 +28,7 @@
     window.location = "{{'registeration'}}";
     					}
 					</script> --}}
-				<br>  
+				<br>
 <!-- /.row -->
 <!-- Main row -->
 <form action="regon" method="POST">
@@ -38,35 +38,38 @@
     @foreach($user as $value)
 				<div class="row">
 				<div class="col-md-4 space">Registration is:&nbsp; <b class=color>{{$value->reg_status}}</b></div>
-                    
-					<div class="col-md-4 text-center"> 			
+
+					<div class="col-md-4 text-center">
     				<div class="onoffswitch4">
 
                         <label class="switch">
                             @if($value->reg_status=="OFF")
-                            <input type="hidden" name="reg" value="ON">   
-                            {{-- <input type="hidden" name="reg" value="OFF" > --}}
+                                {{-- <input type="hidden" name="reg" value="ON"> --}}
+                                <input type="checkbox" name="reg" value="OFF" >
+                                {{-- <input type="hidden" name="reg" value="OFF" > --}}
                             @else
-                            <input type="hidden" name="reg" value="OFF"> 
-                            {{-- <input type="hidden" name="reg" value="ON" > --}}
+                                {{-- <input type="hidden" name="reg" value="OFF"> --}}
+                                <input type="checkbox" name="reg" value="ON" checked>
+                                {{-- <input type="hidden" name="reg" value="ON" > --}}
                             @endif
-                            {{-- <span class="slider round"></span> --}}
-                          </label>
+                                {{-- <input type="checkbox" name="reg" checked> --}}
+                                <span class="slider round"></span>
+                        </label>
 
-                      {{-- <style>
+                          <style>
                             .switch {
                               position: relative;
                               display: inline-block;
                               width: 60px;
                               height: 34px;
                             }
-                            
-                            .switch input { 
+
+                            .switch input {
                               opacity: 0;
                               width: 0;
                               height: 0;
                             }
-                            
+
                             .slider {
                               position: absolute;
                               cursor: pointer;
@@ -78,11 +81,10 @@
                               -webkit-transition: .4s;
                               transition: .4s;
                             }
-                            
+
                             .slider:before {
                               position: absolute;
                               content: "";
-                              color:white;
                               height: 26px;
                               width: 26px;
                               left: 4px;
@@ -95,45 +97,43 @@
                             input:checked + .slider {
                               background-color: #2196F3;
                             }
-                            
+
                             input:focus + .slider {
                               box-shadow: 0 0 1px #2196F3;
                             }
-                            
+
                             input:checked + .slider:before {
                               -webkit-transform: translateX(26px);
                               -ms-transform: translateX(26px);
                               transform: translateX(26px);
                             }
-                            
+
                             /* Rounded sliders */
                             .slider.round {
                               border-radius: 34px;
                             }
-                            
+
                             .slider.round:before {
                               border-radius: 50%;
                             }
-                            </style> --}}
- 
-            <button type=submit class="form-control btn btn-primary" name="submit" value="Submit">ON/OFF</button>       
-            
-						</div>
-							</div>
-						</div>
+                            </style>
+
+                        {{-- <button type=submit class="form-control btn btn-primary" name="submit" value="Submit">ON/OFF</button> --}}
+					</div>
+				</div>
+			</div>
             @endforeach
-            @endif      
+            @endif
         </form>
-        <div class="col-md-12"></div>
-                        
-						<script>
+
+						{{-- <script>
 							initSample();
-						</script>
+						</script> --}}
 						<div class="clearfix">
 						</div>
 					</div>
 		    </div>
-		
+
 		<!-- Page Content Ends -->
     </section>
     <!-- /.content -->

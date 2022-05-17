@@ -32,7 +32,7 @@
                     <td><center><input type='text' name="id" id="{{ $data->Id }}" value='{{ $data->Id }}' readonly></center></td>
                     <td><center><input type='number' name="amount" id="amount" value='{{ $data->amount }}' pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" required></center></td>
                     <!-- <td><button type="submit" name="submit" value="submit">Submit</button></td>  -->
-                    <td><button type="submit" name="submit" value="submit">Submit</button></td> 
+                    <td><button type="submit" name="submit" value="submit" style="border:1px solid transparent; border-radius:10px;">Submit</button></td> 
                 </form>
                 </tr>
                 @endforeach
