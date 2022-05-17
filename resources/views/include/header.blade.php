@@ -500,12 +500,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                <h3>
-                <!-- @if(isset($visitor))
-                   {{$visitor}}
-                   @endif -->
-                   10,004
-                </h3>
+                <h3>{{$Visitor}}</h3>
                 <p>Total Visitors</p>
                 </div>
                 <div class="icon">

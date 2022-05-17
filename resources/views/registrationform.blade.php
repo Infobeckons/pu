@@ -709,7 +709,7 @@ switch(member){
 
 <div class="col-md-6">
   <label for="phone"><b>Phone</b></label>
-  <input id="phone" name="phone" type="tel"  placeholder="Phone" maxlength="10" class="form-control wdp_form_control" required = "true"  >
+  <input id="phone" name="phone" type="number" step="0.01" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" placeholder="Phone" maxlength="10" class="form-control wdp_form_control" required = "true"  >
  </div>
 
  <div class="col-md-6">

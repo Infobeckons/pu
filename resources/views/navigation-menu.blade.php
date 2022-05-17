@@ -21,7 +21,13 @@
                     </x-jet-nav-link>
                 </div>
 
-                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ ('contact') }}" :active="request()->routeIs('contact')">
+                        {{ __('Contacts') }}
+                    </x-jet-nav-link>
+                </div>
+
+                {{-- <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.index')">
                         {{ __('Tasks') }}
                     </x-jet-nav-link>
@@ -31,7 +37,7 @@
                     <x-jet-nav-link href="{{ route('admin.index') }}" :active="request()->routeIs('admin.index')">
                         {{ __('Admin_Panel') }}
                     </x-jet-nav-link>
-                </div> -->
+                </div> --> --}}
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -108,7 +114,7 @@
 
                         <x-slot name="content">
                             <!-- Account Management -->
-                            
+
                                     <div class="block px-4 py-2 text-xs text-gray-400">
                                         {{ __('Manage Account') }}
                                     </div>

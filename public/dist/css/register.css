@@ -195,8 +195,15 @@ label.radio-inline {
   /* background-color: white;
   background-color: linear-gradient(red, white, green); */
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
 
-input[type=text], input[type=tel], input[type=password], input[type=email], textarea {
+input[type=text], input[type=number], input[type=password], input[type=email], textarea {
     width: 98%;
     height: 35px;
     padding: 15px;

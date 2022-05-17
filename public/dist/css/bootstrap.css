@@ -361,9 +361,17 @@ li.list-profile a {
     color: #ababab;
 }
 
-/* .hide{
-    display: block !important;
-} */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+img.brand-image.img-circle.elevation-3 {
+    color: white;
+}
 @media only screen and (min-width: 375)
 {
     table.table.table-bordered.mb-5 {

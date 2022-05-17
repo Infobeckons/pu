@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('report', function (){    return view('report');     });
     Route::post('report', 'App\Http\Controllers\reportcontroller@show');
 
+    Route::get('user/contact', 'App\Http\Controllers\reportcontroller@showcontact');
     Route::get('contact', 'App\Http\Controllers\reportcontroller@showcontact');
     Route::post('addcontact', 'App\Http\Controllers\reportcontroller@contactupdate');
 
@@ -128,3 +129,6 @@ Route::view('acknowledge', 'acknowledge');
 Route::view('form','registrationform');
 Route::get('test', 'App\Http\Controllers\reportController@test');
 Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');
+Route::name('front.')->middleware('visitor')->group(function() {
+    Route::get('/', 'App\Http\Controllers\HomeController@index')->name('index');
+});
