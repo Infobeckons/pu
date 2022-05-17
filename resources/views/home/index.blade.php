@@ -369,7 +369,7 @@
                                             </p>
                                         </div>
                                         <div class="col-sm-5">
-                                            <a href="{{url('regs')}}" class="btn m-btncolr  m-font reg-btn">REGISTRATION</a>
+                                            <a href="{{url('regs')}}" class="btn m-btncolr  m-font">REGISTRATION</a>
                                         </div>
                                     </div>
                                 </div>

@@ -16,29 +16,29 @@ class formup extends Controller
     //Insert data from registeration page to database
      //This is the main submission form where user fills their personal details for registeration//
     protected function addData(Request $request){
-        $validate = $request->validate([
-            'image' => 'required',
-            'eventname' => 'required',
-            'agegroup' => 'required',
-            'amount' => 'required',
-            'billing_name' => 'required',
-            'fathername' => 'required',
-            'dateofbirth' => 'required',
-            'age' => 'required',
-            'pay' => 'required',
-            'billing_address' => 'required',
-            'billing_city' => 'required',
-            'billing_state' => 'required',
-            'billing_email' => 'required',
-            'institute' => 'required',
-            'phone' => 'required',
-            'gender' => 'required',
-            'declaration' => 'required',
-            'date' => 'required'
-        ]);
-        if($validate==false){
-            echo "<script>alert('All fields are required.😊')</script>";
-        }
+        // $validate = $request->validate([
+        //     'image' => 'required',
+        //     'eventname' => 'required',
+        //     'agegroup' => 'required',
+        //     'amount' => 'required',
+        //     'billing_name' => 'required',
+        //     'fathername' => 'required',
+        //     'dateofbirth' => 'required',
+        //     'age' => 'required',
+        //     'pay' => 'required',
+        //     'billing_address' => 'required',
+        //     'billing_city' => 'required',
+        //     'billing_state' => 'required',
+        //     'billing_email' => 'required',
+        //     'institute' => 'required',
+        //     'phone' => 'required',
+        //     'gender' => 'required',
+        //     'declaration' => 'required',
+        //     'date' => 'required'
+        // ]);
+        // if($validate==false){
+        //     echo "<script>alert('All fields are required.😊')</script>";
+        //}
 
         $id= 'PURF'.mt_rand(000001,999999);
         $PURFID = $id;

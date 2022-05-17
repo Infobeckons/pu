@@ -134,7 +134,7 @@
 	  <option value="Sloganwriting">Slogan Writing Competition</option>
   </select>
 
-    <div class="col-md-4" name="agegroup" id="agegroup" style="display:none" >
+    <div class="col-md-6" name="agegroup" id="agegroup" style="display:none" >
       <label class="control-label" for="agegroup"><b>Your AgeGroup</b></label>
       <select name="agegroup[]" id="agegroupsel" class="form-control wdp_form_control" >
         <option value="" hidden>---Select---</option>
@@ -144,7 +144,7 @@
       </select>
     </div>
 
-    <div class="col-md-4" name="agegroup1" id="agegroup1" style="display:none">
+    <div class="col-md-6" name="agegroup1" id="agegroup1" style="display:none">
       <label class="control-label" for="agegroup1"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel1" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -154,7 +154,7 @@
         </select>
     </div>
 
-    <div class="col-md-4" name="agegroup2" id="agegroup2" style="display:none">
+    <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
       <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel2" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -164,7 +164,7 @@
         </select>
     </div>
 
-    <div class="col-md-4" name="agegroup3" id="agegroup3" style="display:none">
+    <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
       <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel3" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -174,7 +174,7 @@
         </select>
     </div>
     <!-- {{-- <input type="hidden" name="purf_id" value="PUrf_default"> --}} -->
-    <div class="col-md-4" id="members" style="display:none" >
+    <div class="col-md-6" id="members" style="display:none" >
     <label class="control-label" for="members"><b>Members</b></label>
     <select  name="members" class="form-control wdp_form_control" id="membersel" required="true"  onchange="refresh2(); refresh3();">
     	<option value="" hidden>---Select---</option>
@@ -184,7 +184,7 @@
     </select>
   </div>
 
-          <div class="col-md-4" id="members1" style="display:none">
+          <div class="col-md-6" id="members1" style="display:none">
             <label class="control-label" for="members1"><b>Group of members</b></label>
            <select name="members1" id="member1" class="form-control wdp_form_control" >
              <option value="" hidden>---Select---</option>
@@ -200,7 +200,7 @@
           </div>
           <br>
 
-  <div class="col-md-4" id="group" style="display:none">
+  <div class="col-md-6" id="group" style="display:none">
     <label class="control-label" for="group"><b>Group/Individual/Team's' Name</b></label>
     <input id="group" name="group" type="text" placeholder="Group/Individual/Team's Name" class="form-control wdp_form_control">
   </div><br>
@@ -208,18 +208,18 @@
   </div>
 </div>
 
-  <div class="col-md-4 col-reg" id="name2" style="display: none;">
-    <div class="col-fil">
-      <label class="control-label" for="name"><b>Name</b></label>
-      <input type="text" name="name"  placeholder="Name" style="float: left;" />
+  <div class="row col-reg-dute" id="name2" style="display: none;">
+    <div class="col-md-4">
+      <label class="control-label" for="name"><b>Name</b></label><br>
+      <input type="text" name="name"  placeholder="Name"/>
     </div>
-    <div class="col-fil">
-      <label class="control-label" for="Fname"><b>Father's Name'</b></label>
-      <input type="text" name="Fname" placeholder="Father's_name'" style="float: left; "/>
+    <div class="col-md-4">
+      <label class="control-label" for="Fname"><b>Father's Name'</b></label><br>
+      <input type="text" name="Fname" placeholder="Father's_name"/>
     </div>
-    <div class="col-fil">
-      <label class="control-label" for="Address"><b>Address</b></label>
-      <input type="text" name="Address" placeholder="Address" style="float: left; "/>
+    <div class="col-md-4">
+      <label class="control-label" for="Address"><b>Address</b></label><br>
+      <input type="text" name="Address" placeholder="Address" />
     </div>
   </div>
 
@@ -488,7 +488,7 @@ switch(member){
   if(gmember==member){
       document.getElementById('amount').value=amount3;
 	    for(x=2 ; x<=member; x++){
-        data+='<div class="col-3"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
+        data+='<div class="row"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
         i++;
     }
     // if(i==gmember){
@@ -503,7 +503,7 @@ switch(member){
   if(gmember==member){
       document.getElementById('amount').value=amount3;
 	    for(x=2 ; x<=member; x++){
-        data+='<div class="col-3"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
+        data+='<div class="row"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
         i++;
     }
     document.getElementById("danceapend").innerHTML=data;
@@ -513,7 +513,7 @@ switch(member){
   if(gmember==member){
       document.getElementById('amount').value=amount3;
 	    for(x=2 ; x<=member; x++){
-        data+='<div class="col-3"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
+        data+='<div class="row"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
         i++;
     }
     document.getElementById("danceapend").innerHTML=data;
@@ -523,7 +523,7 @@ switch(member){
   if(gmember==member){
       document.getElementById('amount').value=amount3;
 	    for(x=2 ; x<=member; x++){
-        data+='<div class="col-3"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
+        data+='<div class="row"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
         i++;
     }
     document.getElementById("danceapend").innerHTML=data;
@@ -533,7 +533,7 @@ switch(member){
   if(gmember==member){
       document.getElementById('amount').value=amount3;
 	    for(x=2 ; x<=member; x++){
-        data+='<div class="col-3"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
+        data+='<div class="row"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
         i++;
     }
     document.getElementById("danceapend").innerHTML=data;
@@ -543,7 +543,7 @@ switch(member){
   if(gmember==member){
       document.getElementById('amount').value=amount3;
 	    for(x=2 ; x<=member; x++){
-        data+='<div class="col-3"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
+        data+='<div class="row"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
         i++;
     }
     document.getElementById("danceapend").innerHTML=data;
@@ -553,7 +553,7 @@ switch(member){
   if(gmember==member){
       document.getElementById('amount').value=amount3;
 	    for(x=2 ; x<=member; x++){
-        data+='<div class="col-3"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
+        data+='<div class="row"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
         i++;
     }
     document.getElementById("danceapend").innerHTML=data;
@@ -563,7 +563,7 @@ switch(member){
   if(gmember==member){
       document.getElementById('amount').value=amount3;
 	    for(x=2 ; x<=member; x++){
-        data+='<div class="col-3"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
+        data+='<div class="row"><div class="form-group member-col" style="display:block" id="member'+i+'"><label class="col-md-3 control-label" for="member'+i+'" id="member'+i+'">Member  '+i+'</label><div class="danceapend"><input id="membername'+i+'" name="membername'+i+'" type="text" placeholder="Name" class="member"  style="float:left" required></div><div class="danceapend"><input id="memberfathername'+i+'" name="memberfathername'+i+'" type="text" placeholder="Father Name" class="member" style="float:left" required></div><div class="danceapend"><input id="memberdob'+i+'" name="memberdob'+i+'" type="text" placeholder="Address" class="member"  required></div></div></div><br>';
         i++;
     }
     document.getElementById("danceapend").innerHTML=data;
@@ -616,15 +616,8 @@ switch(member){
         }
 </script>
 
-
-  <br>
  <br>
-  <input id="amountfetch" name="amountfetch" type="hidden" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>
-
-  <div class="col-md-4">
-  <label class="control-label" for="amount"><b>Amount</b></label>
-  <input id="amount" name="amount" type="text" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>
-  </div>
+  
 
 
   <div class="col-md-4">
@@ -635,7 +628,12 @@ switch(member){
   <div class="col-md-4">
   <label class="control-label" for="fathername" id="headfathername"><b>Father's Name</b></label>
   <input id="fathername" name="fathername" type="text" placeholder="Father's Name" class="form-control wdp_form_control" required = "true" >
-  </div><br>
+  </div>
+  
+  <div class="col-md-4">
+  <label class="control-label" for="add"><b>Address</b></label>
+  <textarea name="billing_address" cols="62" class="form-control wdp_form_control" id="address" required = "true" style="height:35px !important"></textarea>
+  </div>
 
 
 <script>
@@ -668,6 +666,14 @@ switch(member){
   }
   </script>
 
+
+<input id="amountfetch" name="amountfetch" type="hidden" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>
+
+  <div class="col-md-4">
+  <label class="control-label" for="amount"><b>Amount</b></label>
+  <input id="amount" name="amount" type="text" value="" class="form-control wdp_form_control" style="cursor:no-drop" readonly>
+  </div>
+  
   <div class="col-md-4">
     <label class="control-label" for="dateofbirth" id="headdob"><b>Date of Birth</b></label>
     <input id="DOB" name="dateofbirth" type="date" placeholder="Date of Birth" oninput="ageCalculator()" class="form-control wdp_form_control"   min="1990-01-01" max="2020-12-31"  format="dd/mm/yyyy" style="cursor:pointer;" />
@@ -681,16 +687,10 @@ switch(member){
 
   <input id="pay" name="pay" type="hidden" value="success" placeholder="Success or fail" class="form-control wdp_form_control" required = "true" >
 
-
-<div class="col-md-4">
-  <label class="control-label" for="add"><b>Address</b></label>
-  <textarea name="billing_address" cols="62" class="form-control wdp_form_control" id="address" required = "true" style="height:35px !important"></textarea>
-  </div>
-
   <div class="col-md-4">
   <label class="control-label" for="add"><b>City</b></label>
   <input id="billing_city" name="billing_city" type="text" placeholder="City" class="form-control wdp_form_control" required = "true" >
-</div>
+  </div>
 
 <div class="col-md-4">
   <label class="control-label" for="add"><b>State</b></label>
@@ -756,10 +756,10 @@ switch(member){
 <input type="hidden" name="tid" id="tid" readonly />
 
 
-
-<div class="col-md-5">
+<div class="col-md-12 text-center">
     <button type="submit" name="submit" id="submit" value="submit" class="btn wdp_btn wdp_margin_top_4 registerbtn">Register</button>
 </div>
+
 
 </form>
 
