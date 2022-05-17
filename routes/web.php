@@ -23,9 +23,9 @@ use Illuminate\Http\Request;
 
 // Route::view('/', 'welcome');
 
-Route::get('/', function(){
-   return view('welcome');
-});
+// Route::get('/', function(){
+//    return view('home/index');
+// });
 Route::get('/show2','App\Http\Controllers\ViewController@show' );
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -49,7 +49,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('report', function (){    return view('report');     });
     Route::post('report', 'App\Http\Controllers\reportcontroller@show');
 
-    Route::get('user/contact', 'App\Http\Controllers\reportcontroller@showcontact');
     Route::get('contact', 'App\Http\Controllers\reportcontroller@showcontact');
     Route::post('addcontact', 'App\Http\Controllers\reportcontroller@contactupdate');
 
@@ -130,5 +129,12 @@ Route::view('form','registrationform');
 Route::get('test', 'App\Http\Controllers\reportController@test');
 Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');
 Route::name('front.')->middleware('visitor')->group(function() {
-    Route::get('/', 'App\Http\Controllers\HomeController@index')->name('index');
+    Route::view('/', 'home/index')->name('index');
+    Route::view('/about', 'home/aboutus')->name('about');
+    Route::view('/rules', 'home/rules')->name('rules');
+    Route::view('/registrationform', 'registrationform')->name('registrationform');
+    Route::view('/book', 'home/stall-booking')->name('book');
+    Route::view('/event', 'home/eventschedule')->name('event');
+    Route::view('/gal', 'home/gallery')->name('gal');
+    Route::view('/conn', 'home/contact')->name('conn');
 });

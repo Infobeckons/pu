@@ -28,7 +28,7 @@ $(function() {
     <br>
     <br>
 	<div class="wraper container-fluid">
-		
+
 		<!-- end col -->
 		<div class="row">
 			<div class="col-lg-12">
@@ -37,7 +37,7 @@ $(function() {
 				<h3 class="portlet-title text-dark text-uppercase" style="padding-bottom: 1%">
 				Home Page</h3>
 			</div>
-		<form method="post" name="multiple_upload_form" id="multiple_upload_form" enctype="multipart/form-data" action="https://panchayatiduniya.com/rose-festival/home_page_update">
+		<form method="post" name="multiple_upload_form" id="multiple_upload_form" enctype="multipart/form-data" action="home_page_update">
 			<div >
 			@csrf
 				<input type="hidden" name="id" value="1">
@@ -123,7 +123,7 @@ $(function() {
 					</div>
 			</form>
 		</div>
-		
+
 		<!-- Page Content Ends -->
     </section>
     <!-- /.content -->

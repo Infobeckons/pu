@@ -48,42 +48,42 @@
                                    Reports
                           </h3>
                               <br>
-                          <form action="formshow" method="post" enctype="multipart/form-data">
-                                  @csrf
-                                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-                                   <div class="portlet">
-                                      <div class="col-md-4">
-                                             <select name="eventname" class="form-control input-md" id="eventname" :value="old('eventname')" required autofocus >
-                                                <option value="no" hidden>Select Your Event </option>
-                                                <option value="Collargemaking">Collarge Making Competition </option>
-                                                <option value="Creativemehandi">Creative Mehandi Competition</option>
-                                                <option value="Dance">Dancing Competition </option>
-                                                <option value="Facepainting">Face Painting </option>
-                                                <option value="Fancydress">Fancy Dress Competition </option>
-                                                <option value="Paintingmentally">Painting Competition For Children With Intellectual Disability (Mentally Challenged)</option>
-                                                <option value="Paintingcom">Painting Competition </option>
-                                                <option value="photography">Photography Competition </option>
-                                                <option value="Poeticrecitation">Poetic Recitation </option>
-                                                <option value="Rangolicom">Rangoli Competition </option>
-                                                <option value="Roseprincess">Rose Prince And Rose Princess </option>
-                                                <option value="Rosequiz">Rose Quiz </option>
-                                                <option value="Singing">Singing Competition </option>
-                                                <option value="Sloganwriting">Slogan Writing Competition </option>
-                                                <!---<option value="fashion">FASHION COMPETITION </option>-->
-                                           </select>
-                                       </div>
-                                      <div class="col-md-4">
-                                          <select name="agegroup" id="agegroup" style="display:none" class="form-control input-md"  :value="old('agegroup')" >
-                                          </select>
-                                      </div>
-                                      <div class="col-md-4">
-                                            <select name="members" id="members" style="display:none" class="form-control input-md" :value="old('members')" >
-                                            </select>
-                                      </div>
-<script>
-          jQuery(document).ready(function(){
-          jQuery("#eventname").change(function(){
-              var eventName=$(this).val();
+                        <form action="formshow" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                            <div class="portlet">
+                                <div class="col-md-4">
+                                    <select name="eventname" class="form-control input-md" id="eventname" :value="old('eventname')" required autofocus >
+                                        <option value="no" hidden>Select Your Event </option>
+                                        <option value="Collargemaking">Collarge Making Competition </option>
+                                        <option value="Creativemehandi">Creative Mehandi Competition</option>
+                                        <option value="Dance">Dancing Competition </option>
+                                        <option value="Facepainting">Face Painting </option>
+                                        <option value="Fancydress">Fancy Dress Competition </option>
+                                        <option value="Paintingmentally">Painting Competition For Children With Intellectual Disability (Mentally Challenged)</option>
+                                        <option value="Paintingcom">Painting Competition </option>
+                                        <option value="photography">Photography Competition </option>
+                                        <option value="Poeticrecitation">Poetic Recitation </option>
+                                        <option value="Rangolicom">Rangoli Competition </option>
+                                        <option value="Roseprincess">Rose Prince And Rose Princess </option>
+                                        <option value="Rosequiz">Rose Quiz </option>
+                                        <option value="Singing">Singing Competition </option>
+                                        <option value="Sloganwriting">Slogan Writing Competition </option>
+                                        <!---<option value="fashion">FASHION COMPETITION </option>-->
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="agegroup" id="agegroup" style="display:none" class="form-control input-md"  :value="old('agegroup')" >
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                      <select name="members" id="members" style="display:none" class="form-control input-md" :value="old('members')" >
+                                      </select>
+                                </div>
+            <script>
+                jQuery(document).ready(function(){
+                jQuery("#eventname").change(function(){
+                var eventName=$(this).val();
                   if(eventName=='Collargemaking' || eventName=='Creativemehandi' || eventName=='Poeticrecitation' || eventName=='Rangolicom' || eventName=='Sloganwriting' || eventName=='Rosequiz' || eventname=="photography")
                   {
                       $('#agegroup').css('display','block');
@@ -141,110 +141,100 @@
                   }
                 });
             });
-</script>
-        <button class="col-md-4 form-control input-md btn btn-primary">Submit</button>
+            </script>
+            <button class="col-md-4 form-control input-md btn btn-primary">Submit</button>
 
             <div class="clearfix">
             </div>
-
         </div>
-            </form>
-                </br>
-                    </div>
-                          </div>
-                  <!-- end col -->
-                  <div class="row">
-                      <div class="col-lg-12">
-                          <div class="portlet">
-                          <h3 class="portlet-title text-dark text-uppercase">Rose Festival 2021
-                                </h3>
-                              <!-- /primary heading -->
-                              <div class="portlet-heading">
-                              <div class="portlet">
-                                  <div class="portlet-body">
-                                      <div class="table-responsive">
-                                        @if(isset($users))
-							            <table class="table">
-                                                @if($users==null)
-                                                <div class></div>
-                                                @else
-									        <thead>
-									        	<tr>
-									        		<th>Register ID</th>
-                                                    <th>Competition</th>
-									        		<th>Name</th>
-                                                    <th>Father Name</th>
-                                                    <th>Group Name</th>
-									        		<th>Members</th>
-									        		<th>Payment</th>
-									        		<th>DOB</th>
-									        	</tr>
-									        </thead>
-                                            @endif
-							                @foreach($users as $user)
-									<tr>
-										<td>{{$user->PURF_ID}}</td>
-                                        <td>{{$user->eventname}}</td>
-										<td>{{$user->name}}</td>
-										<td>{{$user->fname}}</td>
-										<td>{{$user->groupname}}</td>
-                                        <td>{{$user->member}}</td>
-                                        @if($user->payment=='success')
-										<td><span class="label label-success">{{$user->payment}}</span></td>
+    </form>
+
+    </div>
+    </div>
+        <!-- end col -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="portlet">
+
+                    <!-- /primary heading -->
+                    <div class="portlet-heading">
+                        <div class="portlet">
+                            <div class="portlet-body">
+                                <div class="table-responsive">
+                                @if(isset($users))
+						            <table class="table">
+                                        <h3 class="portlet-title text-dark text-uppercase">Rose Festival 2021</h3>
+                                        @if($users==null)
+                                            <div class></div>
                                         @else
-                                        <td><span class="label label-danger">{{$user->payment}}</span></td>
+								        <thead>
+								        	<tr>
+								        		<th>Register ID</th>
+                                                <th>Competition</th>
+								        		<th>Name</th>
+                                                <th>Father Name</th>
+                                                <th>Group Name</th>
+								        		<th>Members</th>
+								        		<th>Payment</th>
+								        		<th>DOB</th>
+								        	</tr>
+								        </thead>
                                         @endif
-										<td>{{$user->dob}}</td>
-									</tr>
-								@endforeach
+						                @foreach($users as $user)
+								        <tr>
+									        <td>{{$user->PURF_ID}}</td>
+                                            <td>{{$user->eventname}}</td>
+									        <td>{{$user->name}}</td>
+									        <td>{{$user->fname}}</td>
+									        <td>{{$user->groupname}}</td>
+                                            <td>{{$user->member}}</td>
+                                        @if($user->payment=='success')
+									        <td><span class="label label-success">{{$user->payment}}</span></td>
+                                        @else
+                                            <td><span class="label label-danger">{{$user->payment}}</span></td>
+                                        @endif
+									        <td>{{$user->dob}}</td>
+								        </tr>
+							            @endforeach
+                                        @if($users==null)
+                                            <div class="row-col" style="display:none;">
+                                            </div>
+                                        @elseif(count($users) < 5)
+                                            <div class="row-col" style="display:none;">
+                                            </div>
+                                        @else
+                                        <div class="row-col">
+                                            {{-- {!! var_dump($users) !!} --}}
+                                            {{$users->render('vendor.pagination.bootstrap-4') }}
+                                            {{-- {{ $users->render('vendor.pagination.simple-default') }} --}}
+                                        </div>
+                                            <style>
+                                                .w-5{
+                                                    display: none;
+                                                }
+                                            </style>
+
+                                        @endif
+                                    </table>
 
                                 @if($users==null)
-                                <div class="row-col" style="display:none;">
-                                </div>
-                                @elseif(count($users) < 5)
-                                <div class="row-col" style="display:none;">
-                                </div>
-                                @else
-
-                                <div class="row-col">
-                                    {{-- {!! var_dump($users) !!} --}}
-                                     {{$users->render('vendor.pagination.bootstrap-4') }}
-                                    {{-- {{ $users->render('vendor.pagination.simple-default') }} --}}
-                                </div>
-                                <style>
-                                    .w-5{
-                                        display: none;
-                                    }
-                                </style>
+                                <div class="text-center"><h2>There isn't Any Data!</h2></div>
                                 @endif
-                            </table>
+                                @else
+							    <div class="text-center"><h2>There isn't Any Data!</h2></div>
+                                @endif
+                                    {{-- {{ dump($users)}} --}}
+                                </div>
+                                <hr class="hidden-xs">
+                                <div class="row">
+                                    <button class="col-md-4 col-lg-4 col-xs-4 btn btn-primary" onclick="exportTableToCSV('members.csv')"><i class="zmdi zmdi-cloud-download"></i>&nbsp;Excel File</button>
+                                    <div class="col-md-2 col-lg-2 col-xs-2"></div>
+                                    <button class="col-md-4 col-xs-4 col-lg-4 btn btn-danger" type="button" id="create_pdf" value="Generate PDF"><i class="zmdi zmdi-cloud-download"></i>&nbsp;PDF File</button>
+                                    <div class="col-md-2 col-lg-2 col-xs-2"></div>
+                                </div>
 
-                            @if($users==null)
-                            <div class="text-center"><h2>There isn't Any Data!</h2></div>
-                            @endif
-
-                            @else
-								<div class="text-center"><h2>There isn't Any Data!</h2></div>
-                            @endif
-
-
-                            {{-- {{ dump($users)}} --}}
-
-
-
-                                      </div>
-                                      <hr class="hidden-xs">
-                                      <div class="row">
-
-                                          <button class="col-md-4 col-lg-4 col-xs-4 btn btn-primary" onclick="exportTableToCSV('members.csv')"><i class="zmdi zmdi-cloud-download"></i>&nbsp;Excel File</button>
-                                          <div class="col-md-2 col-lg-2 col-xs-2"></div>
-
-                                          <button class="col-md-4 col-xs-4 col-lg-4 btn btn-danger" type="button" id="create_pdf" value="Generate PDF"><i class="zmdi zmdi-cloud-download"></i>&nbsp;PDF File</button>
-                                          <div class="col-md-2 col-lg-2 col-xs-2"></div>
-
-                                      </div>
-                                  </div>
-                              </div>
+                            </div>
+                        </div>
 
 <script>
           function downloadCSV(csv, filename) {
@@ -312,7 +302,7 @@
                                unit: 'px',
                                format: 'a4'
                            });
-                          doc.addImage(img, 'JPEG', 20, 10);
+                          doc.addImage(img, 'JPEG', 20, 20);
                           doc.save('PURF Report.pdf');
                           form.width(cache_width);
                       });
@@ -395,11 +385,11 @@
             </div>
 							</div>
 						</div>
-						{{-- <script>
+						<script>
 							initSample();
 						</script>
 					<div class="clearfix">
-						</div> --}}
+						</div>
 					</div>
 			</form>
 		</div>

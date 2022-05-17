@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function index(Request $request){
+        //dd($request);
         $role=Auth::user()->role;
-        if($role=='1')
-        {
+        if($role=='1'){
             return view('report');
         }
         elseif($role=='0'){

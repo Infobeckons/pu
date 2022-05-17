@@ -368,6 +368,9 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
+.regswitch {
+    margin-top: 30px;
+}
 
 img.brand-image.img-circle.elevation-3 {
     color: white;
