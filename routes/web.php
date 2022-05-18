@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TaskController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\booking;
 use App\Http\Controllers\reportcontroller;
 use App\Http\Controllers\formup;
@@ -125,10 +122,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Page Controlles
     //Route::get('home_page','PageController@home_page');
-    Route::get('home_page_update/{param}','PageController@home_page_update');
+    Route::get('home_page_update/{id}','App\Http\Controllers\PageController@home_page');
     Route::post('update_home_database','PageController@update_home_database');
-    Route::resource('home_page','PageController@home_page');
-    Route::view('homepage','home_page');
+    Route::get('home_page','PageController@home_page');
+    Route::post('home_page_update/{id}','App\Http\Controllers\PageController@update');
 
 
     //User Routes

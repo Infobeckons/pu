@@ -137,7 +137,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 <!-- Brand Logo -->
 <div class="logobar" height="60px" width="200px">
-    <img src="dist/img/panjab-university-logo-1.jpg" height="50px" width="50px" style="margin:10px;" alt="PunjabUniversity Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <img src="{{asset('dist/img/panjab-university-logo-1.jpg')}}" height="50px" width="50px" style="margin:10px;" alt="PunjabUniversity Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light" style="color:#fff;"><b>PU-Admin_Block</b></span>
     </div>
 <!-- Sidebar -->

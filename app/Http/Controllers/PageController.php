@@ -72,7 +72,7 @@ class PageController extends Controller
     {
         $id=$request->input('id');
         global $name;
-        $find = DB::table("header")->where('name',$request->input('id'))->first();
+        $find = DB::table("headers")->where('name',$request->input('id'))->first();
         if($request->hasFile('file')){
             $logoImage = $request->file('file');
             $name = $logoImage->getClientOriginalName();
@@ -82,7 +82,7 @@ class PageController extends Controller
                 }
                 else{
                     if($find!=null){
-                        $query2 = DB::table("header")->where('name', '=', $id)->update([
+                        $query2 = DB::table("headers")->where('name', '=', $id)->update([
                         'data' => $request->input('editor'),
                         'file' => $request->file('file')->move('storage\image\homepage',$name),
                         ]);
@@ -94,7 +94,7 @@ class PageController extends Controller
                         }
                     }
                     else{
-                        $query = DB::table("header")->insert([
+                        $query = DB::table("headers")->insert([
                             'name' => $request->input('id'),
                             'data' => $request->input('editor'),
                             'file' => $request->file('file')->move('storage\image\homepage',$name),
@@ -111,12 +111,12 @@ class PageController extends Controller
         }
         else{
 
-            if($request->input('header')==null){
+            if($request->input('headers')==null){
                 return back()->with('fail','Editor Field is required.');
             }
             else{
                 if($find!=null){
-                    $query2 = DB::table("header")->where('name', '=', $id)->update([
+                    $query2 = DB::table("headers")->where('name', '=', $id)->update([
                     'data' => $request->input('editor'),
                     ]);
                     if($query2){
@@ -127,7 +127,7 @@ class PageController extends Controller
                     }
                 }
                 else{
-                    $query = DB::table("header")->insert([
+                    $query = DB::table("headers")->insert([
                         'name' => $request->input('id'),
                         'data' => $request->input('editor'),
                     ]);
@@ -157,6 +157,6 @@ class PageController extends Controller
 
     public function home_page()
     {
-
+        return view('home_page');
     }
 }
