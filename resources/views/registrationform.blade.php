@@ -134,7 +134,7 @@
 	  <option value="Sloganwriting">Slogan Writing Competition</option>
   </select>
 
-    <div class="col-md-4" name="agegroup" id="agegroup" style="display:none" >
+    <div class="col-md-6" name="agegroup" id="agegroup" style="display:none" >
       <label class="control-label" for="agegroup"><b>Your AgeGroup</b></label>
       <select name="agegroup[]" id="agegroupsel" class="form-control wdp_form_control" >
         <option value="" hidden>---Select---</option>
@@ -144,7 +144,7 @@
       </select>
     </div>
 
-    <div class="col-md-4" name="agegroup1" id="agegroup1" style="display:none">
+    <div class="col-md-6" name="agegroup1" id="agegroup1" style="display:none">
       <label class="control-label" for="agegroup1"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel1" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -154,7 +154,7 @@
         </select>
     </div>
 
-    <div class="col-md-4" name="agegroup2" id="agegroup2" style="display:none">
+    <div class="col-md-6" name="agegroup2" id="agegroup2" style="display:none">
       <label class="control-label" for="agegroup2"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel2" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -164,7 +164,7 @@
         </select>
     </div>
 
-    <div class="col-md-4" name="agegroup3" id="agegroup3" style="display:none">
+    <div class="col-md-6" name="agegroup3" id="agegroup3" style="display:none">
       <label class="control-label" for="agegroup3"><b>Your AgeGroup</b></label>
         <select name="agegroup[]" id="agegroupsel3" class="form-control wdp_form_control">
           <option value="" hidden>---Select---</option>
@@ -174,7 +174,7 @@
         </select>
     </div>
     <!-- {{-- <input type="hidden" name="purf_id" value="PUrf_default"> --}} -->
-    <div class="col-md-4" id="members" style="display:none" >
+    <div class="col-md-6" id="members" style="display:none" >
     <label class="control-label" for="members"><b>Members</b></label>
     <select  name="members" class="form-control wdp_form_control" id="membersel" required="true"  onchange="refresh2(); refresh3();">
     	<option value="" hidden>---Select---</option>
@@ -768,11 +768,11 @@ switch(member){
 <section class="equal campus text-center">
 <div class="container">
 <div class="heading">
-  <img class="image" src="{{ asset('dist/img/panjab-university-logo-1.jpg')}}" style="width:200px">
+  <img class="image" src="{{asset('dist/img/favicon.ico')}}" style="width:200px">
 </div>
 
 <div class="heading2">
-  <h2 class="center">Registration  Closed Agle saal try Kro</h2>
+  <h2 class="center">Registration Closed</h2>
 </div>
 
 <article>

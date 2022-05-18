@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\booking;
 use App\Http\Controllers\reportcontroller;
 use App\Http\Controllers\formup;
@@ -112,7 +113,6 @@ Route::group(['middleware' => 'auth'], function () {
     // search
     // Route::get('search', 'App\Http\Controllers\booking@search');
     Route::any('search', 'App\Http\Controllers\transdata@find');
-    //Route::post('search?page=2','App\Http\Controllers\transdata@find');
     Route::get('extend', 'App\Http\Controllers\formup@index');
     Route::post('regon', 'App\Http\Controllers\formup@register');
 
@@ -122,19 +122,46 @@ Route::group(['middleware' => 'auth'], function () {
     Route::view('pan', 'pan');
 
     Route::get('logout', 'App\Http\Controllers\HomeController@logout')->name('logout');
+
+    //Page Controlles
+    //Route::get('home_page','PageController@home_page');
+    Route::get('home_page_update/{param}','PageController@home_page_update');
+    Route::post('update_home_database','PageController@update_home_database');
+    Route::resource('home_page','PageController@home_page');
+    Route::view('homepage','home_page');
+
+
+    //User Routes
+    Route::post('new_password','userController@new_password');
+    Route::get('rec/{pass}','userController@rec');
+    Route::post('user_recover','userController@user_recover');
+    Route::get('user_home','userController@index');
+    Route::get('logout','userController@logout');
+    Route::get('user_payment','userController@payment');
+    Route::post('login_user','userController@login_user');
+    Route::get('regis','userController@regis');
+    Route::post('regis_user','registerController@index');
+    Route::get('user_login',function(){
+    return view('user/login');
+    });
+    Route::get('rpw',function(){
+    return view('user/recoverpw');
+    });
+
 });
 
-Route::view('acknowledge', 'acknowledge');
-Route::view('form','registrationform');
-Route::get('test', 'App\Http\Controllers\reportController@test');
-Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');
-Route::name('front.')->middleware('visitor')->group(function() {
-    Route::view('/', 'home/index')->name('index');
-    Route::view('/about', 'home/aboutus')->name('about');
-    Route::view('/rules', 'home/rules')->name('rules');
-    Route::view('/registrationform', 'registrationform')->name('registrationform');
-    Route::view('/book', 'home/stall-booking')->name('book');
-    Route::view('/event', 'home/eventschedule')->name('event');
-    Route::view('/gal', 'home/gallery')->name('gal');
-    Route::view('/conn', 'home/contact')->name('conn');
-});
+    Route::view('acknowledge', 'acknowledge');
+    Route::view('form','registrationform');
+    Route::get('test', 'App\Http\Controllers\reportController@test');
+    Route::post('amountfetch', 'App\Http\Controllers\amounts@setamount');
+
+    Route::name('front.')->middleware('visitor')->group(function() {
+        Route::view('/', 'home/index')->name('index');
+        Route::view('/about', 'home/aboutus')->name('about');
+        Route::view('/ruleshead', 'home/rules')->name('ruleshead');
+        Route::view('/registrationform', 'registrationform')->name('registrationformde4');
+        Route::view('/book', 'home/stall-booking')->name('book');
+        Route::view('/eventer', 'home/eventschedule')->name('eventer');
+        Route::view('/gal', 'home/gallery')->name('gal');
+        Route::view('/cform', 'home/contact')->name('cform');
+    });

@@ -104,17 +104,17 @@
                             <ul class="nav navbar-nav wdp_nav">
                                 <li id="index"><a href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Home</a></li>
                                 <li><a href="{{url('about')}}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;About</a></li>
-                                <li><a href="{{url('rules')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;&nbsp;Rules</a></li>
+                                <li><a href="{{url('ruleshead')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i>&nbsp;&nbsp;Rules</a></li>
                                 <li><a href="{{url('registrationform')}}"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>&nbsp;&nbsp;Registration</a></li>
 
                                 <li><a href="{{url('book')}}"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;&nbsp;Booking of stall</a></li>
-                                <li><a href="{{url('event')}}"><i class="fa fa-calendar " aria-hidden="true"></i>&nbsp;&nbsp;Event Schedule</a></li>
+                                <li><a href="{{url('eventer')}}"><i class="fa fa-calendar " aria-hidden="true"></i>&nbsp;&nbsp;Event Schedule</a></li>
                                 <li><a href="{{url('gal')}}"><i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;&nbsp;Gallery</a></li>
 
-                                <li><a href="{{url('conn')}}"><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp;&nbsp;Contact</a></li>
+                                <li><a href="{{url('cform')}}"><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp;&nbsp;Contact</a></li>
                                 {{-- <!--li><a href="{{url('home_result')}}"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;&nbsp;Result</a></li--> --}}
 
-                                <li><a href="{{url('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login</a></li>
+                                <li><a href="{{url('user_login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login</a></li>
                             </ul>
                         </div>
 

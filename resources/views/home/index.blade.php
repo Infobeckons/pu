@@ -282,7 +282,7 @@
                                                         <p><i class="fa fa-check-circle"></i> Band Competition of various Schools</p>
                                                         <p><i class="fa fa-check-circle"></i> Fashion Competition</p>
                                                     </div>
-                                                    <a href="{{url('regs')}}" class="btn wdp_btn_inverse wdp_margin_top_4">Attend</a>
+                                                    <a href="{{url('registrationform')}}" class="btn wdp_btn_inverse wdp_margin_top_4">Attend</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -305,7 +305,7 @@
                                                         <p><i class="fa fa-check-circle"></i> Slogan Writing</p>
                                                         <p><i class="fa fa-check-circle"></i> Face Painting</p>
                                                     </div>
-                                                    <a href="{{('regs')}}" class="btn wdp_btn_inverse wdp_margin_top_4">Attend</a>
+                                                    <a href="{{('registrationform')}}" class="btn wdp_btn_inverse wdp_margin_top_4">Attend</a>
                                                 </div>
                                             </div>
                                             <div class="col-sm-5">
@@ -343,7 +343,7 @@
                                                         <p><i class="fa fa-check-circle"></i> Painting</p>
                                                         <p><i class="fa fa-check-circle"></i> Fancy Dress</p>
                                                     </div>
-                                                    <a href="{{url('regs')}}" class="btn wdp_btn_inverse wdp_margin_top_4">Attend</a>
+                                                    <a href="{{url('registrationform')}}" class="btn wdp_btn_inverse wdp_margin_top_4">Attend</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -369,7 +369,7 @@
                                             </p>
                                         </div>
                                         <div class="col-sm-5">
-                                            <a href="{{url('regs')}}" class="btn m-btncolr  m-font">REGISTRATION</a>
+                                            <a href="{{url('registrationform')}}" class="btn m-btncolr  m-font">REGISTRATION</a>
                                         </div>
                                     </div>
                                 </div>

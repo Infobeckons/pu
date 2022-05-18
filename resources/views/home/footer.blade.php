@@ -1,5 +1,7 @@
- {{-- < $users=DB::select("select * from contact"); ?> --}}
+ <?php $users=DB::select("select * from contacts"); ?>
 			{{-- comment --}}
+            @if(isset($users))
+				@foreach($users as $user)
 						<section id="wdp_contact_bar" class="text-center wdp_margin_top_10 ">
                             <div class="wdp_contact_bar_inner m-green ft-bb ft-bb2">
 
@@ -10,20 +12,21 @@
                                             <i class="fa fa-envelope"></i>
                                             <p class="wdp_contact_bar_phone m-cal-footer">
                                                 <span class="ft-head"> Email</span><br>
-                                                {{-- comment --}}<p>
+                                                {{ $user->email }}<p>
                                         </div>
                                         <div class="col-sm-4">
                                             <i class="fa fa-mobile fa1"></i>
                                             <p class="wdp_contact_bar_phone m-cal-footer">
                                                 <span class="ft-head">For more information & sponsorship</span><br>
 
-                                              {{-- comment --}}
+                                                {{$user->contact1}} / {{$user->contact2}} <br> {{$user->contact3}}.
+
                                             </p>
                                         </div>
                                         <div class="col-sm-4">
                                             <i class="fa fa-facebook fa2"></i>
                                             <p class="wdp_contact_bar_phone m-cal-footer">
-                                            	{{-- <a href="< echo $user->social;?>" style="text-decoration:none;color:white;"> --}}
+                                            	<a href="{{ '$user->social' }}" style="text-decoration:none;color:white;">
                                                 <span class="ft-head">Follow us on facebook</span>
                                                 </a>
                                                 <br>
@@ -55,7 +58,10 @@
                                 </div>
                             </div>
 
-                        </section>{{-- comment --}}
+                        </section>
+
+                    @endforeach
+                @endif
                         </main><!-- END MAIN -->
 
                 </div><!-- END PRIMARY -->

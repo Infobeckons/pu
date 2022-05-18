@@ -1,0 +1,58 @@
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) { 
+
+    .logo{
+        margin-top:23px;
+    }
+    h1{
+        font-family: 'Anton', sans-serif;
+        font-size: 60px;
+        text-align: center;
+    }
+    h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        margin-top: 75px;
+        line-height: 2px;
+        text-align: center;
+    }
+    h3{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        line-height: 2px;
+        text-align: center;
+    }
+    .boxed {
+        border: 1px solid black;
+        margin-top: 50px;
+        height: 192px;
+        width: 160px;
+        left: 25%;
+
+    }
+    .dotted{
+        border: none;
+        border-top: 2px dotted #000;
+        color: #fff;
+        height: 1px;
+        width: 100%;
+    }
+    .date{
+        margin-left: 402px;
+        margin-top: 30px;
+    }
+	
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 900px) and (orientation: landscape) { 
+
+}
+
+@media only screen and (min-device-width:767px) and (max-device-width:1024px) and (orientation:portrait){
+
+}
+@media only screen and (min-device-width:767px) and (max-device-width:1024px) and (orientation:landscape){
+
+}

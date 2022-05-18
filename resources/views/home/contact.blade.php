@@ -14,22 +14,22 @@
 
                         <!-- FEATURE IMAGE -->
                         <section class="m-header">
-                         <?php $use=DB::select("select * from header"); ?>@if(isset($use)) 
-								@foreach($use as $us)
+                         {{-- < $use=DB::select("select * from header"); ?>@if(isset($use))
+								@foreach($use as $us) --}}
 
-                            <figure><img src="<?php echo 'uploads/gallery/'.$us->icon;?>" class="img-responsive center-block main-logo"></figure>
-                            	@endforeach
-                            	@endif
+                            {{-- <figure><img src="< echo 'uploads/gallery/'.$us->icon;?>" class="img-responsive center-block main-logo"></figure> --}}
+                            	{{-- @endforeach
+                            	@endif --}}
                         </section>
-  
+
                         <!-- END FEATURE IMAGE -->
 
                         <!-- PAGE TITLE -->
                         <div id="page_title" class="wdp_margin_top_6">
                             <div class="container text-center">
-                                <img src="{{url('resources/assets/home/images/leaves-rose.png')}}" class="center-block img-responsive flower-img" >                                
+                                <img src="{{url('home/images/leaves-rose.png')}}" class="center-block img-responsive flower-img" >
                                 <h2>Contact Us</h2>
-                                <img src="{{url('resources/assets/home/images/line.png')}}" class="center-block img-responsive btm-img">
+                                <img src="{{url('home/images/line.png')}}" class="center-block img-responsive btm-img">
                             </div>
                         </div>
                         <!-- END PAGE TITLE -->
@@ -44,7 +44,7 @@
                         </div>
                         <!-- END BREADCRUMB -->
                         <!-- CONTACT -->
-                        <?php $use=DB::select("select * from contact"); ?>
+                        <?php $use=DB::select("select * from contacts"); ?>
                         	@foreach($use as $us)
                         <section id="wdp_contact">
 
@@ -52,33 +52,33 @@
                                 <div class="row">
 
                                     <div class="wdp_contact_item">
-                                        <div class="container bck">                                          
+                                        <div class="container bck">
                                             <div class="row">
                                                 <div class="col-md-9 border-right">
                                                     <div class="col-md-6">
                                                         <h3><i class="fa fa-map-marker mf"></i>Address</h3>
-                                                        <p>                                                             
+                                                        <p>
                                                         {{$us->address}}
                                                         </p>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <h3><i class="fa fa-mobile mf"></i>Contact Number</h3>
-                                                        <p>                                                             
+                                                        <p>
                                                             Mobile: -  {{$us->contact1}}, {{$us->contact2}}.<br>
-                                                        	Mobile: -  {{$us->contact3}}. 
-                                                            
-                                                            </p>                                                        
-                                                        <p>   
+                                                        	 Mobile: -  {{$us->contact3}}.
+
+                                                            </p>
+                                                        <p>
                                                         <p class="m-fb">
                                                             <a href="{{$us->social}}" ><span><i class="fa fa-facebook"></i></span> Follow Us On Facebook </a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <img src="{{url('resources/assets/home/images/loc.png')}}" class="img-responsive center-block" alt=""/>
+                                                    <img src="{{url('home/images/loc.png')}}" class="img-responsive center-block" alt=""/>
                                                 </div>
                                             </div>
-                                        </div> 
+                                        </div>
 
                                     </div>
 
@@ -88,11 +88,12 @@
                                 </div>
                             </div>
 
-                        </section>@endforeach
+                        </section>
+
+                        @endforeach
                         <!-- END CONTACT -->
 
                         @include('home/footer')
                         <!-- CONTACT BAR -->
                         <!-- END CONTACT BAR -->
 
-                    

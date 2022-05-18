@@ -252,7 +252,14 @@
         </li>
         <li class="nav-item">
         <a href="{{'registeration'}}" class="nav-link">
-            <i class="nav-icon fas fa-registered"></i>
+            <?php $reg=DB::select("Select reg_status from files");?>
+			@foreach($reg as $regs)
+			@if($regs->reg_status=="ON")
+			<i class="nav-icon fa-solid fa-toggle-on"></i>
+			@else
+			<i class="nav-icon fa-solid fa-toggle-off"></i>
+			@endif
+			@endforeach
             <p>
             Registeration
             </p>
