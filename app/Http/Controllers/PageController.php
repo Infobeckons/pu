@@ -68,75 +68,76 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+        // dd($request);
         $id=$request->input('id');
         global $name;
-        $find = DB::table("headers")->where('name',$request->input('id'))->first();
+        $find = DB::table("headers")->where('id',$request->input('id'))->first();
         if($request->hasFile('file')){
             $logoImage = $request->file('file');
             $name = $logoImage->getClientOriginalName();
 
-                if($request->input('editor')==null || $request->file('file')==null){
-                    return back()->with('fail','All Fields are required.');
+                if($request->input('data')==null && $request->file('file')==null){
+                    return view('p_home')->with('fail','All Fields are required.');
                 }
                 else{
                     if($find!=null){
-                        $query2 = DB::table("headers")->where('name', '=', $id)->update([
-                        'data' => $request->input('editor'),
+                        $query2 = DB::table("headers")->where('id', '=', $id)->update([
+                        'data' => $request->input('data'),
                         'file' => $request->file('file')->move('storage\image\homepage',$name),
                         ]);
                         if($query2){
-                            return back()->with('success','Data updated successfully.');
+                            return view('p_home')->with('success','Data updated successfully.');
                         }
                         else{
-                            return back()->with('fail','Data Updating Error ');
+                            return view('p_home')->with('fail','Data Updating Error ');
                         }
                     }
                     else{
                         $query = DB::table("headers")->insert([
-                            'name' => $request->input('id'),
-                            'data' => $request->input('editor'),
+                            'name' => $request->input('name'),
+                            'data' => $request->input('data'),
                             'file' => $request->file('file')->move('storage\image\homepage',$name),
                         ]);
 
                         if($query){
-                            return back()->with('success','Data has been inserted successfully.');
+                            return view('p_home')->with('success','Data has been inserted successfully.');
                         }
                         else{
-                            return back()->with('fail','Something went wrong.');
+                            return view('p_home')->with('fail','Something went wrong.');
                         }
                     }
                 }
         }
         else{
 
-            if($request->input('headers')==null){
-                return back()->with('fail','Editor Field is required.');
+            if($request->input('name')==null){
+                return back()->with('fail','Field name error.');
             }
             else{
                 if($find!=null){
-                    $query2 = DB::table("headers")->where('name', '=', $id)->update([
-                    'data' => $request->input('editor'),
+                    $query2 = DB::table("headers")->where('id', '=', $id)->update([
+                    'data' => $request->input('data'),
                     ]);
                     if($query2){
-                        return back()->with('success','Data updated successfully.');
+                        return view('p_home')->with('success','Data updated successfully.');
                     }
                     else{
-                        return back()->with('fail','Data Updating Error ');
+                        return view('p_home')->with('fail','Data Updating Error ');
                     }
                 }
                 else{
                     $query = DB::table("headers")->insert([
-                        'name' => $request->input('id'),
-                        'data' => $request->input('editor'),
+                        'name' => $request->input('name'),
+                        'data' => $request->input('data'),
                     ]);
 
                     if($query){
-                        return back()->with('success','Data has been inserted successfully.');
+                        return view('p_home')->with('success','Data has been inserted successfully.');
                     }
                     else{
-                        return back()->with('fail','Something went wrong.');
+                        return view('p_home')->with('fail','Something went wrong.');
                     }
                 }
             }
@@ -155,8 +156,19 @@ class PageController extends Controller
         //
     }
 
-    public function home_page()
+
+    public function p_home()
     {
-        return view('home_page');
+        return view('p_home');
+    }
+
+    //Home page Update
+    public function home_page_update($param,Request $request)
+    {
+
+            $users=header::where(['url'=>$param])->get();
+            //dd($users);
+            return view('home_update',['users'=>$users]);
+
     }
 }

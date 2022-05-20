@@ -14,21 +14,21 @@
 
                         <!-- FEATURE IMAGE -->
                         <section class="m-header">
-                         <?php $use=DB::select("select * from header"); ?>@if(isset($use)) 
+                         {{-- < $use=DB::select("select * from header"); ?>@if(isset($use))
 								@foreach($use as $us)
 
-                            <figure><img src="<?php echo 'uploads/gallery/'.$us->icon;?>" class="img-responsive center-block main-logo"></figure>
+                            <figure><img src="< echo 'uploads/gallery/'.$us->icon;?>" class="img-responsive center-block main-logo"></figure>
                             	@endforeach
-                            	@endif
-                        </section>          
+                            	@endif --}}
+                        </section>
                         <!-- END FEATURE IMAGE -->
 
                         <!-- PAGE TITLE -->
                         <div id="page_title" class="wdp_margin_top_6">
                             <div class="container text-center">
-                                <img src="{{url('resources/assets/home/images/leaves-rose.png')}}" class="center-block img-responsive flower-img" >                                
+                                <img src="{{url('home/images/leaves-rose.png')}}" class="center-block img-responsive flower-img" >
                                 <h2>Flower Competition</h2>
-                                <img src="{{url('resources/assets/home/images/line.png')}}" class="center-block img-responsive btm-img" />
+                                <img src="{{url('home/images/line.png')}}" class="center-block img-responsive btm-img" />
                             </div>
                         </div>
                         <!-- END PAGE TITLE -->
@@ -99,7 +99,7 @@
         <p>Inauguration </p>
         <p>Flower and Photography Competition</p>
       <p>Fashion Competition </p><br>
-      
+
         <h4>2nd Day</h4>
         <h4>Competitions: </h4>
         <p>Singing</p>
@@ -114,21 +114,21 @@
       <p>Painting</p>
       <p>Fancy Dress </p>
         <p>Laughter Show</p><br>
-        
+
         <h4>2nd Day </h4>
       <p>12th February, 2017 3rd Day </p>
       <p>747 </p>
-      <h4>For more information &amp; sponsorship: Please contact: 99140 03004, 98148 93401, 99145 27023 0172-2534365, e-teal: purosefestival14@gmail.com pu rosefestival 
-      10th-12th, February, 2017 
-      Special Attractions 
-      Fashion Competition 
-      Rose Prince &amp; Princess 
-      Rangoli &amp; Flower Competition 
-      Fancy Dress 
+      <h4>For more information &amp; sponsorship: Please contact: 99140 03004, 98148 93401, 99145 27023 0172-2534365, e-teal: purosefestival14@gmail.com pu rosefestival
+      10th-12th, February, 2017
+      Special Attractions
+      Fashion Competition
+      Rose Prince &amp; Princess
+      Rangoli &amp; Flower Competition
+      Fancy Dress
       Dancing Singing Competition
       Photography Competition
         Painting Competition</h4>
-      
+
       </div>-->
 
     </div>
@@ -300,7 +300,7 @@
             </table>
         </div>
         <div class="col-md-2"></div>
-    </div>                                      
+    </div>
 
 <!---- END OF CLASS B --->
     <div class="container">
@@ -467,7 +467,7 @@
         </div>
         <div class="col-md-2"></div>
     </div>
-                                        </div> 
+                                        </div>
 
                                     </div>
 
@@ -482,4 +482,3 @@
                        @include('home/footer')
                         <!-- END CONTACT BAR -->
 
-                   

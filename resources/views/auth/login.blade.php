@@ -3,7 +3,7 @@
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
-       
+
         <x-jet-validation-errors class="mb-4" />
 
         @if (session('status'))
@@ -36,7 +36,8 @@
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
-                    </a>
+                    </a> |
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
                 @endif
 
                 <x-jet-button class="ml-4">

@@ -19,7 +19,7 @@
                                             <p class="wdp_contact_bar_phone m-cal-footer">
                                                 <span class="ft-head">For more information & sponsorship</span><br>
 
-                                                {{$user->contact1}} / {{$user->contact2}} <br> {{$user->contact3}}.
+                                                {{$user->contact1}} / {{$user->contact2}} <br> / {{$user->contact3}}
 
                                             </p>
                                         </div>

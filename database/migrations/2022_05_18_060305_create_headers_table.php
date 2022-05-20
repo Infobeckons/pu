@@ -16,8 +16,9 @@ class CreateHeadersTable extends Migration
         Schema::create('headers', function (Blueprint $table) {
             $table->id();
             $table->string('name',30);
-            $table->text('data')->nullable;
-            $table->string('file')->nullable;
+            $table->text('data')->nullable();
+            $table->string('url');
+            $table->string('file')->nullable();
 
         });
     }

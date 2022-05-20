@@ -10,7 +10,7 @@
 
                     <!-- MAIN -->
                     <main id="main" class="site-main" role="main">
-                        {{-- comment --}}
+
 
                         <!-- SLIDESHOW -->
                         <section class="m-header">
@@ -22,20 +22,23 @@
 	                             <div class="container-fluid">
 									<div class="row text-center visit-row">
 										<div class="col-md-3 visit-box">
-											{{-- comment --}}
+
 											    <h1 class="visit-h1">Total Visitors :- {{$Visitor}}</h1>
-											{{-- comment --}}
+
 										</div>
 										<div class="col-md-9 marquee-box">
 											<marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
-											    {{-- comment --}}
+											    <?php $reg=DB::select("select * from files");?>
+                                                    @foreach($reg as $registration)
+                                                        @if($registration->reg_status=="ON")
 											                <b>
 											                    Last date for sale and acceptance of forms for photography competition extended till 07.02.2020 upto 5pm and for other competitions till 08.02.2020 till 5pm.
 											                </b>
-											            {{-- comment --}}
+											            @else
 
 											                <b>Registration Closed : &nbsp;&nbsp;&nbsp;&nbsp;For more information call on : 99140-03004, 98148-93401, 99145-27023, 0172-2534365</b>
-											           {{-- comment --}}
+											            @endif
+											        @endforeach
 											</marquee>
 										</div>
 									</div>
@@ -47,14 +50,21 @@
                                 <h2 class="welcome">Welcome to</h2>
                                 <h2>Panjab University Rose Festival</h2>
                                 <img src="{{asset('home/images/line.png')}}" class="center-block img-responsive btm-img">
-                              {{-- comment --}}
+
+                                <?php $home=DB::select("select * from headers where `url`='home_page_about'");?>
+                                @foreach($home as $data)
+                                <p class="main-p">{{$data->data}}</p>
                                 <center>
                                     <a href="{{url('about')}}" class="btn wdp_btn wdp_margin_top_4">Read more</a>
                                 </center>
+                                @endforeach
 
                                 <h1 class="info-heading">For more information</h1>
                                 <p class="wdp_contact_bar_phone"><i class="fa fa-mobile"></i>
-                                {{-- comment --}}
+                                    <?php $users=DB::select("select * from contacts"); ?>@if(isset($users))
+                                    @foreach($users as $user)
+                                    {{$user->contact1}} / {{$user->contact2}} / {{$user->contact3}}</p>
+                                    </div>@endforeach @endif
 
 
 
@@ -229,7 +239,10 @@
                                                     <p><span class="lead"><i class="fa fa-calendar"></i></span></p>
                                                 </div>
                                                 <div class="wdp_event_time">
-                                                   {{-- comment --}}
+                                                    <?php $home=DB::select("select * from headers where `url`='home_date'");?>
+                                                        @foreach($home as $data)
+                                                        <p>{{$data->data}}</p>
+                                                        @endforeach
                                                 </div>
                                             </div>
                                         </div>
@@ -240,7 +253,10 @@
                                                     <p><span class="lead"><i class="fa fa-clock-o"></i></span></p>
                                                 </div>
                                                 <div class="wdp_event_time">
-                                                   {{-- comment --}}
+                                                    <?php $home=DB::select("select * from headers where `url`='home_time'");?>
+                                                        @foreach($home as $data)
+                                                        <p>{{$data->data}}</p>
+                                                        @endforeach
                                                 </div>
                                             </div>
                                         </div>
@@ -251,7 +267,10 @@
                                                     <p><span class="lead"><i class="fa fa-map-marker"></i></span> </p>
                                                 </div>
                                                 <div class="wdp_event_time">
-                                                   {{-- comment --}}
+                                                    <?php $home=DB::select("select * from headers where `url`='home_vanue'");?>
+                                                        @foreach($home as $data)
+                                                        <p>{{$data->data}}</p>
+                                                        @endforeach
                                                 </div>
                                             </div>
                                         </div>
@@ -261,7 +280,10 @@
                             <div id="wdp_event_list">
                                 <div class="post-container">
                                     <div class="container wdp_margin_top_4">
-                                        {{-- <h4 class="wdp_event_title text-center"> Day 1&nbsp;<span class="bracket">(</span> <span class="m-date">{{$data->day1_date}}</span> <span class="bracket">)</span></h4> --}}
+                                        <?php $home=DB::select("select * from headers where `url`='day1_date'");?>
+                                                        @foreach($home as $data)
+                                        <h4 class="wdp_event_title text-center"> Day 1&nbsp;<span class="bracket">(</span> <span class="m-date">{{$data->data}}</span> <span class="bracket">)</span></h4>
+                                                        @endforeach
                                         <div class="row">
                                             <div class="col-sm-5">
                                                 <div class="featured-image-content wdp_event_featured_image wdp_margin_top_6">
@@ -290,7 +312,10 @@
                                 </div>
                                 <div class="post-container">
                                     <div class="container wdp_margin_top_4">
-                                        {{-- <h4 class="wdp_event_title text-center"> Day 2&nbsp;<span class="bracket">(</span> <span class="m-date">{{$data->day2_date}}</span> <span class="bracket">)</span></h4> --}}
+                                        <?php $home=DB::select("select * from headers where `url`='day2_date'");?>
+                                                        @foreach($home as $data)
+                                        <h4 class="wdp_event_title text-center"> Day 2&nbsp;<span class="bracket">(</span> <span class="m-date">{{$data->data}}</span> <span class="bracket">)</span></h4>
+                                                        @endforeach
                                         <div class="row">
                                             <div class="col-sm-2">
                                                 &nbsp;&nbsp;
@@ -320,7 +345,10 @@
                                 </div>
                                 <div class="post-container">
                                     <div class="container wdp_margin_top_4">
-                                        {{-- <h4 class="wdp_event_title text-center"> Day 3&nbsp;<span class="bracket">(</span> <span class="m-date">{{$data->day3_date}}</span> <span class="bracket">)</span></h4> --}}
+                                        <?php $home=DB::select("select * from headers where `url`='day3_date'");?>
+                                                        @foreach($home as $data)
+                                        <h4 class="wdp_event_title text-center"> Day 3&nbsp;<span class="bracket">(</span> <span class="m-date">{{$data->data}}</span> <span class="bracket">)</span></h4>
+                                                        @endforeach
                                         <div class="row">
                                             <div class="col-sm-5">
                                                 <div class="featured-image-content wdp_event_featured_image wdp_margin_top_6">
@@ -362,7 +390,10 @@
 
                                         <div class="col-sm-7">
                                             <p class="wdp_contact_bar_phone m-cal">
-                                           {{-- comment --}}
+                                                <?php $home=DB::select("select * from headers where `url`='home_registration_text'");?>
+                                                        @foreach($home as $data)
+                                                        {{$data->data}}
+                                                        @endforeach
                                             </p>
                                             <p class="wdp_contact_bar_phone flower-line">
                                                 Flower Competition <span class="bracket">(</span> To be applied offline only <span class="bracket">)</span> To see details <a href="{{url('flowercomp')}}" class="m-link">Click Here</a>

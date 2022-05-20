@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class header extends Model
 {
     use HasFactory;
-    public $fillable=['name','data','file'];
+    public $fillable=['name','data','url','file'];
 }

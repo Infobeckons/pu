@@ -69,11 +69,12 @@
                             <button type="submit" class="btn btn-primary btn-block btn-lg">Log In</button>
                         </div>
                         <p class="hint-text"><a class="frgt-green" href="{{url('rpw')}}">Forgot Password?</a> | <a class="frgt-red"  href="{{url('/')}}">Back To Home</a></p>
+                        <center><p class="hint-text"><a href="{{ route('login') }}" class="frgt-green">Admin Login</a></p></center>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
-@include('home/footer ')	
+@include('home/footer ')
 @endif
